@@ -7,12 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		27748A8D1B94A22D00090E19 /* ProjectPaintball.otf in Resources */ = {isa = PBXBuildFile; fileRef = 27748A8C1B94A22D00090E19 /* ProjectPaintball.otf */; };
 		27944CF51B9494210064C69C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27944CF41B9494210064C69C /* AppDelegate.swift */; };
 		27944CF71B9494210064C69C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27944CF61B9494210064C69C /* ViewController.swift */; };
 		27944CFA1B9494210064C69C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 27944CF81B9494210064C69C /* Main.storyboard */; };
 		27944CFC1B9494210064C69C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 27944CFB1B9494210064C69C /* Images.xcassets */; };
 		27944CFF1B9494210064C69C /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 27944CFD1B9494210064C69C /* LaunchScreen.xib */; };
 		27944D0B1B9494210064C69C /* SplatTrackTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27944D0A1B9494210064C69C /* SplatTrackTests.swift */; };
+		EE5CDB3A8ACB97DF47D2D291 /* Pods_SplatTrack.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A569C456F96E8A85EFDE826 /* Pods_SplatTrack.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -26,16 +28,20 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		18577BB5900A82EF889E9C42 /* Pods-SplatTrack.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SplatTrack.release.xcconfig"; path = "Pods/Target Support Files/Pods-SplatTrack/Pods-SplatTrack.release.xcconfig"; sourceTree = "<group>"; };
+		27748A8C1B94A22D00090E19 /* ProjectPaintball.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = ProjectPaintball.otf; path = Resources/ProjectPaintball.otf; sourceTree = "<group>"; };
 		27944CEF1B9494210064C69C /* SplatTrack.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SplatTrack.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		27944CF31B9494210064C69C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		27944CF41B9494210064C69C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		27944CF61B9494210064C69C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		27944CF91B9494210064C69C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		27944CFB1B9494210064C69C /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		27944CFB1B9494210064C69C /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = SplatTrack/Images.xcassets; sourceTree = "<group>"; };
 		27944CFE1B9494210064C69C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		27944D041B9494210064C69C /* SplatTrackTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SplatTrackTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		27944D091B9494210064C69C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		27944D0A1B9494210064C69C /* SplatTrackTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplatTrackTests.swift; sourceTree = "<group>"; };
+		8A569C456F96E8A85EFDE826 /* Pods_SplatTrack.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SplatTrack.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E703548B0908F1F1ADA2A9F9 /* Pods-SplatTrack.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SplatTrack.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SplatTrack/Pods-SplatTrack.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +49,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EE5CDB3A8ACB97DF47D2D291 /* Pods_SplatTrack.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,12 +63,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		27748A8B1B94A1ED00090E19 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				27944CFB1B9494210064C69C /* Images.xcassets */,
+				27748A8C1B94A22D00090E19 /* ProjectPaintball.otf */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
 		27944CE61B9494210064C69C = {
 			isa = PBXGroup;
 			children = (
+				27748A8B1B94A1ED00090E19 /* Resources */,
 				27944CF11B9494210064C69C /* SplatTrack */,
 				27944D071B9494210064C69C /* SplatTrackTests */,
 				27944CF01B9494210064C69C /* Products */,
+				7B14D9BC8EE94B8E8291A4E7 /* Pods */,
+				5C47792DD39640CB4CC91CAE /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -80,7 +99,6 @@
 				27944CF41B9494210064C69C /* AppDelegate.swift */,
 				27944CF61B9494210064C69C /* ViewController.swift */,
 				27944CF81B9494210064C69C /* Main.storyboard */,
-				27944CFB1B9494210064C69C /* Images.xcassets */,
 				27944CFD1B9494210064C69C /* LaunchScreen.xib */,
 				27944CF21B9494210064C69C /* Supporting Files */,
 			);
@@ -112,6 +130,23 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		5C47792DD39640CB4CC91CAE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8A569C456F96E8A85EFDE826 /* Pods_SplatTrack.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7B14D9BC8EE94B8E8291A4E7 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E703548B0908F1F1ADA2A9F9 /* Pods-SplatTrack.debug.xcconfig */,
+				18577BB5900A82EF889E9C42 /* Pods-SplatTrack.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -119,9 +154,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 27944D0E1B9494210064C69C /* Build configuration list for PBXNativeTarget "SplatTrack" */;
 			buildPhases = (
+				18C00D2130C2BC0D97C22EFE /* Check Pods Manifest.lock */,
 				27944CEB1B9494210064C69C /* Sources */,
 				27944CEC1B9494210064C69C /* Frameworks */,
 				27944CED1B9494210064C69C /* Resources */,
+				BC6C658A87F2C257A967BB2A /* Embed Pods Frameworks */,
+				04DA6B6AC4603D8D4F9802CC /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -193,6 +231,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				27944CFA1B9494210064C69C /* Main.storyboard in Resources */,
+				27748A8D1B94A22D00090E19 /* ProjectPaintball.otf in Resources */,
 				27944CFF1B9494210064C69C /* LaunchScreen.xib in Resources */,
 				27944CFC1B9494210064C69C /* Images.xcassets in Resources */,
 			);
@@ -206,6 +245,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		04DA6B6AC4603D8D4F9802CC /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SplatTrack/Pods-SplatTrack-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		18C00D2130C2BC0D97C22EFE /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		BC6C658A87F2C257A967BB2A /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SplatTrack/Pods-SplatTrack-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		27944CEB1B9494210064C69C /* Sources */ = {
@@ -340,9 +427,11 @@
 		};
 		27944D0F1B9494210064C69C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E703548B0908F1F1ADA2A9F9 /* Pods-SplatTrack.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = SplatTrack/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -350,9 +439,11 @@
 		};
 		27944D101B9494210064C69C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 18577BB5900A82EF889E9C42 /* Pods-SplatTrack.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = SplatTrack/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -411,6 +502,7 @@
 				27944D101B9494210064C69C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		27944D111B9494210064C69C /* Build configuration list for PBXNativeTarget "SplatTrackTests" */ = {
 			isa = XCConfigurationList;
@@ -419,6 +511,7 @@
 				27944D131B9494210064C69C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
