@@ -74,6 +74,7 @@ class ViewController: UIViewController {
     
     // Container view
     @IBOutlet weak var contentView: UIView!
+    @IBOutlet weak var loadingView: UIView!
     
     // MARK: View Lifecycle
     override func viewDidLoad() {
@@ -82,6 +83,7 @@ class ViewController: UIViewController {
         themeViews()
         
         contentView.hidden = true
+        loadingView.hidden = false
         fetchMapData(updateMapData)
     }
     
@@ -127,6 +129,7 @@ class ViewController: UIViewController {
             rankedStageTwoImage.image = UIImage(named: self.StageImageMap[data.rankedStageTwoName!] ?? "")
         }
         
+        loadingView.hidden = true
         contentView.hidden = false
     }
     

@@ -12,6 +12,7 @@
             <string>ProjectPaintball</string>
             <string>ProjectPaintball</string>
             <string>ProjectPaintball</string>
+            <string>ProjectPaintball</string>
         </mutableArray>
     </customFonts>
     <scenes>
@@ -33,6 +34,23 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sy2-j2-AN6">
                                 <rect key="frame" x="0.0" y="64" width="600" height="536"/>
                                 <subviews>
+                                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4LF-gq-WVx" userLabel="LoadingView">
+                                        <rect key="frame" x="200" y="168" width="200" height="200"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Updating..." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CSW-Z3-aiA">
+                                                <rect key="frame" x="57" y="92" width="87" height="18"/>
+                                                <fontDescription key="fontDescription" name="ProjectPaintball" family="Project Paintball" pointSize="16"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="200" id="E73-76-PQo"/>
+                                            <constraint firstAttribute="centerX" secondItem="CSW-Z3-aiA" secondAttribute="centerX" id="Kec-1Y-tfd"/>
+                                            <constraint firstAttribute="centerY" secondItem="CSW-Z3-aiA" secondAttribute="centerY" constant="-0.5" id="bH6-dz-14w"/>
+                                            <constraint firstAttribute="height" constant="200" id="wdl-ED-aju"/>
+                                        </constraints>
+                                    </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FPc-Eb-Z2v" userLabel="ContentView">
                                         <rect key="frame" x="0.0" y="0.0" width="600" height="622"/>
                                         <subviews>
@@ -128,10 +146,18 @@
                                 </subviews>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="FPc-Eb-Z2v" secondAttribute="trailing" id="DXh-W3-ALE"/>
+                                    <constraint firstAttribute="centerX" secondItem="4LF-gq-WVx" secondAttribute="centerX" id="KpS-A9-yLB"/>
                                     <constraint firstItem="FPc-Eb-Z2v" firstAttribute="leading" secondItem="Sy2-j2-AN6" secondAttribute="leading" id="PD1-zF-m9b"/>
                                     <constraint firstItem="FPc-Eb-Z2v" firstAttribute="top" secondItem="Sy2-j2-AN6" secondAttribute="top" id="WD4-pe-AC0"/>
+                                    <constraint firstAttribute="centerY" secondItem="4LF-gq-WVx" secondAttribute="centerY" id="ZAR-8H-GE7"/>
+                                    <constraint firstItem="4LF-gq-WVx" firstAttribute="top" secondItem="FPc-Eb-Z2v" secondAttribute="top" constant="134" id="h2D-CC-4Kf"/>
                                     <constraint firstAttribute="bottom" secondItem="FPc-Eb-Z2v" secondAttribute="bottom" id="xcC-2t-Y8e"/>
                                 </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="h2D-CC-4Kf"/>
+                                    </mask>
+                                </variation>
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -147,9 +173,15 @@
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Sy2-j2-AN6" secondAttribute="bottom" id="zXy-f7-lc8"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="SplatTrack" id="cp4-9V-jOy"/>
+                    <navigationItem key="navigationItem" title="SplatTrack" id="cp4-9V-jOy">
+                        <barButtonItem key="leftBarButtonItem" systemItem="refresh" id="b2n-3N-u0V">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Item" style="done" id="hu6-MV-VTg"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="contentView" destination="FPc-Eb-Z2v" id="Xto-nM-QMb"/>
+                        <outlet property="loadingView" destination="4LF-gq-WVx" id="C9S-sM-yy2"/>
                         <outlet property="rankedHeader" destination="Xp5-es-Sb6" id="M5A-bp-HSP"/>
                         <outlet property="rankedRulesLabel" destination="Xp5-es-Sb6" id="Vil-df-w65"/>
                         <outlet property="rankedStageOneImage" destination="DBk-Pl-YEM" id="h5Y-g5-fwm"/>
