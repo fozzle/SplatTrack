@@ -20,6 +20,7 @@ struct MapData {
 
 class ViewController: UIViewController {
     
+    // MARK: Constants
     let SplatURL = "https://splatoon.ink/schedule.json"
     let RulesFormatString = "Current %@ Stages:"
     let StageImageMap = [
@@ -35,25 +36,51 @@ class ViewController: UIViewController {
         "Urchin Underpass": "Stage_Urchin_Underpass",
         "Walleye Warehouse": "Stage_Walleye_Warehouse"
     ]
+    let Colors = [
+        (255.0,0.0,118.0),
+        (255.0,139.0,0.0),
+        (255.0,225.0,0.0),
+        (193.0,252.0,0.0),
+        (0.0,220.0,96.0),
+        (0.0,199.0,209.0),
+        (66.0,0.0,233.0),
+        (172.0,0.0,233.0),
+        (0.0,170.0,232.0),
+        (255.0,37.0,0.0),
+        (177.0,245.0,231.0),
+        (0.0,207.0,60.0),
+        (0.0,219.0,144.0),
+        (118.0,73.0,252.0),
+        (50.0,0.0,183.0),
+        (237.0,0.0,200.0)
+        ]
     
-    // Outlets
+    // Stages
     @IBOutlet weak var regularStageOneLabel: UILabel!
     @IBOutlet weak var regularStageTwoLabel: UILabel!
     @IBOutlet weak var rankedStageOneLabel: UILabel!
     @IBOutlet weak var rankedStageTwoLabel: UILabel!
     @IBOutlet weak var rankedRulesLabel: UILabel!
     
+    // Headers
+    @IBOutlet weak var rankedHeader: UILabel!
+    @IBOutlet weak var regularHeader: UILabel!
+    
+    // Images
     @IBOutlet weak var regularStageOneImage: UIImageView!
     @IBOutlet weak var regularStageTwoImage: UIImageView!
     @IBOutlet weak var rankedStageOneImage: UIImageView!
     @IBOutlet weak var rankedStageTwoImage: UIImageView!
     
+    // MARK: View Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        themeViews()
         fetchMapData(updateMapData)
     }
     
+    // MARK: Update
     func fetchMapData(completion: (MapData?) -> Void) {
         // Hit splatoon.ink API for data
         Alamofire.request(.GET, SplatURL).responseJSON {[unowned self] (req, res, json, error) in
@@ -82,18 +109,44 @@ class ViewController: UIViewController {
     func updateMapData(mapData: MapData?) {
         // Change text of labels
         if let data = mapData {
-            self.regularStageOneLabel.text = data.regularStageOneName
-            self.regularStageTwoLabel.text = data.regularStageTwoName
-            self.rankedStageOneLabel.text = data.rankedStageOneName
-            self.rankedStageTwoLabel.text = data.rankedStageTwoName
-            self.rankedRulesLabel.text = String(format: self.RulesFormatString, data.rankedRulesetName!)
+            regularStageOneLabel.text = data.regularStageOneName
+            regularStageTwoLabel.text = data.regularStageTwoName
+            rankedStageOneLabel.text = data.rankedStageOneName
+            rankedStageTwoLabel.text = data.rankedStageTwoName
+            rankedRulesLabel.text = String(format: self.RulesFormatString, data.rankedRulesetName!)
             
             // Images
-            self.regularStageOneImage.image = UIImage(named: self.StageImageMap[data.regularStageOneName!] ?? "")
-            self.regularStageTwoImage.image = UIImage(named: self.StageImageMap[data.regularStageTwoName!] ?? "")
-            self.rankedStageOneImage.image = UIImage(named: self.StageImageMap[data.rankedStageOneName!] ?? "")
-            self.rankedStageTwoImage.image = UIImage(named: self.StageImageMap[data.rankedStageTwoName!] ?? "")
+            regularStageOneImage.image = UIImage(named: self.StageImageMap[data.regularStageOneName!] ?? "")
+            regularStageTwoImage.image = UIImage(named: self.StageImageMap[data.regularStageTwoName!] ?? "")
+            rankedStageOneImage.image = UIImage(named: self.StageImageMap[data.rankedStageOneName!] ?? "")
+            rankedStageTwoImage.image = UIImage(named: self.StageImageMap[data.rankedStageTwoName!] ?? "")
         }
+    }
+    
+    func themeViews() {
+        // Transparent nav bar
+        if let navBar = navigationController?.navigationBar {
+            navBar.setBackgroundImage(UIImage(), forBarMetrics:UIBarMetrics.Default)
+            navBar.shadowImage = UIImage()
+            navBar.translucent = true
+            navBar.barStyle = UIBarStyle.Black
+        }
+        
+        // Colorize
+        let (red, green, blue) = Colors.randomItem()
+        let bodyColor = UIColor(red: CGFloat(red/255.0), green: CGFloat(green/255.0), blue: CGFloat(blue/255.0), alpha: CGFloat(1))
+        
+        let (headerRed, headerGreen, headerBlue) = Colors.randomItem()
+        let headerColor = UIColor(red: CGFloat(headerRed/255.0), green: CGFloat(headerGreen/255.0), blue: CGFloat(headerBlue/255.0), alpha: CGFloat(1))
+        
+        for label in [regularStageOneLabel, regularStageTwoLabel, rankedStageOneLabel, rankedStageTwoLabel] {
+            label.textColor = bodyColor
+        }
+        
+        for label in [regularHeader, rankedHeader] {
+            label.textColor = headerColor
+        }
+
     }
 
 }

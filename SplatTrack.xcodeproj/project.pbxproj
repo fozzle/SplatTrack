@@ -14,6 +14,7 @@
 		27944CFC1B9494210064C69C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 27944CFB1B9494210064C69C /* Images.xcassets */; };
 		27944CFF1B9494210064C69C /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 27944CFD1B9494210064C69C /* LaunchScreen.xib */; };
 		27944D0B1B9494210064C69C /* SplatTrackTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27944D0A1B9494210064C69C /* SplatTrackTests.swift */; };
+		27F7DD391B94D3C900C6A7DA /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27F7DD381B94D3C900C6A7DA /* Array.swift */; };
 		EE5CDB3A8ACB97DF47D2D291 /* Pods_SplatTrack.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A569C456F96E8A85EFDE826 /* Pods_SplatTrack.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
@@ -40,6 +41,7 @@
 		27944D041B9494210064C69C /* SplatTrackTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SplatTrackTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		27944D091B9494210064C69C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		27944D0A1B9494210064C69C /* SplatTrackTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplatTrackTests.swift; sourceTree = "<group>"; };
+		27F7DD381B94D3C900C6A7DA /* Array.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Array.swift; sourceTree = "<group>"; };
 		8A569C456F96E8A85EFDE826 /* Pods_SplatTrack.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SplatTrack.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E703548B0908F1F1ADA2A9F9 /* Pods-SplatTrack.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SplatTrack.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SplatTrack/Pods-SplatTrack.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -96,6 +98,7 @@
 		27944CF11B9494210064C69C /* SplatTrack */ = {
 			isa = PBXGroup;
 			children = (
+				27F7DD371B94D3B800C6A7DA /* Extensions */,
 				27944CF41B9494210064C69C /* AppDelegate.swift */,
 				27944CF61B9494210064C69C /* ViewController.swift */,
 				27944CF81B9494210064C69C /* Main.storyboard */,
@@ -128,6 +131,14 @@
 				27944D091B9494210064C69C /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		27F7DD371B94D3B800C6A7DA /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				27F7DD381B94D3C900C6A7DA /* Array.swift */,
+			);
+			name = Extensions;
 			sourceTree = "<group>";
 		};
 		5C47792DD39640CB4CC91CAE /* Frameworks */ = {
@@ -299,6 +310,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				27F7DD391B94D3C900C6A7DA /* Array.swift in Sources */,
 				27944CF71B9494210064C69C /* ViewController.swift in Sources */,
 				27944CF51B9494210064C69C /* AppDelegate.swift in Sources */,
 			);
@@ -372,7 +384,7 @@
 					"$(inherited)",
 				);
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
+				GCC_TREAT_WARNINGS_AS_ERRORS = NO;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
@@ -412,7 +424,7 @@
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
+				GCC_TREAT_WARNINGS_AS_ERRORS = NO;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
