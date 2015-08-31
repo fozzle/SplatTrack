@@ -10,6 +10,14 @@ import UIKit
 import Alamofire
 import SwiftyJSON
 
+struct MapData {
+    var regularStageOneName: String?
+    var regularStageTwoName: String?
+    var rankedStageOneName: String?
+    var rankedStageTwoName: String?
+    var rankedRulesetName: String?
+}
+
 class ViewController: UIViewController {
     
     let SplatURL = "https://splatoon.ink/schedule.json"
@@ -43,39 +51,49 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        fetchMapData(updateMapData)
+    }
+    
+    func fetchMapData(completion: (MapData?) -> Void) {
         // Hit splatoon.ink API for data
         Alamofire.request(.GET, SplatURL).responseJSON {[unowned self] (req, res, json, error) in
             if(error != nil) {
                 NSLog("Error: \(error)")
+                completion(nil)
             }
             else {
                 var json = JSON(json!)
+                var mapData = MapData()
                 
                 // Extract stage strings
                 let regularStages = json["schedule"][0]["regular"]["maps"],
-                    rankedStages = json["schedule"][0]["ranked"]["maps"],
-                    regularStageOneString = regularStages[0]["nameEN"].string,
-                    regularStageTwoString = regularStages[1]["nameEN"].string,
-                    rankedStageOneString = rankedStages[0]["nameEN"].string,
-                    rankedStageTwoString = rankedStages[1]["nameEN"].string,
-                    rankedGameModeString = json["schedule"][0]["ranked"]["rulesEN"].string
+                rankedStages = json["schedule"][0]["ranked"]["maps"]
                 
-                // Change text of labels
-                self.regularStageOneLabel.text = regularStageOneString
-                self.regularStageTwoLabel.text = regularStageTwoString
-                self.rankedStageOneLabel.text = rankedStageOneString
-                self.rankedStageTwoLabel.text = rankedStageTwoString
-                self.rankedRulesLabel.text = String(format: self.RulesFormatString, rankedGameModeString!)
-                
-                // Images
-                self.regularStageOneImage.image = UIImage(named: self.StageImageMap[regularStageOneString!] ?? "")
-                self.regularStageTwoImage.image = UIImage(named: self.StageImageMap[regularStageTwoString!] ?? "")
-                self.rankedStageOneImage.image = UIImage(named: self.StageImageMap[rankedStageOneString!] ?? "")
-                self.rankedStageTwoImage.image = UIImage(named: self.StageImageMap[rankedStageTwoString!] ?? "")
-                
+                mapData.regularStageOneName = regularStages[0]["nameEN"].string
+                mapData.regularStageTwoName = regularStages[1]["nameEN"].string
+                mapData.rankedStageOneName = rankedStages[0]["nameEN"].string
+                mapData.rankedStageTwoName = rankedStages[1]["nameEN"].string
+                mapData.rankedRulesetName = json["schedule"][0]["ranked"]["rulesEN"].string
+                completion(mapData)
             }
         }
-        
+    }
+    
+    func updateMapData(mapData: MapData?) {
+        // Change text of labels
+        if let data = mapData {
+            self.regularStageOneLabel.text = data.regularStageOneName
+            self.regularStageTwoLabel.text = data.regularStageTwoName
+            self.rankedStageOneLabel.text = data.rankedStageOneName
+            self.rankedStageTwoLabel.text = data.rankedStageTwoName
+            self.rankedRulesLabel.text = String(format: self.RulesFormatString, data.rankedRulesetName!)
+            
+            // Images
+            self.regularStageOneImage.image = UIImage(named: self.StageImageMap[data.regularStageOneName!] ?? "")
+            self.regularStageTwoImage.image = UIImage(named: self.StageImageMap[data.regularStageTwoName!] ?? "")
+            self.rankedStageOneImage.image = UIImage(named: self.StageImageMap[data.rankedStageOneName!] ?? "")
+            self.rankedStageTwoImage.image = UIImage(named: self.StageImageMap[data.rankedStageTwoName!] ?? "")
+        }
     }
 
 }
