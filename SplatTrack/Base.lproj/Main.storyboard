@@ -149,6 +149,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="SplatTrack" id="cp4-9V-jOy"/>
                     <connections>
+                        <outlet property="contentView" destination="FPc-Eb-Z2v" id="Xto-nM-QMb"/>
                         <outlet property="rankedHeader" destination="Xp5-es-Sb6" id="M5A-bp-HSP"/>
                         <outlet property="rankedRulesLabel" destination="Xp5-es-Sb6" id="Vil-df-w65"/>
                         <outlet property="rankedStageOneImage" destination="DBk-Pl-YEM" id="h5Y-g5-fwm"/>

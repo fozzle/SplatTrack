@@ -72,11 +72,16 @@ class ViewController: UIViewController {
     @IBOutlet weak var rankedStageOneImage: UIImageView!
     @IBOutlet weak var rankedStageTwoImage: UIImageView!
     
+    // Container view
+    @IBOutlet weak var contentView: UIView!
+    
     // MARK: View Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
         themeViews()
+        
+        contentView.hidden = true
         fetchMapData(updateMapData)
     }
     
@@ -121,6 +126,8 @@ class ViewController: UIViewController {
             rankedStageOneImage.image = UIImage(named: self.StageImageMap[data.rankedStageOneName!] ?? "")
             rankedStageTwoImage.image = UIImage(named: self.StageImageMap[data.rankedStageTwoName!] ?? "")
         }
+        
+        contentView.hidden = false
     }
     
     func themeViews() {
@@ -136,8 +143,12 @@ class ViewController: UIViewController {
         let (red, green, blue) = Colors.randomItem()
         let bodyColor = UIColor(red: CGFloat(red/255.0), green: CGFloat(green/255.0), blue: CGFloat(blue/255.0), alpha: CGFloat(1))
         
-        let (headerRed, headerGreen, headerBlue) = Colors.randomItem()
-        let headerColor = UIColor(red: CGFloat(headerRed/255.0), green: CGFloat(headerGreen/255.0), blue: CGFloat(headerBlue/255.0), alpha: CGFloat(1))
+        var headerColor : UIColor
+        do {
+            var (headerRed, headerGreen, headerBlue) = Colors.randomItem()
+             headerColor = UIColor(red: CGFloat(headerRed/255.0), green: CGFloat(headerGreen/255.0), blue: CGFloat(headerBlue/255.0), alpha: CGFloat(1))
+        } while (headerColor == bodyColor)
+        
         
         for label in [regularStageOneLabel, regularStageTwoLabel, rankedStageOneLabel, rankedStageTwoLabel] {
             label.textColor = bodyColor
@@ -146,6 +157,13 @@ class ViewController: UIViewController {
         for label in [regularHeader, rankedHeader] {
             label.textColor = headerColor
         }
+        
+        if var titleTextAttributes = navigationController?.navigationBar.titleTextAttributes {
+            titleTextAttributes[NSForegroundColorAttributeName] = headerColor
+            navigationController?.navigationBar.titleTextAttributes = titleTextAttributes
+        }
+        
+
 
     }
 
