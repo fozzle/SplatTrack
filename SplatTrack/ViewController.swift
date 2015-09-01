@@ -21,6 +21,7 @@ struct MapData {
 class ViewController: UIViewController {
     
     // MARK: Constants
+    let ScrollSpeed = 100.0 // bigger = slower
     let SplatURL = "https://splatoon.ink/schedule.json"
     let RulesFormatString = "Current %@ Stages:"
     let StageImageMap = [
@@ -76,15 +77,51 @@ class ViewController: UIViewController {
     @IBOutlet weak var contentView: UIView!
     @IBOutlet weak var loadingView: UIView!
     
+    // Backsplats
+    @IBOutlet weak var backsplat1: UIImageView!
+    @IBOutlet weak var backsplat2: UIImageView!
+    @IBOutlet weak var backsplat3: UIImageView!
+    @IBOutlet weak var backsplat4: UIImageView!
+    @IBOutlet weak var backgroundView: UIView!
+    
+    // MARK: Instance Variables
+    var backgroundLayer : CALayer?
+    var backgroundAnimation: CABasicAnimation?
+    
     // MARK: View Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
+        setupBackgroundLayer()
+        applyBackgroundAnimation()
         themeViews()
         
         contentView.hidden = true
         loadingView.hidden = false
         fetchMapData(updateMapData)
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "applicationWillEnterForeground:", name: UIApplicationWillEnterForegroundNotification, object: nil)
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
+        NSNotificationCenter
+            .defaultCenter()
+            .removeObserver(self, name: UIApplicationWillEnterForegroundNotification, object: nil)
+    }
+    
+    func applicationWillEnterForeground(note: NSNotification) {
+        self.applyBackgroundAnimation()
+    }
+    
+    deinit {
+        NSNotificationCenter
+            .defaultCenter()
+            .removeObserver(self, name: UIApplicationWillEnterForegroundNotification, object: nil)
     }
     
     // MARK: Update
@@ -133,6 +170,8 @@ class ViewController: UIViewController {
         contentView.hidden = false
     }
     
+    
+    // MARK: Appearance
     func themeViews() {
         // Transparent nav bar
         if let navBar = navigationController?.navigationBar {
@@ -152,13 +191,16 @@ class ViewController: UIViewController {
              headerColor = UIColor(red: CGFloat(headerRed/255.0), green: CGFloat(headerGreen/255.0), blue: CGFloat(headerBlue/255.0), alpha: CGFloat(1))
         } while (headerColor == bodyColor)
         
-        
-        for label in [regularStageOneLabel, regularStageTwoLabel, rankedStageOneLabel, rankedStageTwoLabel] {
+        // Style labels, with splats
+        let labels = [regularStageOneLabel, regularStageTwoLabel, rankedStageOneLabel, rankedStageTwoLabel]
+        for label in labels {
             label.textColor = bodyColor
         }
         
-        for label in [regularHeader, rankedHeader] {
-            label.textColor = headerColor
+        // Style headers, with splats
+        let headers = [regularHeader, rankedHeader]
+        for header in headers {
+            header.textColor = headerColor
         }
         
         if var titleTextAttributes = navigationController?.navigationBar.titleTextAttributes {
@@ -166,8 +208,44 @@ class ViewController: UIViewController {
             navigationController?.navigationBar.titleTextAttributes = titleTextAttributes
         }
         
+        // Style images
+        let images = [regularStageOneImage, regularStageTwoImage, rankedStageOneImage, rankedStageTwoImage]
+        let backsplat = UIImage(named: "backsplat")?.tintedImageWithColor(headerColor)
+        for image in images {
+//            image.tintColor = headerColor
+            image.backgroundColor = UIColor(patternImage: backsplat!)
+        }
+        
 
 
+    }
+    
+    func applyBackgroundAnimation() {
+        backgroundLayer?.addAnimation(backgroundAnimation, forKey: "position")
+    }
+    
+    func setupBackgroundLayer() {
+        let backgroundImage = UIImage(named: "background")
+        let backgroundImagePattern = UIColor(patternImage:backgroundImage!)
+        backgroundLayer = CALayer()
+        backgroundLayer?.backgroundColor = backgroundImagePattern.CGColor
+        backgroundLayer?.transform = CATransform3DMakeScale(1, -1, 1);
+        
+        let size = backgroundView.bounds.size
+        backgroundLayer?.anchorPoint = CGPointMake(0, 1)
+        backgroundLayer?.frame = CGRectMake(0, 0, (backgroundImage?.size.width)! + size.width, (backgroundImage?.size.height)! + 2*size.height)
+        
+        backgroundView.layer.addSublayer(backgroundLayer!)
+        
+        let startPoint = CGPointMake(-(backgroundImage?.size.width)!, 0)
+        let endPoint = CGPointMake(0, -(backgroundImage?.size.height)!)
+        
+        backgroundAnimation = CABasicAnimation(keyPath: "position")
+        backgroundAnimation?.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionLinear)
+        backgroundAnimation?.fromValue = NSValue(CGPoint: startPoint)
+        backgroundAnimation?.toValue = NSValue(CGPoint: endPoint)
+        backgroundAnimation?.repeatCount = HUGE;
+        backgroundAnimation?.duration = ScrollSpeed
     }
 
 }
