@@ -199,7 +199,7 @@ class ViewController: UIViewController {
             header.textColor = headerColor
         }
         
-        settingsBarButton.tintColor = headerColor
+        navigationController?.navigationBar.tintColor = headerColor
         
         if var titleTextAttributes = navigationController?.navigationBar.titleTextAttributes {
             titleTextAttributes[NSForegroundColorAttributeName] = headerColor
