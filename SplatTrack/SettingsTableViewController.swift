@@ -9,12 +9,17 @@
 import UIKit
 
 class SettingsTableViewController: UITableViewController {
+    
+    private let NotificationKey = "SplatTrackNotificationKey"
 
+    @IBOutlet weak var notificationSwitch: UISwitch!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        notificationSwitch.tintColor = navigationController?.navigationBar.tintColor
+        notificationSwitch.on = NSUserDefaults.standardUserDefaults().boolForKey(NotificationKey)
+        notificationSwitch.tintColor = navigationController?.navigationBar.tintColor
+        notificationSwitch.onTintColor = navigationController?.navigationBar.tintColor
     }
 
     // MARK: - Table view data source
@@ -28,59 +33,40 @@ class SettingsTableViewController: UITableViewController {
         // Return the number of rows in the section.
         return 1
     }
-    /*
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath) as! UITableViewCell
-
-        // Configure the cell...
-
-        return cell
+    
+    @IBAction func notificationSwitchChanged(sender: UISwitch) {
+        // If turned on, ask for notification privileges and schedule notifications
+        if sender.on {
+            notificationsSwitchEnabled()
+        } else {
+            notificationsSwitchDisabled()
+        }
+        NSUserDefaults.standardUserDefaults().setBool(sender.on, forKey: NotificationKey)
     }
-    */
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return NO if you do not want the specified item to be editable.
-        return true
+    
+    private func notificationsSwitchEnabled() {
+        if !areNotificationsEnabled() {
+            let application = UIApplication.sharedApplication()
+            application.registerUserNotificationSettings(UIUserNotificationSettings(forTypes: .Alert | .Sound, categories: nil))
+        } else {
+            // schedule notifications
+        }
     }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        if editingStyle == .Delete {
-            // Delete the row from the data source
-            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-        } else if editingStyle == .Insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
+    
+    private func notificationsSwitchDisabled() {
+        // remove scheduled notifications
     }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
-
+    
+    private func areNotificationsEnabled() -> Bool {
+        return (UIApplication.sharedApplication().currentUserNotificationSettings().types & (UIUserNotificationType.Alert | UIUserNotificationType.Sound)) != UIUserNotificationType.allZeros
     }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return NO if you do not want the item to be re-orderable.
-        return true
+    
+    private func scheduleNotifications() {
+        
     }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using [segue destinationViewController].
-        // Pass the selected object to the new view controller.
+    
+    private func cancelNotifications() {
+        
     }
-    */
 
 }

@@ -180,11 +180,14 @@
                                             <subviews>
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="B8G-AZ-5rN">
                                                     <rect key="frame" x="543" y="6" width="51" height="31"/>
+                                                    <connections>
+                                                        <action selector="notificationSwitchChanged:" destination="R71-M7-5BX" eventType="valueChanged" id="uPS-ge-R66"/>
+                                                    </connections>
                                                 </switch>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enable stage change notifications" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fLx-5X-GCf">
-                                                    <rect key="frame" x="8" y="11" width="527" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <rect key="frame" x="8" y="12" width="527" height="20"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -196,6 +199,7 @@
                                                 <constraint firstAttribute="centerY" secondItem="B8G-AZ-5rN" secondAttribute="centerY" id="qjD-xd-SFf"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
@@ -208,6 +212,9 @@
                     <navigationItem key="navigationItem" title="Settings" id="MQa-j6-z3B">
                         <barButtonItem key="backBarButtonItem" title=" " id="akp-Xo-kB6"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="notificationSwitch" destination="B8G-AZ-5rN" id="C6Y-9Q-OZo"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="38I-KS-oax" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
