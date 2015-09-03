@@ -78,13 +78,13 @@ class ViewController: UIViewController {
     // MARK: Instance Variables
     var backgroundLayer : CALayer?
     var backgroundAnimation: CABasicAnimation?
+    var alertController: UIAlertController = UIAlertController(title: "Update Failed", message: "SplatTrack failed to update map data. Check your internet connection and try again.", preferredStyle: .Alert)
     
     // MARK: View Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        let _ = self.view   
 
+        setupAlertViewController()
         setupBackgroundLayer()
         applyBackgroundAnimation()
         themeViews()
@@ -122,8 +122,9 @@ class ViewController: UIViewController {
         // Hit splatoon.ink API for data
         Alamofire.request(.GET, SplatURL).responseJSON {[unowned self] (req, res, json, error) in
             if(error != nil) {
-                UIAlertController
-                completion(nil)
+                self.presentViewController(self.alertController, animated: true) {
+                    // nothing
+                }
             }
             else {
                 var json = JSON(json!)
@@ -232,6 +233,18 @@ class ViewController: UIViewController {
         backgroundAnimation?.toValue = NSValue(CGPoint: endPoint)
         backgroundAnimation?.repeatCount = HUGE;
         backgroundAnimation?.duration = ScrollSpeed
+    }
+    
+    func setupAlertViewController() {
+        let OKAction = UIAlertAction(title: "OK", style: .Cancel) { (action) in
+            // ...
+        }
+    
+        let retryAction = UIAlertAction(title: "Retry", style: .Default) { (action) in
+            self.fetchMapData(self.updateMapData)
+        }
+        alertController.addAction(OKAction)
+        alertController.addAction(retryAction)
     }
 
 }
