@@ -50,14 +50,14 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FPc-Eb-Z2v" userLabel="ContentView">
                                         <rect key="frame" x="0.0" y="0.0" width="600" height="911"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current Turf War Stages:" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o9X-FA-q73">
-                                                <rect key="frame" x="146" y="8" width="308" height="27"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current Turf War Stages:" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o9X-FA-q73">
+                                                <rect key="frame" x="8" y="8" width="584" height="27"/>
                                                 <fontDescription key="fontDescription" name="ProjectPaintball" family="Project Paintball" pointSize="24"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current &lt;Rules&gt; Stages:" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xp5-es-Sb6">
-                                                <rect key="frame" x="156" y="460" width="289" height="27"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current &lt;Rules&gt; Stages:" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xp5-es-Sb6">
+                                                <rect key="frame" x="8" y="460" width="584" height="27"/>
                                                 <fontDescription key="fontDescription" name="ProjectPaintball" family="Project Paintball" pointSize="24"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
@@ -96,13 +96,17 @@
                                             </view>
                                         </subviews>
                                         <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="Xp5-es-Sb6" secondAttribute="trailing" constant="8" id="1U0-eV-GMC"/>
+                                            <constraint firstAttribute="trailing" secondItem="o9X-FA-q73" secondAttribute="trailing" constant="8" id="29o-Ei-IXx"/>
                                             <constraint firstAttribute="centerX" secondItem="nc2-Ce-jJD" secondAttribute="centerX" id="ABn-rO-ySL"/>
+                                            <constraint firstItem="o9X-FA-q73" firstAttribute="leading" secondItem="FPc-Eb-Z2v" secondAttribute="leading" constant="8" id="Ag5-Sw-sN5"/>
                                             <constraint firstItem="MCh-Qb-t4A" firstAttribute="top" secondItem="nc2-Ce-jJD" secondAttribute="bottom" constant="8" id="Mpn-LP-zbm"/>
                                             <constraint firstItem="nc2-Ce-jJD" firstAttribute="top" secondItem="Xp5-es-Sb6" secondAttribute="bottom" constant="8" id="RCB-Wl-Yvs"/>
                                             <constraint firstAttribute="centerX" secondItem="o9X-FA-q73" secondAttribute="centerX" id="TcK-mY-7NL"/>
                                             <constraint firstItem="Xp5-es-Sb6" firstAttribute="top" secondItem="YCe-3r-nFd" secondAttribute="bottom" constant="8" id="VyU-Y3-euQ"/>
                                             <constraint firstItem="tOJ-8h-zhC" firstAttribute="top" secondItem="o9X-FA-q73" secondAttribute="bottom" constant="8" id="bBn-iO-zWq"/>
                                             <constraint firstAttribute="centerX" secondItem="Xp5-es-Sb6" secondAttribute="centerX" id="bOS-tM-n52"/>
+                                            <constraint firstItem="Xp5-es-Sb6" firstAttribute="leading" secondItem="FPc-Eb-Z2v" secondAttribute="leading" constant="8" id="dN7-ot-GyJ"/>
                                             <constraint firstAttribute="centerX" secondItem="YCe-3r-nFd" secondAttribute="centerX" id="haz-EZ-POV"/>
                                             <constraint firstItem="YCe-3r-nFd" firstAttribute="top" secondItem="tOJ-8h-zhC" secondAttribute="bottom" constant="9" id="mgZ-uu-y6v"/>
                                             <constraint firstAttribute="centerX" secondItem="MCh-Qb-t4A" secondAttribute="centerX" id="qtj-Gs-hah"/>
