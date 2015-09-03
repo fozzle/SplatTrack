@@ -73,6 +73,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var loadingView: UIView!
     
     // Background
+    @IBOutlet weak var settingsBarButton: UIBarButtonItem!
     @IBOutlet weak var backgroundView: UIView!
     
     // MARK: Instance Variables
@@ -186,9 +187,7 @@ class ViewController: UIViewController {
         } while (headerColor == bodyColor)
 
         
-        // test
         let cardViews = [regularStageOneCardView, regularStageTwoCardView, rankedStageOneCardView, rankedStageTwoCardView]
-        
         for cardView in cardViews {
             cardView.splatColor = headerColor
             cardView.textColor = bodyColor
@@ -199,6 +198,8 @@ class ViewController: UIViewController {
         for header in headers {
             header.textColor = headerColor
         }
+        
+        settingsBarButton.tintColor = headerColor
         
         if var titleTextAttributes = navigationController?.navigationBar.titleTextAttributes {
             titleTextAttributes[NSForegroundColorAttributeName] = headerColor

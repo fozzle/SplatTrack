@@ -136,10 +136,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="SplatTrack" id="cp4-9V-jOy">
-                        <barButtonItem key="leftBarButtonItem" systemItem="refresh" id="b2n-3N-u0V">
-                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Item" style="done" id="hu6-MV-VTg"/>
+                        <barButtonItem key="rightBarButtonItem" image="Settings" style="done" id="hu6-MV-VTg"/>
                     </navigationItem>
                     <connections>
                         <outlet property="backgroundView" destination="w2K-3N-WJx" id="eFc-u2-LhL"/>
@@ -152,6 +149,7 @@
                         <outlet property="regularHeader" destination="o9X-FA-q73" id="0za-qf-88K"/>
                         <outlet property="regularStageOneCardView" destination="tOJ-8h-zhC" id="2cg-G3-rtn"/>
                         <outlet property="regularStageTwoCardView" destination="YCe-3r-nFd" id="wzh-4p-Qh6"/>
+                        <outlet property="settingsBarButton" destination="hu6-MV-VTg" id="Vt0-XJ-jiv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -177,4 +175,7 @@
             <point key="canvasLocation" x="305" y="346"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Settings" width="20" height="20"/>
+    </resources>
 </document>

@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		272FF0F81B962C260096BCDF /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 272FF0F71B962C260096BCDF /* UIImage.swift */; };
-		276921781B9663B0003E5CE7 /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 276921771B9663B0003E5CE7 /* TestViewController.swift */; };
 		27748A8D1B94A22D00090E19 /* ProjectPaintball.otf in Resources */ = {isa = PBXBuildFile; fileRef = 27748A8C1B94A22D00090E19 /* ProjectPaintball.otf */; };
 		2778DFE01B9634C4002E5AE5 /* StageCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2778DFDF1B9634C4002E5AE5 /* StageCardView.swift */; };
 		2778DFE21B9634D7002E5AE5 /* StageCardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2778DFE11B9634D7002E5AE5 /* StageCardView.xib */; };
@@ -35,7 +34,6 @@
 /* Begin PBXFileReference section */
 		18577BB5900A82EF889E9C42 /* Pods-SplatTrack.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SplatTrack.release.xcconfig"; path = "Pods/Target Support Files/Pods-SplatTrack/Pods-SplatTrack.release.xcconfig"; sourceTree = "<group>"; };
 		272FF0F71B962C260096BCDF /* UIImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
-		276921771B9663B0003E5CE7 /* TestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
 		27748A8C1B94A22D00090E19 /* ProjectPaintball.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = ProjectPaintball.otf; path = Resources/ProjectPaintball.otf; sourceTree = "<group>"; };
 		2778DFDF1B9634C4002E5AE5 /* StageCardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StageCardView.swift; sourceTree = "<group>"; };
 		2778DFE11B9634D7002E5AE5 /* StageCardView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StageCardView.xib; sourceTree = "<group>"; };
@@ -114,7 +112,6 @@
 				27944CF21B9494210064C69C /* Supporting Files */,
 				2778DFDF1B9634C4002E5AE5 /* StageCardView.swift */,
 				2778DFE11B9634D7002E5AE5 /* StageCardView.xib */,
-				276921771B9663B0003E5CE7 /* TestViewController.swift */,
 			);
 			path = SplatTrack;
 			sourceTree = "<group>";
@@ -328,7 +325,6 @@
 				272FF0F81B962C260096BCDF /* UIImage.swift in Sources */,
 				27944CF71B9494210064C69C /* ViewController.swift in Sources */,
 				2778DFE01B9634C4002E5AE5 /* StageCardView.swift in Sources */,
-				276921781B9663B0003E5CE7 /* TestViewController.swift in Sources */,
 				27944CF51B9494210064C69C /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
