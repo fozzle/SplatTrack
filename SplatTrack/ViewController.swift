@@ -56,32 +56,23 @@ class ViewController: UIViewController {
         (237.0,0.0,200.0)
         ]
     
-    // Stages
-    @IBOutlet weak var regularStageOneLabel: UILabel!
-    @IBOutlet weak var regularStageTwoLabel: UILabel!
-    @IBOutlet weak var rankedStageOneLabel: UILabel!
-    @IBOutlet weak var rankedStageTwoLabel: UILabel!
     @IBOutlet weak var rankedRulesLabel: UILabel!
+    
+    // Stages
+    @IBOutlet weak var regularStageOneCardView: StageCardView!
+    @IBOutlet weak var regularStageTwoCardView: StageCardView!
+    @IBOutlet weak var rankedStageOneCardView: StageCardView!
+    @IBOutlet weak var rankedStageTwoCardView: StageCardView!
     
     // Headers
     @IBOutlet weak var rankedHeader: UILabel!
     @IBOutlet weak var regularHeader: UILabel!
     
-    // Images
-    @IBOutlet weak var regularStageOneImage: UIImageView!
-    @IBOutlet weak var regularStageTwoImage: UIImageView!
-    @IBOutlet weak var rankedStageOneImage: UIImageView!
-    @IBOutlet weak var rankedStageTwoImage: UIImageView!
-    
     // Container view
     @IBOutlet weak var contentView: UIView!
     @IBOutlet weak var loadingView: UIView!
     
-    // Backsplats
-    @IBOutlet weak var backsplat1: UIImageView!
-    @IBOutlet weak var backsplat2: UIImageView!
-    @IBOutlet weak var backsplat3: UIImageView!
-    @IBOutlet weak var backsplat4: UIImageView!
+    // Background
     @IBOutlet weak var backgroundView: UIView!
     
     // MARK: Instance Variables
@@ -91,6 +82,8 @@ class ViewController: UIViewController {
     // MARK: View Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let _ = self.view   
 
         setupBackgroundLayer()
         applyBackgroundAnimation()
@@ -129,7 +122,7 @@ class ViewController: UIViewController {
         // Hit splatoon.ink API for data
         Alamofire.request(.GET, SplatURL).responseJSON {[unowned self] (req, res, json, error) in
             if(error != nil) {
-                NSLog("Error: \(error)")
+                UIAlertController
                 completion(nil)
             }
             else {
@@ -153,17 +146,17 @@ class ViewController: UIViewController {
     func updateMapData(mapData: MapData?) {
         // Change text of labels
         if let data = mapData {
-            regularStageOneLabel.text = data.regularStageOneName
-            regularStageTwoLabel.text = data.regularStageTwoName
-            rankedStageOneLabel.text = data.rankedStageOneName
-            rankedStageTwoLabel.text = data.rankedStageTwoName
-            rankedRulesLabel.text = String(format: self.RulesFormatString, data.rankedRulesetName!)
+            regularStageOneCardView.stageName = data.regularStageOneName
+            regularStageTwoCardView.stageName = data.regularStageTwoName
+            rankedStageOneCardView.stageName = data.rankedStageOneName
+            rankedStageTwoCardView.stageName = data.rankedStageTwoName
+            rankedHeader.text = String(format: self.RulesFormatString, data.rankedRulesetName!)
             
             // Images
-            regularStageOneImage.image = UIImage(named: self.StageImageMap[data.regularStageOneName!] ?? "")
-            regularStageTwoImage.image = UIImage(named: self.StageImageMap[data.regularStageTwoName!] ?? "")
-            rankedStageOneImage.image = UIImage(named: self.StageImageMap[data.rankedStageOneName!] ?? "")
-            rankedStageTwoImage.image = UIImage(named: self.StageImageMap[data.rankedStageTwoName!] ?? "")
+            regularStageOneCardView.imageName = self.StageImageMap[data.regularStageOneName!] ?? ""
+            regularStageTwoCardView.imageName = self.StageImageMap[data.regularStageTwoName!] ?? ""
+            rankedStageOneCardView.imageName = self.StageImageMap[data.rankedStageOneName!] ?? ""
+            rankedStageTwoCardView.imageName = self.StageImageMap[data.rankedStageTwoName!] ?? ""
         }
         
         loadingView.hidden = true
@@ -190,11 +183,14 @@ class ViewController: UIViewController {
             var (headerRed, headerGreen, headerBlue) = Colors.randomItem()
              headerColor = UIColor(red: CGFloat(headerRed/255.0), green: CGFloat(headerGreen/255.0), blue: CGFloat(headerBlue/255.0), alpha: CGFloat(1))
         } while (headerColor == bodyColor)
+
         
-        // Style labels, with splats
-        let labels = [regularStageOneLabel, regularStageTwoLabel, rankedStageOneLabel, rankedStageTwoLabel]
-        for label in labels {
-            label.textColor = bodyColor
+        // test
+        let cardViews = [regularStageOneCardView, regularStageTwoCardView, rankedStageOneCardView, rankedStageTwoCardView]
+        
+        for cardView in cardViews {
+            cardView.splatColor = headerColor
+            cardView.textColor = bodyColor
         }
         
         // Style headers, with splats
@@ -207,16 +203,6 @@ class ViewController: UIViewController {
             titleTextAttributes[NSForegroundColorAttributeName] = headerColor
             navigationController?.navigationBar.titleTextAttributes = titleTextAttributes
         }
-        
-        // Style images
-        let images = [regularStageOneImage, regularStageTwoImage, rankedStageOneImage, rankedStageTwoImage]
-        let backsplat = UIImage(named: "backsplat")?.tintedImageWithColor(headerColor)
-        for image in images {
-//            image.tintColor = headerColor
-            image.backgroundColor = UIColor(patternImage: backsplat!)
-        }
-        
-
 
     }
     

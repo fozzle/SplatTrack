@@ -3,40 +3,46 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="ProjectPaintball.otf">
+            <string>ProjectPaintball</string>
+        </mutableArray>
+    </customFonts>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="StageCardView" customModule="SplatTrack" customModuleProvider="target">
+            <connections>
+                <outlet property="stageImage" destination="Imd-8v-eIl" id="o1s-JY-faz"/>
+                <outlet property="stageLabel" destination="qeU-hQ-PiT" id="OA2-ZA-QZw"/>
+            </connections>
+        </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="StageCardView" customModule="SplatTrack" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="1" width="461" height="270"/>
+            <rect key="frame" x="-1" y="0.0" width="350" height="284"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qeU-hQ-PiT">
-                    <rect key="frame" x="209" y="8" width="42" height="122"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qeU-hQ-PiT">
+                    <rect key="frame" x="20" y="8" width="310" height="18"/>
+                    <fontDescription key="fontDescription" name="ProjectPaintball" family="Project Paintball" pointSize="16"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Imd-8v-eIl">
-                    <rect key="frame" x="140" y="150" width="181" height="100"/>
-                    <constraints>
-                        <constraint firstAttribute="width" constant="181" id="dMO-gD-Yk4"/>
-                        <constraint firstAttribute="height" constant="100" id="sRv-KW-3Jl"/>
-                    </constraints>
+                    <rect key="frame" x="10" y="46" width="330" height="218"/>
                 </imageView>
             </subviews>
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="Imd-8v-eIl" secondAttribute="bottom" constant="20" id="6VL-lg-pGQ"/>
+                <constraint firstItem="qeU-hQ-PiT" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="C8S-la-iSW"/>
+                <constraint firstItem="Imd-8v-eIl" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="10" id="Kmd-Vi-1EX"/>
+                <constraint firstAttribute="trailing" secondItem="qeU-hQ-PiT" secondAttribute="trailing" constant="20" id="OYr-Wb-PZB"/>
                 <constraint firstItem="qeU-hQ-PiT" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="8" id="VAh-Zw-UbJ"/>
+                <constraint firstAttribute="centerX" secondItem="Imd-8v-eIl" secondAttribute="centerX" id="aGu-hP-mIu"/>
                 <constraint firstItem="Imd-8v-eIl" firstAttribute="top" secondItem="qeU-hQ-PiT" secondAttribute="bottom" constant="20" id="cdY-dV-hEX"/>
-                <constraint firstAttribute="centerX" secondItem="qeU-hQ-PiT" secondAttribute="centerX" id="crM-bM-YSv"/>
-                <constraint firstAttribute="centerX" secondItem="Imd-8v-eIl" secondAttribute="centerX" constant="0.5" id="vBG-Wk-KWr"/>
+                <constraint firstAttribute="trailing" secondItem="Imd-8v-eIl" secondAttribute="trailing" constant="10" id="kyo-XX-rFn"/>
             </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <connections>
-                <outlet property="stageImage" destination="Imd-8v-eIl" id="1pk-wP-SaZ"/>
-                <outlet property="stageLabel" destination="qeU-hQ-PiT" id="dWD-pZ-dkq"/>
-            </connections>
-            <point key="canvasLocation" x="372.5" y="52"/>
+            <point key="canvasLocation" x="65" y="51"/>
         </view>
     </objects>
 </document>

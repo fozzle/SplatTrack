@@ -9,10 +9,6 @@
             <string>ProjectPaintball</string>
             <string>ProjectPaintball</string>
             <string>ProjectPaintball</string>
-            <string>ProjectPaintball</string>
-            <string>ProjectPaintball</string>
-            <string>ProjectPaintball</string>
-            <string>ProjectPaintball</string>
         </mutableArray>
     </customFonts>
     <scenes>
@@ -52,7 +48,7 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FPc-Eb-Z2v" userLabel="ContentView">
-                                        <rect key="frame" x="0.0" y="0.0" width="600" height="734"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="911"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current Turf War Stages:" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o9X-FA-q73">
                                                 <rect key="frame" x="146" y="8" width="308" height="27"/>
@@ -60,130 +56,60 @@
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Stage 1" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zRG-PV-9B4">
-                                                <rect key="frame" x="269" y="43" width="63" height="18"/>
-                                                <fontDescription key="fontDescription" name="ProjectPaintball" family="Project Paintball" pointSize="16"/>
-                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Stage 2" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u22-Vz-rWN">
-                                                <rect key="frame" x="269" y="217" width="63" height="18"/>
-                                                <fontDescription key="fontDescription" name="ProjectPaintball" family="Project Paintball" pointSize="16"/>
-                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kwW-Mx-UAR" userLabel="Stage2RegContainer">
-                                                <rect key="frame" x="190" y="243" width="221" height="140"/>
-                                                <subviews>
-                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gt8-cj-9Xq">
-                                                        <rect key="frame" x="20" y="20" width="181" height="100"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="width" constant="181" id="IcJ-lT-m2P"/>
-                                                            <constraint firstAttribute="height" constant="100" id="dQq-ao-GI1"/>
-                                                        </constraints>
-                                                    </imageView>
-                                                </subviews>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="trailing" secondItem="gt8-cj-9Xq" secondAttribute="trailing" constant="20" id="NHa-4v-tvH"/>
-                                                    <constraint firstItem="gt8-cj-9Xq" firstAttribute="leading" secondItem="kwW-Mx-UAR" secondAttribute="leading" constant="20" id="bLe-GC-EWT"/>
-                                                    <constraint firstAttribute="bottom" secondItem="gt8-cj-9Xq" secondAttribute="bottom" constant="20" id="ghH-7e-EUH"/>
-                                                    <constraint firstItem="gt8-cj-9Xq" firstAttribute="top" secondItem="kwW-Mx-UAR" secondAttribute="top" constant="20" id="uf9-Wp-VEa"/>
-                                                </constraints>
-                                            </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current &lt;Rules&gt; Stages:" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xp5-es-Sb6">
-                                                <rect key="frame" x="156" y="391" width="289" height="27"/>
+                                                <rect key="frame" x="156" y="460" width="289" height="27"/>
                                                 <fontDescription key="fontDescription" name="ProjectPaintball" family="Project Paintball" pointSize="24"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="30b-Pk-015" userLabel="Stage1RankContainer">
-                                                <rect key="frame" x="190" y="452" width="221" height="140"/>
-                                                <subviews>
-                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="DBk-Pl-YEM">
-                                                        <rect key="frame" x="20" y="20" width="181" height="100"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="height" constant="100" id="FJr-aD-bcE"/>
-                                                            <constraint firstAttribute="width" constant="181" id="S05-52-EBw"/>
-                                                        </constraints>
-                                                    </imageView>
-                                                </subviews>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tOJ-8h-zhC" userLabel="Stage1RegularCard" customClass="StageCardView" customModule="SplatTrack" customModuleProvider="target">
+                                                <rect key="frame" x="200" y="43" width="200" height="200"/>
+                                                <color key="backgroundColor" red="0.43529411764705883" green="0.44313725490196076" blue="0.47450980392156861" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="trailing" secondItem="DBk-Pl-YEM" secondAttribute="trailing" constant="20" id="Vpm-i0-nS4"/>
-                                                    <constraint firstItem="DBk-Pl-YEM" firstAttribute="top" secondItem="30b-Pk-015" secondAttribute="top" constant="20" id="ZcG-nv-aba"/>
-                                                    <constraint firstItem="DBk-Pl-YEM" firstAttribute="leading" secondItem="30b-Pk-015" secondAttribute="leading" constant="20" id="bw3-ih-gsh"/>
-                                                    <constraint firstAttribute="bottom" secondItem="DBk-Pl-YEM" secondAttribute="bottom" constant="20" id="fM2-0e-KJx"/>
+                                                    <constraint firstAttribute="height" constant="200" id="IbM-ng-h5Y"/>
+                                                    <constraint firstAttribute="width" constant="200" id="s0g-5W-yYP"/>
                                                 </constraints>
                                             </view>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Stage 1" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mID-Wo-S2e">
-                                                <rect key="frame" x="269" y="426" width="63" height="18"/>
-                                                <fontDescription key="fontDescription" name="ProjectPaintball" family="Project Paintball" pointSize="16"/>
-                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Stage 2" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jmz-O1-MTP">
-                                                <rect key="frame" x="269" y="600" width="63" height="18"/>
-                                                <fontDescription key="fontDescription" name="ProjectPaintball" family="Project Paintball" pointSize="16"/>
-                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Urf-ZG-pg4">
-                                                <rect key="frame" x="210" y="626" width="181" height="100"/>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YCe-3r-nFd" userLabel="Stage2RegularCard" customClass="StageCardView" customModule="SplatTrack" customModuleProvider="target">
+                                                <rect key="frame" x="200" y="252" width="200" height="200"/>
+                                                <color key="backgroundColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="100" id="JZ3-5R-yPo"/>
-                                                    <constraint firstAttribute="width" constant="181" id="hjH-CI-I4i"/>
+                                                    <constraint firstAttribute="width" constant="200" id="EB3-bS-G9h"/>
+                                                    <constraint firstAttribute="height" constant="200" id="ien-pN-zgy"/>
                                                 </constraints>
-                                            </imageView>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qhv-ef-pQ4" userLabel="Stage1RegContainer">
-                                                <rect key="frame" x="190" y="69" width="221" height="140"/>
-                                                <subviews>
-                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Pxg-6g-OJJ">
-                                                        <rect key="frame" x="20" y="20" width="181" height="100"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="width" constant="181" id="0cG-Ym-aqi"/>
-                                                            <constraint firstAttribute="height" constant="100" id="TwO-ga-sXz"/>
-                                                        </constraints>
-                                                    </imageView>
-                                                </subviews>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MCh-Qb-t4A" userLabel="Stage2RankedCard" customClass="StageCardView" customModule="SplatTrack" customModuleProvider="target">
+                                                <rect key="frame" x="200" y="703" width="200" height="200"/>
+                                                <color key="backgroundColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="trailing" secondItem="Pxg-6g-OJJ" secondAttribute="trailing" constant="20" id="FdZ-lC-vAp"/>
-                                                    <constraint firstItem="Pxg-6g-OJJ" firstAttribute="leading" secondItem="Qhv-ef-pQ4" secondAttribute="leading" constant="20" id="kMu-rG-qss"/>
-                                                    <constraint firstItem="Pxg-6g-OJJ" firstAttribute="top" secondItem="Qhv-ef-pQ4" secondAttribute="top" constant="20" id="ndt-e3-3iJ"/>
-                                                    <constraint firstAttribute="bottom" secondItem="Pxg-6g-OJJ" secondAttribute="bottom" constant="20" id="vcv-o4-CrZ"/>
+                                                    <constraint firstAttribute="height" constant="200" id="eRD-hN-CGb"/>
+                                                    <constraint firstAttribute="width" constant="200" id="gI4-XH-14A"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nc2-Ce-jJD" userLabel="Stage1RankedCard" customClass="StageCardView" customModule="SplatTrack" customModuleProvider="target">
+                                                <rect key="frame" x="200" y="495" width="200" height="200"/>
+                                                <color key="backgroundColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="200" id="3uS-4z-vpp"/>
+                                                    <constraint firstAttribute="height" constant="200" id="HpM-Cu-Zda"/>
                                                 </constraints>
                                             </view>
                                         </subviews>
                                         <constraints>
-                                            <constraint firstItem="u22-Vz-rWN" firstAttribute="top" secondItem="Qhv-ef-pQ4" secondAttribute="bottom" constant="8" id="5Ad-wF-kyx"/>
-                                            <constraint firstAttribute="centerX" secondItem="mID-Wo-S2e" secondAttribute="centerX" id="5WH-gS-pOw"/>
-                                            <constraint firstAttribute="centerX" secondItem="u22-Vz-rWN" secondAttribute="centerX" id="6vN-W3-bFj"/>
-                                            <constraint firstAttribute="centerX" secondItem="zRG-PV-9B4" secondAttribute="centerX" id="8g9-ZH-Be9"/>
-                                            <constraint firstAttribute="bottom" secondItem="Urf-ZG-pg4" secondAttribute="bottom" constant="8" id="CqT-L3-Uoi"/>
-                                            <constraint firstItem="kwW-Mx-UAR" firstAttribute="top" secondItem="u22-Vz-rWN" secondAttribute="bottom" constant="8" id="IPC-oY-RlH"/>
-                                            <constraint firstItem="jmz-O1-MTP" firstAttribute="top" secondItem="30b-Pk-015" secondAttribute="bottom" constant="8" id="RWg-Sq-9y7"/>
-                                            <constraint firstItem="Qhv-ef-pQ4" firstAttribute="top" secondItem="zRG-PV-9B4" secondAttribute="bottom" constant="8" id="TJK-tD-9HV"/>
+                                            <constraint firstAttribute="centerX" secondItem="nc2-Ce-jJD" secondAttribute="centerX" id="ABn-rO-ySL"/>
+                                            <constraint firstItem="MCh-Qb-t4A" firstAttribute="top" secondItem="nc2-Ce-jJD" secondAttribute="bottom" constant="8" id="Mpn-LP-zbm"/>
+                                            <constraint firstItem="nc2-Ce-jJD" firstAttribute="top" secondItem="Xp5-es-Sb6" secondAttribute="bottom" constant="8" id="RCB-Wl-Yvs"/>
                                             <constraint firstAttribute="centerX" secondItem="o9X-FA-q73" secondAttribute="centerX" id="TcK-mY-7NL"/>
-                                            <constraint firstAttribute="centerX" secondItem="30b-Pk-015" secondAttribute="centerX" id="Thz-JJ-a3b"/>
-                                            <constraint firstAttribute="centerX" secondItem="Urf-ZG-pg4" secondAttribute="centerX" id="a0Z-3E-4rV"/>
+                                            <constraint firstItem="Xp5-es-Sb6" firstAttribute="top" secondItem="YCe-3r-nFd" secondAttribute="bottom" constant="8" id="VyU-Y3-euQ"/>
+                                            <constraint firstItem="tOJ-8h-zhC" firstAttribute="top" secondItem="o9X-FA-q73" secondAttribute="bottom" constant="8" id="bBn-iO-zWq"/>
                                             <constraint firstAttribute="centerX" secondItem="Xp5-es-Sb6" secondAttribute="centerX" id="bOS-tM-n52"/>
-                                            <constraint firstAttribute="centerX" secondItem="jmz-O1-MTP" secondAttribute="centerX" id="cgZ-f2-fpN"/>
-                                            <constraint firstAttribute="centerX" secondItem="kwW-Mx-UAR" secondAttribute="centerX" id="eWX-dT-0dW"/>
-                                            <constraint firstItem="mID-Wo-S2e" firstAttribute="top" secondItem="Xp5-es-Sb6" secondAttribute="bottom" constant="8" id="fjr-Nw-Qn0"/>
-                                            <constraint firstItem="30b-Pk-015" firstAttribute="top" secondItem="mID-Wo-S2e" secondAttribute="bottom" constant="8" id="kWt-wu-dzm"/>
-                                            <constraint firstAttribute="centerX" secondItem="Qhv-ef-pQ4" secondAttribute="centerX" id="l5f-93-tdd"/>
-                                            <constraint firstItem="30b-Pk-015" firstAttribute="top" secondItem="Xp5-es-Sb6" secondAttribute="bottom" constant="8" id="ngj-vV-rmi"/>
+                                            <constraint firstAttribute="centerX" secondItem="YCe-3r-nFd" secondAttribute="centerX" id="haz-EZ-POV"/>
+                                            <constraint firstItem="YCe-3r-nFd" firstAttribute="top" secondItem="tOJ-8h-zhC" secondAttribute="bottom" constant="9" id="mgZ-uu-y6v"/>
+                                            <constraint firstAttribute="centerX" secondItem="MCh-Qb-t4A" secondAttribute="centerX" id="qtj-Gs-hah"/>
+                                            <constraint firstAttribute="bottom" secondItem="MCh-Qb-t4A" secondAttribute="bottom" constant="8" id="rEW-Pv-ypE"/>
+                                            <constraint firstAttribute="centerX" secondItem="tOJ-8h-zhC" secondAttribute="centerX" id="sRu-s6-LvB"/>
                                             <constraint firstItem="o9X-FA-q73" firstAttribute="top" secondItem="FPc-Eb-Z2v" secondAttribute="top" constant="8" id="vTd-91-bCL"/>
-                                            <constraint firstItem="zRG-PV-9B4" firstAttribute="top" secondItem="o9X-FA-q73" secondAttribute="bottom" constant="8" id="vZS-vS-6tv"/>
-                                            <constraint firstItem="Xp5-es-Sb6" firstAttribute="top" secondItem="kwW-Mx-UAR" secondAttribute="bottom" constant="8" id="vwy-1J-aMO"/>
-                                            <constraint firstItem="Urf-ZG-pg4" firstAttribute="top" secondItem="jmz-O1-MTP" secondAttribute="bottom" constant="8" id="yOn-zP-hBG"/>
                                         </constraints>
-                                        <variation key="default">
-                                            <mask key="constraints">
-                                                <exclude reference="ngj-vV-rmi"/>
-                                            </mask>
-                                        </variation>
                                     </view>
                                 </subviews>
                                 <constraints>
@@ -221,15 +147,11 @@
                         <outlet property="loadingView" destination="4LF-gq-WVx" id="C9S-sM-yy2"/>
                         <outlet property="rankedHeader" destination="Xp5-es-Sb6" id="M5A-bp-HSP"/>
                         <outlet property="rankedRulesLabel" destination="Xp5-es-Sb6" id="Vil-df-w65"/>
-                        <outlet property="rankedStageOneImage" destination="DBk-Pl-YEM" id="h5Y-g5-fwm"/>
-                        <outlet property="rankedStageOneLabel" destination="mID-Wo-S2e" id="vLh-3n-s4D"/>
-                        <outlet property="rankedStageTwoImage" destination="Urf-ZG-pg4" id="Sjq-v1-wyG"/>
-                        <outlet property="rankedStageTwoLabel" destination="jmz-O1-MTP" id="X5d-gC-Aou"/>
+                        <outlet property="rankedStageOneCardView" destination="nc2-Ce-jJD" id="ZfK-9e-U2S"/>
+                        <outlet property="rankedStageTwoCardView" destination="MCh-Qb-t4A" id="gH3-LI-wck"/>
                         <outlet property="regularHeader" destination="o9X-FA-q73" id="0za-qf-88K"/>
-                        <outlet property="regularStageOneImage" destination="Pxg-6g-OJJ" id="d3S-Be-nLm"/>
-                        <outlet property="regularStageOneLabel" destination="zRG-PV-9B4" id="Ldr-dn-e8G"/>
-                        <outlet property="regularStageTwoImage" destination="gt8-cj-9Xq" id="57X-IO-JzZ"/>
-                        <outlet property="regularStageTwoLabel" destination="u22-Vz-rWN" id="BhP-0X-hOW"/>
+                        <outlet property="regularStageOneCardView" destination="tOJ-8h-zhC" id="2cg-G3-rtn"/>
+                        <outlet property="regularStageTwoCardView" destination="YCe-3r-nFd" id="wzh-4p-Qh6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

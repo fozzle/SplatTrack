@@ -9,10 +9,9 @@
 import UIKit
 
 class StageCardView: UIView {
-    
-    @IBOutlet weak private var stageLabel: UILabel!
-    @IBOutlet weak private var stageImage: UIImageView!
-    
+    var embeddedView:UIView!
+    @IBOutlet weak var stageImage: UIImageView!
+    @IBOutlet weak var stageLabel: UILabel!
     
     var stageName : String? {
         didSet {
@@ -24,25 +23,39 @@ class StageCardView: UIView {
             self.stageImage.image = UIImage(named: imageName!)
         }
     }
-    var textColor : UIColor {
+    var textColor : UIColor? {
         didSet {
             self.stageLabel.textColor = textColor
         }
     }
-    var splatColor : UIColor {
+    var splatColor : UIColor? {
         didSet {
-            let splatImage = UIImage(named: "backsplat")?.tintedImageWithColor(splatColor)
-            self.backgroundColor = UIColor(patternImage: splatImage!)
+            let splatImage = UIImage(named: "backsplat")?.tintedImageWithColor(splatColor!)
+            self.layer.backgroundColor = UIColor.clearColor().CGColor   
+            self.layer.contents = splatImage?.CGImage
         }
     }
     
     // MARK: init
     required init(coder aDecoder: NSCoder) {
-        self.textColor = UIColor.blackColor()
-        self.splatColor = UIColor.blackColor()
-        
         super.init(coder: aDecoder)
+        if subviews.count == 0 {
+            setup()
+        }
     }
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        setup()
+    }
+    
+    private func setup() {
+        self.embeddedView = NSBundle.mainBundle().loadNibNamed("StageCardView",owner:self,options:nil).last as! StageCardView
+        self.addSubview(self.embeddedView)
+        self.embeddedView.frame = self.bounds
+        self.embeddedView.autoresizingMask = .FlexibleHeight | .FlexibleWidth
+    }
+    
     
     
 
