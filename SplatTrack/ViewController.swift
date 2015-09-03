@@ -22,6 +22,7 @@ class ViewController: UIViewController {
     
     // MARK: Constants
     let ScrollSpeed = 100.0 // bigger = slower
+    let UpdateTime: NSTimeInterval = 120.0
     let SplatURL = "https://splatoon.ink/schedule.json"
     let RulesFormatString = "Current %@ Stages:"
     let StageImageMap = [
@@ -56,6 +57,8 @@ class ViewController: UIViewController {
         (237.0,0.0,200.0)
         ]
     
+    
+    // MARK: Outlets
     @IBOutlet weak var rankedRulesLabel: UILabel!
     
     // Stages
@@ -77,26 +80,33 @@ class ViewController: UIViewController {
     @IBOutlet weak var backgroundView: UIView!
     
     // MARK: Instance Variables
-    var backgroundLayer : CALayer?
-    var backgroundAnimation: CABasicAnimation?
-    var alertController: UIAlertController = UIAlertController(title: "Update Failed", message: "SplatTrack failed to update map data. Check your internet connection and try again.", preferredStyle: .Alert)
+    private var backgroundLayer : CALayer?
+    private var backgroundAnimation: CABasicAnimation?
+    private var alertController: UIAlertController = UIAlertController(title: "Update Failed", message: "SplatTrack failed to update map data. Check your internet connection and try again.", preferredStyle: .Alert)
+    private var lastUpdated: NSDate = NSDate(timeIntervalSince1970: 0)
     
     // MARK: View Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        contentView.hidden = true
+        loadingView.hidden = false
         setupAlertViewController()
         setupBackgroundLayer()
         applyBackgroundAnimation()
         themeViews()
-        
-        contentView.hidden = true
-        loadingView.hidden = false
-        fetchMapData(updateMapData)
     }
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
+        
+        // Update data
+        if (abs(lastUpdated.timeIntervalSinceNow) > UpdateTime) {
+            contentView.hidden = true
+            loadingView.hidden = false
+            fetchMapData(updateMapData)
+            lastUpdated = NSDate()
+        }
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "applicationWillEnterForeground:", name: UIApplicationWillEnterForegroundNotification, object: nil)
     }
