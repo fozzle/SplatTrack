@@ -18,6 +18,8 @@
 		27944CFC1B9494210064C69C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 27944CFB1B9494210064C69C /* Images.xcassets */; };
 		27944CFF1B9494210064C69C /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 27944CFD1B9494210064C69C /* LaunchScreen.xib */; };
 		27944D0B1B9494210064C69C /* SplatTrackTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27944D0A1B9494210064C69C /* SplatTrackTests.swift */; };
+		27A2FF951B9A1F2D0023EE8D /* GlobalConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A2FF941B9A1F2C0023EE8D /* GlobalConstants.swift */; };
+		27A2FF981B9A20A10023EE8D /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A2FF971B9A20A10023EE8D /* NotificationManager.swift */; };
 		27F7DD391B94D3C900C6A7DA /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27F7DD381B94D3C900C6A7DA /* Array.swift */; };
 		EE5CDB3A8ACB97DF47D2D291 /* Pods_SplatTrack.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A569C456F96E8A85EFDE826 /* Pods_SplatTrack.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
@@ -49,6 +51,8 @@
 		27944D041B9494210064C69C /* SplatTrackTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SplatTrackTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		27944D091B9494210064C69C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		27944D0A1B9494210064C69C /* SplatTrackTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplatTrackTests.swift; sourceTree = "<group>"; };
+		27A2FF941B9A1F2C0023EE8D /* GlobalConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlobalConstants.swift; sourceTree = "<group>"; };
+		27A2FF971B9A20A10023EE8D /* NotificationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
 		27F7DD381B94D3C900C6A7DA /* Array.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Array.swift; sourceTree = "<group>"; };
 		8A569C456F96E8A85EFDE826 /* Pods_SplatTrack.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SplatTrack.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E703548B0908F1F1ADA2A9F9 /* Pods-SplatTrack.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SplatTrack.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SplatTrack/Pods-SplatTrack.debug.xcconfig"; sourceTree = "<group>"; };
@@ -106,6 +110,7 @@
 		27944CF11B9494210064C69C /* SplatTrack */ = {
 			isa = PBXGroup;
 			children = (
+				27A2FF961B9A208F0023EE8D /* Utility */,
 				27F7DD371B94D3B800C6A7DA /* Extensions */,
 				27944CF41B9494210064C69C /* AppDelegate.swift */,
 				27944CF61B9494210064C69C /* ViewController.swift */,
@@ -115,6 +120,7 @@
 				2778DFDF1B9634C4002E5AE5 /* StageCardView.swift */,
 				2778DFE11B9634D7002E5AE5 /* StageCardView.xib */,
 				273B11401B98D58800E51AF0 /* SettingsTableViewController.swift */,
+				27A2FF941B9A1F2C0023EE8D /* GlobalConstants.swift */,
 			);
 			path = SplatTrack;
 			sourceTree = "<group>";
@@ -142,6 +148,14 @@
 				27944D091B9494210064C69C /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		27A2FF961B9A208F0023EE8D /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				27A2FF971B9A20A10023EE8D /* NotificationManager.swift */,
+			);
+			name = Utility;
 			sourceTree = "<group>";
 		};
 		27F7DD371B94D3B800C6A7DA /* Extensions */ = {
@@ -328,7 +342,9 @@
 				272FF0F81B962C260096BCDF /* UIImage.swift in Sources */,
 				273B11411B98D58800E51AF0 /* SettingsTableViewController.swift in Sources */,
 				27944CF71B9494210064C69C /* ViewController.swift in Sources */,
+				27A2FF951B9A1F2D0023EE8D /* GlobalConstants.swift in Sources */,
 				2778DFE01B9634C4002E5AE5 /* StageCardView.swift in Sources */,
+				27A2FF981B9A20A10023EE8D /* NotificationManager.swift in Sources */,
 				27944CF51B9494210064C69C /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -93,7 +93,6 @@ class ViewController: UIViewController {
         loadingView.hidden = false
         setupAlertViewController()
         setupBackgroundLayer()
-        applyBackgroundAnimation()
         themeViews()
     }
     
@@ -109,6 +108,12 @@ class ViewController: UIViewController {
         }
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "applicationWillEnterForeground:", name: UIApplicationWillEnterForegroundNotification, object: nil)
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        self.applyBackgroundAnimation()
     }
     
     override func viewWillDisappear(animated: Bool) {
