@@ -22,10 +22,13 @@ class NotificationManager {
     static func scheduleNotifications() {
         cancelNotifications()
         let calendar = NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian)
+        calendar?.timeZone = NSTimeZone(abbreviation: "UTC")!
         
         for hour in StageChangeHoursUTC {
             var component = NSDateComponents()
             component.hour = hour
+            component.minute = 0
+            component.second = 0
             let scheduledTime = calendar?.dateFromComponents(component)
             
             var notification = UILocalNotification()

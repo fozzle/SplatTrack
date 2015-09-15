@@ -117,6 +117,7 @@
                                     </view>
                                 </subviews>
                                 <constraints>
+                                    <constraint firstAttribute="width" secondItem="FPc-Eb-Z2v" secondAttribute="width" id="DEF-Wk-XZ5"/>
                                     <constraint firstAttribute="trailing" secondItem="FPc-Eb-Z2v" secondAttribute="trailing" id="DXh-W3-ALE"/>
                                     <constraint firstAttribute="centerX" secondItem="4LF-gq-WVx" secondAttribute="centerX" id="KpS-A9-yLB"/>
                                     <constraint firstItem="FPc-Eb-Z2v" firstAttribute="leading" secondItem="Sy2-j2-AN6" secondAttribute="leading" id="PD1-zF-m9b"/>
@@ -128,7 +129,6 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="width" secondItem="FPc-Eb-Z2v" secondAttribute="width" id="6Rh-8h-hPa"/>
                             <constraint firstAttribute="centerX" secondItem="w2K-3N-WJx" secondAttribute="centerX" id="KFS-fL-P00"/>
                             <constraint firstAttribute="width" secondItem="w2K-3N-WJx" secondAttribute="width" id="Py8-Wy-k9N"/>
                             <constraint firstAttribute="height" secondItem="w2K-3N-WJx" secondAttribute="height" id="RIj-rN-XRE"/>
@@ -188,7 +188,7 @@
                                                         <action selector="notificationSwitchChanged:" destination="R71-M7-5BX" eventType="valueChanged" id="uPS-ge-R66"/>
                                                     </connections>
                                                 </switch>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enable stage change notifications" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fLx-5X-GCf">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enable stage change notifications" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fLx-5X-GCf">
                                                     <rect key="frame" x="8" y="12" width="527" height="20"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

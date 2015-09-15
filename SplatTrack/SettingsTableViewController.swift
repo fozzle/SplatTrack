@@ -33,7 +33,7 @@ class SettingsTableViewController: UITableViewController {
         notificationSwitch.onTintColor = navigationController?.navigationBar.tintColor
     }
     
-    private func permissionsSet(notification: NSNotification) {
+    func permissionsSet(notification: NSNotification) {
         notificationSwitch.setOn(NotificationManager.areNotificationsEnabled(), animated: true)
     }
 
