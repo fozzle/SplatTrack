@@ -49,6 +49,11 @@ class SettingsTableViewController: UITableViewController {
         return 1
     }
     
+    override func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+        // Needed because iPads don't set the background color properly from IB
+        cell.backgroundColor = UIColor.blackColor()
+    }
+    
     @IBAction func notificationSwitchChanged(sender: UISwitch) {
         // If turned on, ask for notification privileges and schedule notifications
         if sender.on {
