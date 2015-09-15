@@ -98,7 +98,6 @@ class ViewController: UIViewController {
     override func viewDidLayoutSubviews() {
         setupBackgroundLayer()
         self.applyBackgroundAnimation()
-
     }
     
     override func viewDidAppear(animated: Bool) {
