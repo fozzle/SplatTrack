@@ -92,8 +92,13 @@ class ViewController: UIViewController {
         contentView.hidden = true
         loadingView.hidden = false
         setupAlertViewController()
-        setupBackgroundLayer()
         themeViews()
+    }
+    
+    override func viewDidLayoutSubviews() {
+        setupBackgroundLayer()
+        self.applyBackgroundAnimation()
+
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -108,12 +113,6 @@ class ViewController: UIViewController {
         }
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "applicationWillEnterForeground:", name: UIApplicationWillEnterForegroundNotification, object: nil)
-    }
-    
-    override func viewWillAppear(animated: Bool) {
-        super.viewWillAppear(animated)
-        
-        self.applyBackgroundAnimation()
     }
     
     override func viewWillDisappear(animated: Bool) {
@@ -224,10 +223,16 @@ class ViewController: UIViewController {
     }
     
     func applyBackgroundAnimation() {
-        backgroundLayer?.addAnimation(backgroundAnimation, forKey: "position")
+        if ((backgroundLayer?.animationForKey("position") ) == nil) {
+            backgroundLayer?.addAnimation(backgroundAnimation, forKey: "position")
+        }
     }
     
     func setupBackgroundLayer() {
+        if (backgroundLayer != nil) {
+            return
+        }
+        
         let backgroundImage = UIImage(named: "background")
         let backgroundImagePattern = UIColor(patternImage:backgroundImage!)
         backgroundLayer = CALayer()
