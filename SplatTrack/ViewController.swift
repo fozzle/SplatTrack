@@ -195,7 +195,7 @@ class ViewController: UIViewController {
         let bodyColor = UIColor(red: CGFloat(red/255.0), green: CGFloat(green/255.0), blue: CGFloat(blue/255.0), alpha: CGFloat(1))
         
         var headerColor : UIColor
-        do {
+        repeat {
             var (headerRed, headerGreen, headerBlue) = Colors.randomItem()
              headerColor = UIColor(red: CGFloat(headerRed/255.0), green: CGFloat(headerGreen/255.0), blue: CGFloat(headerBlue/255.0), alpha: CGFloat(1))
         } while (headerColor == bodyColor)

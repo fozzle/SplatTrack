@@ -1,10 +1,10 @@
 # Uncomment this line to define a global platform for your project
-platform :ios, '8.0'
+platform :ios, '9.0'
 use_frameworks!
 
 target 'SplatTrack' do
-	pod 'Alamofire', '~> 1.3'
-	pod 'SwiftyJSON', '~> 2.2.0'
+	pod 'Alamofire', '~> 3.0.0-beta.1'
+	pod 'SwiftyJSON', '~> 2.3.0'
 end
 
 target 'SplatTrackTests' do

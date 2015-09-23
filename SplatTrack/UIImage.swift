@@ -15,7 +15,7 @@ extension UIImage {
         color.setFill()
         let bounds = CGRectMake(0, 0, self.size.width, self.size.height)
         UIRectFill(bounds)
-        self.drawInRect(bounds, blendMode: kCGBlendModeDestinationIn, alpha: 1.0);
+        self.drawInRect(bounds, blendMode: CGBlendMode.DestinationIn, alpha: 1.0);
         
         let tintedImage = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
