@@ -36,7 +36,8 @@ class ViewController: UIViewController {
         "Port Mackerel": "Stage_Port_Mackerel",
         "Saltspray Rig": "Stage_Saltspray_Rig",
         "Urchin Underpass": "Stage_Urchin_Underpass",
-        "Walleye Warehouse": "Stage_Walleye_Warehouse"
+        "Walleye Warehouse": "Stage_Walleye_Warehouse",
+        "Hammerhead Bridge": "Stage_Hammerhead_Bridge"
     ]
     let Colors = [
         (255.0,0.0,118.0),
