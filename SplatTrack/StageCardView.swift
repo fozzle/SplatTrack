@@ -38,7 +38,7 @@ class StageCardView: UIView {
     
     // MARK: init
     required init(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
+        super.init(coder: aDecoder)!
         if subviews.count == 0 {
             setup()
         }
@@ -53,7 +53,7 @@ class StageCardView: UIView {
         self.embeddedView = NSBundle.mainBundle().loadNibNamed("StageCardView",owner:self,options:nil).last as! StageCardView
         self.addSubview(self.embeddedView)
         self.embeddedView.frame = self.bounds
-        self.embeddedView.autoresizingMask = .FlexibleHeight | .FlexibleWidth
+        self.embeddedView.autoresizingMask = [.FlexibleHeight, .FlexibleWidth]
     }
     
     

@@ -135,14 +135,10 @@ class ViewController: UIViewController {
     // MARK: Update
     func fetchMapData(completion: (MapData?) -> Void) {
         // Hit splatoon.ink API for data
-        Alamofire.request(.GET, SplatURL).responseJSON {[unowned self] (req, res, json, error) in
-            if(error != nil) {
-                self.presentViewController(self.alertController, animated: true) {
-                    // nothing
-                }
-            }
-            else {
-                var json = JSON(json!)
+        Alamofire.request(.GET, SplatURL).responseJSON {[unowned self] (_, _, res) in
+            switch res {
+            case .Success(let json):
+                var json = JSON(json)
                 var mapData = MapData()
                 
                 // Extract stage strings
@@ -155,6 +151,10 @@ class ViewController: UIViewController {
                 mapData.rankedStageTwoName = rankedStages[1]["nameEN"].string
                 mapData.rankedRulesetName = json["schedule"][0]["ranked"]["rulesEN"].string
                 completion(mapData)
+            case .Failure(_, _):
+                self.presentViewController(self.alertController, animated: true) {
+                    // nothing
+                }
             }
         }
     }
@@ -196,7 +196,7 @@ class ViewController: UIViewController {
         
         var headerColor : UIColor
         repeat {
-            var (headerRed, headerGreen, headerBlue) = Colors.randomItem()
+            let (headerRed, headerGreen, headerBlue) = Colors.randomItem()
              headerColor = UIColor(red: CGFloat(headerRed/255.0), green: CGFloat(headerGreen/255.0), blue: CGFloat(headerBlue/255.0), alpha: CGFloat(1))
         } while (headerColor == bodyColor)
 
@@ -224,7 +224,7 @@ class ViewController: UIViewController {
     
     func applyBackgroundAnimation() {
         if ((backgroundLayer?.animationForKey("position") ) == nil) {
-            backgroundLayer?.addAnimation(backgroundAnimation, forKey: "position")
+            backgroundLayer?.addAnimation(backgroundAnimation!, forKey: "position")
         }
     }
     

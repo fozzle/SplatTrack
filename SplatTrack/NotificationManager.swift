@@ -12,11 +12,11 @@ import UIKit
 class NotificationManager {
     static private let StageChangeHoursUTC = [6, 10, 14, 18, 22, 2]
     static private let NotificationBody = "Stages have changed!"
-    static private let NotificationTypes = UIUserNotificationType.Alert | UIUserNotificationType.Sound
+    static private let NotificationTypes : UIUserNotificationType = [.Alert, .Sound]
     static private let NotificationSettings = UIUserNotificationSettings(forTypes: NotificationTypes, categories: nil)
     
     static func areNotificationsScheduled() -> Bool {
-        return UIApplication.sharedApplication().scheduledLocalNotifications.count > 0
+        return UIApplication.sharedApplication().scheduledLocalNotifications!.count > 0
     }
     
     static func scheduleNotifications() {
@@ -25,19 +25,19 @@ class NotificationManager {
         calendar?.timeZone = NSTimeZone(abbreviation: "UTC")!
         
         for hour in StageChangeHoursUTC {
-            var component = NSDateComponents()
+            let component = NSDateComponents()
             component.hour = hour
             component.minute = 0
             component.second = 0
             let scheduledTime = calendar?.dateFromComponents(component)
             
-            var notification = UILocalNotification()
+            let notification = UILocalNotification()
             notification.fireDate = scheduledTime
             notification.timeZone = NSTimeZone(abbreviation: "UTC")
             notification.alertBody = NotificationBody
             notification.alertAction = "View"
             notification.alertTitle = "Stage Change!"
-            notification.repeatInterval = NSCalendarUnit.CalendarUnitDay
+            notification.repeatInterval = NSCalendarUnit.Day
             
             UIApplication.sharedApplication().scheduleLocalNotification(notification)
         }
@@ -52,7 +52,7 @@ class NotificationManager {
     }
     
     static func areNotificationsEnabled() -> Bool {
-        return (UIApplication.sharedApplication().currentUserNotificationSettings().types & (UIUserNotificationType.Alert | UIUserNotificationType.Sound)) != UIUserNotificationType.allZeros
+        return (UIApplication.sharedApplication().currentUserNotificationSettings()!.types.union([UIUserNotificationType.Alert, UIUserNotificationType.Sound])) != UIUserNotificationType.None
     }
     
     static func haveAskedForPermission() -> Bool {
