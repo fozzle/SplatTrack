@@ -222,15 +222,15 @@ class ViewController: UIViewController {
 
     }
     
-    func applyBackgroundAnimation() {
-        if ((backgroundLayer?.animationForKey("position") ) == nil) {
+    func applyBackgroundAnimation(force: Bool=false) {
+        if ((backgroundLayer?.animationForKey("position") ) == nil || force) {
             backgroundLayer?.addAnimation(backgroundAnimation!, forKey: "position")
         }
     }
     
     func setupBackgroundLayer() {
         if (backgroundLayer != nil) {
-            return
+            backgroundLayer?.removeFromSuperlayer()
         }
         
         let backgroundImage = UIImage(named: "background")
