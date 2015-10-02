@@ -134,6 +134,9 @@ class ViewController: UIViewController {
     
     // MARK: Update
     func fetchMapData(completion: (MapData?) -> Void) {
+        // Fuck your cache
+        NSURLCache.sharedURLCache().removeAllCachedResponses()
+        
         // Hit splatoon.ink API for data
         Alamofire.request(.GET, SplatURL).responseJSON {[unowned self] (_, _, res) in
             switch res {
