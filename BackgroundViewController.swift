@@ -36,8 +36,8 @@ class BackgroundViewController : UIViewController {
     
     override func viewDidLayoutSubviews() {
 //        Useful for orientation support?
-//        setupBackgroundLayer()
-//        applyBackgroundAnimation()
+        setupBackgroundLayer()
+        applyBackgroundAnimation()
     }
     
     func applicationWillEnterForeground(note: NSNotification) {
@@ -59,8 +59,6 @@ class BackgroundViewController : UIViewController {
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        setupBackgroundLayer()
-        applyBackgroundAnimation()
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "applicationWillEnterForeground:", name: UIApplicationWillEnterForegroundNotification, object: nil)
         
     }
