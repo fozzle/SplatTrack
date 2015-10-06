@@ -17,43 +17,43 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="150"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current Turf War Stages:" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GcN-lo-r42">
-                                <rect key="frame" x="8" y="8" width="304" height="21"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hammerhead Bridge and Arowana Mall" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kyq-EZ-35Y">
-                                <rect key="frame" x="24" y="37" width="272" height="41"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="749" text="Hammerhead Bridge and Arowana Mall" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8PI-kb-1Rr">
-                                <rect key="frame" x="24" y="115" width="272" height="27"/>
+                                <rect key="frame" x="16" y="115" width="280" height="27"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current %@ Stages:" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qzi-vf-2t1">
-                                <rect key="frame" x="24" y="86" width="272" height="21"/>
+                                <rect key="frame" x="16" y="86" width="280" height="21"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current Turf War Stages:" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UYO-5r-xac">
+                                <rect key="frame" x="16" y="8" width="280" height="21"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="lightTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hammerhead Bridge and Arowana Mall" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kyq-EZ-35Y">
+                                <rect key="frame" x="16" y="37" width="280" height="41"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="Qzi-vf-2t1" firstAttribute="leading" secondItem="S3S-Oj-5AN" secondAttribute="leadingMargin" constant="8" id="1im-N4-xKU"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Kyq-EZ-35Y" secondAttribute="trailing" constant="8" id="6QE-K9-4eu"/>
-                            <constraint firstItem="GcN-lo-r42" firstAttribute="leading" secondItem="S3S-Oj-5AN" secondAttribute="leading" constant="8" id="6Vq-gs-PHe"/>
-                            <constraint firstItem="8PI-kb-1Rr" firstAttribute="leading" secondItem="S3S-Oj-5AN" secondAttribute="leadingMargin" constant="8" id="705-rb-LvQ"/>
+                            <constraint firstItem="Kyq-EZ-35Y" firstAttribute="top" secondItem="UYO-5r-xac" secondAttribute="bottom" constant="8" id="6ZX-A4-Fax"/>
+                            <constraint firstItem="UYO-5r-xac" firstAttribute="top" secondItem="Ft6-oW-KC0" secondAttribute="bottom" constant="8" id="Azr-FW-Z07"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Qzi-vf-2t1" secondAttribute="trailing" constant="8" id="J3i-Dc-mHS"/>
-                            <constraint firstAttribute="trailing" secondItem="GcN-lo-r42" secondAttribute="trailing" constant="8" id="L8K-9R-egU"/>
-                            <constraint firstItem="Kyq-EZ-35Y" firstAttribute="leading" secondItem="S3S-Oj-5AN" secondAttribute="leadingMargin" constant="8" id="Mz7-DP-VXj"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="Kyq-EZ-35Y" secondAttribute="leading" id="JOu-xP-XKO"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="UYO-5r-xac" secondAttribute="trailing" constant="8" id="O2e-GX-cM7"/>
+                            <constraint firstItem="8PI-kb-1Rr" firstAttribute="leading" secondItem="S3S-Oj-5AN" secondAttribute="leadingMargin" id="PFV-Cy-cFc"/>
                             <constraint firstAttribute="trailingMargin" secondItem="8PI-kb-1Rr" secondAttribute="trailing" constant="8" id="WMN-O1-h95"/>
-                            <constraint firstItem="Kyq-EZ-35Y" firstAttribute="top" secondItem="GcN-lo-r42" secondAttribute="bottom" constant="8" id="bxo-so-oVv"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="UYO-5r-xac" secondAttribute="leading" id="WoG-Ke-ggo"/>
                             <constraint firstItem="8PI-kb-1Rr" firstAttribute="top" secondItem="Qzi-vf-2t1" secondAttribute="bottom" constant="8" id="g7E-Sy-yR5"/>
-                            <constraint firstItem="GcN-lo-r42" firstAttribute="top" secondItem="Ft6-oW-KC0" secondAttribute="bottom" constant="8" id="mYS-Cv-VNx"/>
+                            <constraint firstItem="Qzi-vf-2t1" firstAttribute="leading" secondItem="S3S-Oj-5AN" secondAttribute="leadingMargin" id="jVc-al-TaV"/>
                             <constraint firstItem="Qzi-vf-2t1" firstAttribute="top" secondItem="Kyq-EZ-35Y" secondAttribute="bottom" constant="8" id="zU5-mQ-zZL"/>
                             <constraint firstItem="FKl-LY-JtV" firstAttribute="top" secondItem="8PI-kb-1Rr" secondAttribute="bottom" constant="8" id="zqr-OB-kIk"/>
                         </constraints>
@@ -72,7 +72,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vXp-U4-Rya" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="516" y="284.5"/>
+            <point key="canvasLocation" x="516" y="284"/>
         </scene>
     </scenes>
 </document>

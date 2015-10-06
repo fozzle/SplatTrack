@@ -10,9 +10,6 @@ import UIKit
 import NotificationCenter
 
 class TodayViewController: UIViewController, NCWidgetProviding {
-    
-    let SplatURL = "https://splatoon.ink/schedule.json"
-    var lastUpdateTime : NSDate?
         
     @IBOutlet weak var regularStagesLabel: UILabel!
     @IBOutlet weak var rankedStagesLabel: UILabel!
