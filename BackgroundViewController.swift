@@ -33,9 +33,11 @@ class BackgroundViewController : UIViewController {
         
         navigationController?.navigationBar.tintColor = colorManager.headerColor
     }
+    
     override func viewDidLayoutSubviews() {
-        setupBackgroundLayer()
-        applyBackgroundAnimation()
+//        Useful for orientation support?
+//        setupBackgroundLayer()
+//        applyBackgroundAnimation()
     }
     
     func applicationWillEnterForeground(note: NSNotification) {
@@ -57,6 +59,8 @@ class BackgroundViewController : UIViewController {
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
+        setupBackgroundLayer()
+        applyBackgroundAnimation()
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "applicationWillEnterForeground:", name: UIApplicationWillEnterForegroundNotification, object: nil)
         
     }
