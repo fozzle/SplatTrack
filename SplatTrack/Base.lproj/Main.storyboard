@@ -15,7 +15,7 @@
         <!--SplatTrack-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController automaticallyAdjustsScrollViewInsets="NO" id="BYZ-38-t0r" customClass="ViewController" customModule="SplatTrack" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ViewController" automaticallyAdjustsScrollViewInsets="NO" id="BYZ-38-t0r" customClass="ViewController" customModule="SplatTrack" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -24,16 +24,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="w2K-3N-WJx" userLabel="backgroundView">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                            </view>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sy2-j2-AN6">
                                 <rect key="frame" x="0.0" y="64" width="600" height="536"/>
                                 <subviews>
                                     <view hidden="YES" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4LF-gq-WVx" userLabel="LoadingView">
                                         <rect key="frame" x="200" y="168" width="200" height="200"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Updating..." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CSW-Z3-aiA">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Updating..." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CSW-Z3-aiA">
                                                 <rect key="frame" x="57" y="92" width="87" height="18"/>
                                                 <fontDescription key="fontDescription" name="ProjectPaintball" family="Project Paintball" pointSize="16"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -127,28 +124,17 @@
                                 </constraints>
                             </scrollView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="centerX" secondItem="w2K-3N-WJx" secondAttribute="centerX" id="KFS-fL-P00"/>
-                            <constraint firstAttribute="width" secondItem="w2K-3N-WJx" secondAttribute="width" id="Py8-Wy-k9N"/>
-                            <constraint firstAttribute="height" secondItem="w2K-3N-WJx" secondAttribute="height" id="RIj-rN-XRE"/>
                             <constraint firstItem="Sy2-j2-AN6" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="T7W-LM-i1a"/>
                             <constraint firstItem="Sy2-j2-AN6" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-16" id="Vcm-67-qLK"/>
-                            <constraint firstAttribute="centerY" secondItem="w2K-3N-WJx" secondAttribute="centerY" id="s3h-f1-R5c"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Sy2-j2-AN6" secondAttribute="trailing" constant="-16" id="wLq-j5-Z6b"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Sy2-j2-AN6" secondAttribute="bottom" id="zXy-f7-lc8"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="SplatTrack" id="cp4-9V-jOy">
                         <barButtonItem key="backBarButtonItem" title=" " id="RLV-wy-ltW"/>
-                        <barButtonItem key="rightBarButtonItem" image="Settings" style="done" id="hu6-MV-VTg">
-                            <connections>
-                                <segue destination="R71-M7-5BX" kind="show" identifier="settings-segue" id="CbM-5W-aOy"/>
-                            </connections>
-                        </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="backgroundView" destination="w2K-3N-WJx" id="eFc-u2-LhL"/>
                         <outlet property="contentView" destination="FPc-Eb-Z2v" id="Xto-nM-QMb"/>
                         <outlet property="loadingView" destination="4LF-gq-WVx" id="C9S-sM-yy2"/>
                         <outlet property="rankedHeader" destination="Xp5-es-Sb6" id="M5A-bp-HSP"/>
@@ -158,12 +144,70 @@
                         <outlet property="regularHeader" destination="o9X-FA-q73" id="0za-qf-88K"/>
                         <outlet property="regularStageOneCardView" destination="tOJ-8h-zhC" id="2cg-G3-rtn"/>
                         <outlet property="regularStageTwoCardView" destination="YCe-3r-nFd" id="wzh-4p-Qh6"/>
-                        <outlet property="settingsBarButton" destination="hu6-MV-VTg" id="Vt0-XJ-jiv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1117" y="346"/>
+            <point key="canvasLocation" x="1713" y="1382"/>
+        </scene>
+        <!--SplatTrack-->
+        <scene sceneID="JeJ-um-Kof">
+            <objects>
+                <viewController id="YWe-Rl-ZtR" customClass="BackgroundViewController" customModule="SplatTrack" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="6NZ-Ba-xdq"/>
+                        <viewControllerLayoutGuide type="bottom" id="BSC-ke-viJ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="wr8-zO-rwZ">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="C47-a2-LfL" userLabel="backgroundView">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            </view>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sM6-BK-tm8">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <connections>
+                                    <segue destination="IDY-AG-Z1L" kind="embed" id="Ted-Bd-sXJ"/>
+                                </connections>
+                            </containerView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="C47-a2-LfL" firstAttribute="centerY" secondItem="wr8-zO-rwZ" secondAttribute="centerY" id="B8A-XT-OkV"/>
+                            <constraint firstItem="sM6-BK-tm8" firstAttribute="centerY" secondItem="wr8-zO-rwZ" secondAttribute="centerY" id="L7o-E9-cUY"/>
+                            <constraint firstItem="sM6-BK-tm8" firstAttribute="height" secondItem="wr8-zO-rwZ" secondAttribute="height" id="QJM-t7-2pd"/>
+                            <constraint firstItem="C47-a2-LfL" firstAttribute="height" secondItem="wr8-zO-rwZ" secondAttribute="height" id="bqJ-bf-nWx"/>
+                            <constraint firstItem="sM6-BK-tm8" firstAttribute="width" secondItem="wr8-zO-rwZ" secondAttribute="width" id="cQc-3M-QLO"/>
+                            <constraint firstItem="sM6-BK-tm8" firstAttribute="centerX" secondItem="wr8-zO-rwZ" secondAttribute="centerX" id="fxg-f7-904"/>
+                            <constraint firstItem="C47-a2-LfL" firstAttribute="centerX" secondItem="wr8-zO-rwZ" secondAttribute="centerX" id="ij5-gQ-Kk1"/>
+                            <constraint firstItem="C47-a2-LfL" firstAttribute="width" secondItem="wr8-zO-rwZ" secondAttribute="width" id="w9g-ID-Hla"/>
+                        </constraints>
+                    </view>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="SplatTrack" id="laj-Hi-mpG">
+                        <barButtonItem key="rightBarButtonItem" image="Settings" style="done" id="kLX-vC-iL0">
+                            <connections>
+                                <segue destination="R71-M7-5BX" kind="show" id="QR6-GU-IAt"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="backgroundView" destination="C47-a2-LfL" id="a2y-CN-JWl"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9Jn-TF-KcY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="305" y="1375"/>
+        </scene>
+        <!--Page View Controller-->
+        <scene sceneID="ACO-Sd-Idl">
+            <objects>
+                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="IDY-AG-Z1L" customClass="PageViewController" customModule="SplatTrack" customModuleProvider="target" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nPG-4N-XdL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1007" y="1375"/>
         </scene>
         <!--Settings-->
         <scene sceneID="8W0-S5-S1X">
@@ -224,7 +268,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="38I-KS-oax" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1824" y="346"/>
+            <point key="canvasLocation" x="1036" y="532"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="i3g-fE-DVY">
@@ -237,12 +281,25 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="Sxm-rE-htY"/>
+                        <segue destination="YWe-Rl-ZtR" kind="relationship" relationship="rootViewController" id="LDA-4V-0mO"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Erj-Ar-nN7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="305" y="346"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="qmb-Ty-MvY">
+            <objects>
+                <viewController id="PNw-ee-PMA" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="1aF-T6-fHB">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iRo-7u-EuW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
         </scene>
     </scenes>
     <resources>

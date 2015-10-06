@@ -12,8 +12,10 @@ import UIKit
 
 class ViewController: UIViewController {
     
+    // MARK: Instance var
+    var PageIndex = 0
+    
     // MARK: Constants
-    let ScrollSpeed = 100.0 // bigger = slower
     let UpdateTime: NSTimeInterval = 120.0
     let RulesFormatString = "Current %@ Stages:"
     let StageImageMap = [
@@ -67,13 +69,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var contentView: UIView!
     @IBOutlet weak var loadingView: UIView!
     
-    // Background
-    @IBOutlet weak var settingsBarButton: UIBarButtonItem!
-    @IBOutlet weak var backgroundView: UIView!
-    
     // MARK: Instance Variables
-    private var backgroundLayer : CALayer?
-    private var backgroundAnimation: CABasicAnimation?
     private var alertController: UIAlertController = UIAlertController(title: "Update Failed", message: "SplatTrack failed to update map data. Check your internet connection and try again.", preferredStyle: .Alert)
     private var lastUpdated: NSDate = NSDate(timeIntervalSince1970: 0)
     
@@ -85,11 +81,6 @@ class ViewController: UIViewController {
         loadingView.hidden = false
         setupAlertViewController()
         themeViews()
-    }
-    
-    override func viewDidLayoutSubviews() {
-        setupBackgroundLayer()
-        self.applyBackgroundAnimation()
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -105,30 +96,12 @@ class ViewController: UIViewController {
             }
         }
         
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "applicationWillEnterForeground:", name: UIApplicationWillEnterForegroundNotification, object: nil)
-    }
-    
-    override func viewWillDisappear(animated: Bool) {
-        super.viewWillDisappear(animated)
-        NSNotificationCenter
-            .defaultCenter()
-            .removeObserver(self, name: UIApplicationWillEnterForegroundNotification, object: nil)
-    }
-    
-    func applicationWillEnterForeground(note: NSNotification) {
-        self.applyBackgroundAnimation()
-    }
-    
-    deinit {
-        NSNotificationCenter
-            .defaultCenter()
-            .removeObserver(self, name: UIApplicationWillEnterForegroundNotification, object: nil)
     }
     
     // MARK: UI Update
     
     func updateMapData(mapData: MapData, source: MapData.DataSource = .Network) {
-        let data = mapData.rotations[0]
+        let data = mapData.rotations[PageIndex]
         // Change text of labels
         regularStageOneCardView.stageName = data.regularStageOneName
         regularStageTwoCardView.stageName = data.regularStageTwoName
@@ -187,40 +160,6 @@ class ViewController: UIViewController {
             navigationController?.navigationBar.titleTextAttributes = titleTextAttributes
         }
 
-    }
-    
-    func applyBackgroundAnimation(force: Bool=false) {
-        if ((backgroundLayer?.animationForKey("position") ) == nil || force) {
-            backgroundLayer?.addAnimation(backgroundAnimation!, forKey: "position")
-        }
-    }
-    
-    func setupBackgroundLayer() {
-        if (backgroundLayer != nil) {
-            backgroundLayer?.removeFromSuperlayer()
-        }
-        
-        let backgroundImage = UIImage(named: "background")
-        let backgroundImagePattern = UIColor(patternImage:backgroundImage!)
-        backgroundLayer = CALayer()
-        backgroundLayer?.backgroundColor = backgroundImagePattern.CGColor
-        backgroundLayer?.transform = CATransform3DMakeScale(1, -1, 1);
-        
-        let size = backgroundView.bounds.size
-        backgroundLayer?.anchorPoint = CGPointMake(0, 1)
-        backgroundLayer?.frame = CGRectMake(0, 0, (backgroundImage?.size.width)! + size.width, (backgroundImage?.size.height)! + 2*size.height)
-        
-        backgroundView.layer.addSublayer(backgroundLayer!)
-        
-        let startPoint = CGPointMake(-(backgroundImage?.size.width)!, 0)
-        let endPoint = CGPointMake(0, -(backgroundImage?.size.height)!)
-        
-        backgroundAnimation = CABasicAnimation(keyPath: "position")
-        backgroundAnimation?.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionLinear)
-        backgroundAnimation?.fromValue = NSValue(CGPoint: startPoint)
-        backgroundAnimation?.toValue = NSValue(CGPoint: endPoint)
-        backgroundAnimation?.repeatCount = HUGE;
-        backgroundAnimation?.duration = ScrollSpeed
     }
     
     func setupAlertViewController() {

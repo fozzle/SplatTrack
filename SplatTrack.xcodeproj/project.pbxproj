@@ -17,6 +17,8 @@
 		27748A8D1B94A22D00090E19 /* ProjectPaintball.otf in Resources */ = {isa = PBXBuildFile; fileRef = 27748A8C1B94A22D00090E19 /* ProjectPaintball.otf */; };
 		2778DFE01B9634C4002E5AE5 /* StageCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2778DFDF1B9634C4002E5AE5 /* StageCardView.swift */; };
 		2778DFE21B9634D7002E5AE5 /* StageCardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2778DFE11B9634D7002E5AE5 /* StageCardView.xib */; };
+		278497281BC44DE100B1FFAF /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 278497271BC44DE100B1FFAF /* PageViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		2784972A1BC453F400B1FFAF /* BackgroundViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 278497291BC453F400B1FFAF /* BackgroundViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		27944CF51B9494210064C69C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27944CF41B9494210064C69C /* AppDelegate.swift */; };
 		27944CF71B9494210064C69C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27944CF61B9494210064C69C /* ViewController.swift */; };
 		27944CFA1B9494210064C69C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 27944CF81B9494210064C69C /* Main.storyboard */; };
@@ -78,6 +80,8 @@
 		27748A8C1B94A22D00090E19 /* ProjectPaintball.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = ProjectPaintball.otf; path = Resources/ProjectPaintball.otf; sourceTree = "<group>"; };
 		2778DFDF1B9634C4002E5AE5 /* StageCardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StageCardView.swift; sourceTree = "<group>"; };
 		2778DFE11B9634D7002E5AE5 /* StageCardView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StageCardView.xib; sourceTree = "<group>"; };
+		278497271BC44DE100B1FFAF /* PageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PageViewController.swift; path = ../PageViewController.swift; sourceTree = "<group>"; };
+		278497291BC453F400B1FFAF /* BackgroundViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BackgroundViewController.swift; path = ../BackgroundViewController.swift; sourceTree = "<group>"; };
 		27944CEF1B9494210064C69C /* SplatTrack.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SplatTrack.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		27944CF31B9494210064C69C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		27944CF41B9494210064C69C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -185,6 +189,8 @@
 		27944CF11B9494210064C69C /* SplatTrack */ = {
 			isa = PBXGroup;
 			children = (
+				278497291BC453F400B1FFAF /* BackgroundViewController.swift */,
+				278497271BC44DE100B1FFAF /* PageViewController.swift */,
 				271EF1701BC1BD730087BE32 /* Models */,
 				271EF16F1BC1BC6E0087BE32 /* SplatTrack.entitlements */,
 				27A2FF961B9A208F0023EE8D /* Utility */,
@@ -510,12 +516,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				27F7DD391B94D3C900C6A7DA /* Array.swift in Sources */,
+				278497281BC44DE100B1FFAF /* PageViewController.swift in Sources */,
 				272FF0F81B962C260096BCDF /* UIImage.swift in Sources */,
 				273B11411B98D58800E51AF0 /* SettingsTableViewController.swift in Sources */,
 				27944CF71B9494210064C69C /* ViewController.swift in Sources */,
 				271EF1721BC1BD860087BE32 /* MapData.swift in Sources */,
 				27A2FF951B9A1F2D0023EE8D /* GlobalConstants.swift in Sources */,
 				2778DFE01B9634C4002E5AE5 /* StageCardView.swift in Sources */,
+				2784972A1BC453F400B1FFAF /* BackgroundViewController.swift in Sources */,
 				27A2FF981B9A20A10023EE8D /* NotificationManager.swift in Sources */,
 				27944CF51B9494210064C69C /* AppDelegate.swift in Sources */,
 			);
