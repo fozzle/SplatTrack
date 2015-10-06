@@ -19,6 +19,7 @@
 		2778DFE21B9634D7002E5AE5 /* StageCardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2778DFE11B9634D7002E5AE5 /* StageCardView.xib */; };
 		278497281BC44DE100B1FFAF /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 278497271BC44DE100B1FFAF /* PageViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		2784972A1BC453F400B1FFAF /* BackgroundViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 278497291BC453F400B1FFAF /* BackgroundViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		2784972C1BC45D9D00B1FFAF /* SplatoonColorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2784972B1BC45D9D00B1FFAF /* SplatoonColorManager.swift */; settings = {ASSET_TAGS = (); }; };
 		27944CF51B9494210064C69C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27944CF41B9494210064C69C /* AppDelegate.swift */; };
 		27944CF71B9494210064C69C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27944CF61B9494210064C69C /* ViewController.swift */; };
 		27944CFA1B9494210064C69C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 27944CF81B9494210064C69C /* Main.storyboard */; };
@@ -82,6 +83,7 @@
 		2778DFE11B9634D7002E5AE5 /* StageCardView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StageCardView.xib; sourceTree = "<group>"; };
 		278497271BC44DE100B1FFAF /* PageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PageViewController.swift; path = ../PageViewController.swift; sourceTree = "<group>"; };
 		278497291BC453F400B1FFAF /* BackgroundViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BackgroundViewController.swift; path = ../BackgroundViewController.swift; sourceTree = "<group>"; };
+		2784972B1BC45D9D00B1FFAF /* SplatoonColorManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplatoonColorManager.swift; sourceTree = "<group>"; };
 		27944CEF1B9494210064C69C /* SplatTrack.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SplatTrack.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		27944CF31B9494210064C69C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		27944CF41B9494210064C69C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -237,6 +239,7 @@
 			isa = PBXGroup;
 			children = (
 				27A2FF971B9A20A10023EE8D /* NotificationManager.swift */,
+				2784972B1BC45D9D00B1FFAF /* SplatoonColorManager.swift */,
 			);
 			name = Utility;
 			sourceTree = "<group>";
@@ -526,6 +529,7 @@
 				2784972A1BC453F400B1FFAF /* BackgroundViewController.swift in Sources */,
 				27A2FF981B9A20A10023EE8D /* NotificationManager.swift in Sources */,
 				27944CF51B9494210064C69C /* AppDelegate.swift in Sources */,
+				2784972C1BC45D9D00B1FFAF /* SplatoonColorManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

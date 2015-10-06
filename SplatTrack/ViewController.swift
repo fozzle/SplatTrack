@@ -32,24 +32,6 @@ class ViewController: UIViewController {
         "Walleye Warehouse": "Stage_Walleye_Warehouse",
         "Hammerhead Bridge": "Stage_Hammerhead_Bridge"
     ]
-    let Colors = [
-        (255.0,0.0,118.0),
-        (255.0,139.0,0.0),
-        (255.0,225.0,0.0),
-        (193.0,252.0,0.0),
-        (0.0,220.0,96.0),
-        (0.0,199.0,209.0),
-        (66.0,0.0,233.0),
-        (172.0,0.0,233.0),
-        (0.0,170.0,232.0),
-        (255.0,37.0,0.0),
-        (177.0,245.0,231.0),
-        (0.0,207.0,60.0),
-        (0.0,219.0,144.0),
-        (118.0,73.0,252.0),
-        (50.0,0.0,183.0),
-        (237.0,0.0,200.0)
-        ]
     
     
     // MARK: Outlets
@@ -122,42 +104,19 @@ class ViewController: UIViewController {
     
     // MARK: Appearance
     func themeViews() {
-        // Transparent nav bar
-        if let navBar = navigationController?.navigationBar {
-            navBar.setBackgroundImage(UIImage(), forBarMetrics:UIBarMetrics.Default)
-            navBar.shadowImage = UIImage()
-            navBar.translucent = true
-            navBar.barStyle = UIBarStyle.Black
-        }
-        
         // Colorize
-        let (red, green, blue) = Colors.randomItem()
-        let bodyColor = UIColor(red: CGFloat(red/255.0), green: CGFloat(green/255.0), blue: CGFloat(blue/255.0), alpha: CGFloat(1))
-        
-        var headerColor : UIColor
-        repeat {
-            let (headerRed, headerGreen, headerBlue) = Colors.randomItem()
-             headerColor = UIColor(red: CGFloat(headerRed/255.0), green: CGFloat(headerGreen/255.0), blue: CGFloat(headerBlue/255.0), alpha: CGFloat(1))
-        } while (headerColor == bodyColor)
+        let colorManager = SplatoonColorManager.sharedInstance
 
-        
         let cardViews = [regularStageOneCardView, regularStageTwoCardView, rankedStageOneCardView, rankedStageTwoCardView]
         for cardView in cardViews {
-            cardView.splatColor = headerColor
-            cardView.textColor = bodyColor
+            cardView.splatColor = colorManager.headerColor
+            cardView.textColor = colorManager.bodyColor
         }
         
         // Style headers, with splats
         let headers = [regularHeader, rankedHeader]
         for header in headers {
-            header.textColor = headerColor
-        }
-        
-        navigationController?.navigationBar.tintColor = headerColor
-        
-        if var titleTextAttributes = navigationController?.navigationBar.titleTextAttributes {
-            titleTextAttributes[NSForegroundColorAttributeName] = headerColor
-            navigationController?.navigationBar.titleTextAttributes = titleTextAttributes
+            header.textColor = colorManager.headerColor
         }
 
     }

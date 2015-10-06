@@ -15,6 +15,24 @@ class BackgroundViewController : UIViewController {
     let ScrollSpeed = 100.0 // bigger = slower
     
     @IBOutlet weak var backgroundView: UIView!
+    
+    override func viewDidLoad() {
+        let colorManager = SplatoonColorManager.sharedInstance
+        // Transparent nav bar
+        if let navBar = navigationController?.navigationBar {
+            navBar.setBackgroundImage(UIImage(), forBarMetrics:UIBarMetrics.Default)
+            navBar.shadowImage = UIImage()
+            navBar.translucent = true
+            navBar.barStyle = UIBarStyle.Black
+        }
+        
+        if var titleTextAttributes = navigationController?.navigationBar.titleTextAttributes {
+            titleTextAttributes[NSForegroundColorAttributeName] = colorManager.headerColor
+            navigationController?.navigationBar.titleTextAttributes = titleTextAttributes
+        }
+        
+        navigationController?.navigationBar.tintColor = colorManager.headerColor
+    }
     override func viewDidLayoutSubviews() {
         setupBackgroundLayer()
         applyBackgroundAnimation()
