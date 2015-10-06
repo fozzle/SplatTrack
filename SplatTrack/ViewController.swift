@@ -53,7 +53,6 @@ class ViewController: UIViewController {
     
     // MARK: Instance Variables
     private var alertController: UIAlertController = UIAlertController(title: "Update Failed", message: "SplatTrack failed to update map data. Check your internet connection and try again.", preferredStyle: .Alert)
-    private var lastUpdated: NSDate = NSDate(timeIntervalSince1970: 0)
     
     // MARK: View Lifecycle
     override func viewDidLoad() {
@@ -62,12 +61,19 @@ class ViewController: UIViewController {
         contentView.hidden = true
         loadingView.hidden = false
         setupAlertViewController()
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
         themeViews()
     }
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
-            
+        
+        contentView.hidden = true
+        loadingView.hidden = false
+        
         if (PageIndex > 0) {
             navigationController?.navigationBar.topItem!.title = "Upcoming Stages"
         } else {

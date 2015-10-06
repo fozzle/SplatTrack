@@ -16,6 +16,7 @@ class StageCardView: UIView {
     var stageName : String? {
         didSet {
             self.stageLabel.text = stageName
+            super.layoutSubviews()
         }
     }
     var imageName : String? {

@@ -157,7 +157,7 @@
             </objects>
             <point key="canvasLocation" x="1713" y="1382"/>
         </scene>
-        <!--CurrentStages-->
+        <!--Current Stages-->
         <scene sceneID="JeJ-um-Kof">
             <objects>
                 <viewController id="YWe-Rl-ZtR" customClass="BackgroundViewController" customModule="SplatTrack" customModuleProvider="target" sceneMemberID="viewController">
@@ -192,7 +192,7 @@
                         </constraints>
                     </view>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" title="CurrentStages" id="laj-Hi-mpG">
+                    <navigationItem key="navigationItem" title="Current Stages" id="laj-Hi-mpG">
                         <barButtonItem key="rightBarButtonItem" image="Settings" style="done" id="kLX-vC-iL0">
                             <connections>
                                 <segue destination="R71-M7-5BX" kind="show" id="QR6-GU-IAt"/>
