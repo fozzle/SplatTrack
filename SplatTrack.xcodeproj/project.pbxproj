@@ -11,6 +11,7 @@
 		271A36251BBE3FDB0041EB84 /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 271A36241BBE3FDB0041EB84 /* TodayViewController.swift */; };
 		271A36281BBE3FDB0041EB84 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 271A36261BBE3FDB0041EB84 /* MainInterface.storyboard */; };
 		271A362C1BBE3FDB0041EB84 /* SplatTrackToday.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 271A36201BBE3FDB0041EB84 /* SplatTrackToday.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		271EF1721BC1BD860087BE32 /* MapData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 271EF1711BC1BD860087BE32 /* MapData.swift */; settings = {ASSET_TAGS = (); }; };
 		272FF0F81B962C260096BCDF /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 272FF0F71B962C260096BCDF /* UIImage.swift */; };
 		273B11411B98D58800E51AF0 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 273B11401B98D58800E51AF0 /* SettingsTableViewController.swift */; };
 		27748A8D1B94A22D00090E19 /* ProjectPaintball.otf in Resources */ = {isa = PBXBuildFile; fileRef = 27748A8C1B94A22D00090E19 /* ProjectPaintball.otf */; };
@@ -24,7 +25,9 @@
 		27944D0B1B9494210064C69C /* SplatTrackTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27944D0A1B9494210064C69C /* SplatTrackTests.swift */; };
 		27A2FF951B9A1F2D0023EE8D /* GlobalConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A2FF941B9A1F2C0023EE8D /* GlobalConstants.swift */; };
 		27A2FF981B9A20A10023EE8D /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A2FF971B9A20A10023EE8D /* NotificationManager.swift */; };
+		27A68B231BC440D000C34233 /* MapData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 271EF1711BC1BD860087BE32 /* MapData.swift */; };
 		27F7DD391B94D3C900C6A7DA /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27F7DD381B94D3C900C6A7DA /* Array.swift */; };
+		584A6BB8BD8FD391D5EFDAE3 /* Pods_SplatTrackToday.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DBF12A9C5431E2C45C23560 /* Pods_SplatTrackToday.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		EE5CDB3A8ACB97DF47D2D291 /* Pods_SplatTrack.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A569C456F96E8A85EFDE826 /* Pods_SplatTrack.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
@@ -60,6 +63,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		07D51072891A3582D5722E9D /* Pods-SplatTrackToday.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SplatTrackToday.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SplatTrackToday/Pods-SplatTrackToday.debug.xcconfig"; sourceTree = "<group>"; };
 		18577BB5900A82EF889E9C42 /* Pods-SplatTrack.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SplatTrack.release.xcconfig"; path = "Pods/Target Support Files/Pods-SplatTrack/Pods-SplatTrack.release.xcconfig"; sourceTree = "<group>"; };
 		271A36201BBE3FDB0041EB84 /* SplatTrackToday.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = SplatTrackToday.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		271A36211BBE3FDB0041EB84 /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
@@ -68,6 +72,7 @@
 		271A36291BBE3FDB0041EB84 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		271EF16E1BC1BC1D0087BE32 /* SplatTrackToday.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = SplatTrackToday.entitlements; sourceTree = "<group>"; };
 		271EF16F1BC1BC6E0087BE32 /* SplatTrack.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = SplatTrack.entitlements; sourceTree = "<group>"; };
+		271EF1711BC1BD860087BE32 /* MapData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapData.swift; sourceTree = "<group>"; };
 		272FF0F71B962C260096BCDF /* UIImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
 		273B11401B98D58800E51AF0 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
 		27748A8C1B94A22D00090E19 /* ProjectPaintball.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = ProjectPaintball.otf; path = Resources/ProjectPaintball.otf; sourceTree = "<group>"; };
@@ -85,8 +90,16 @@
 		27944D0A1B9494210064C69C /* SplatTrackTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplatTrackTests.swift; sourceTree = "<group>"; };
 		27A2FF941B9A1F2C0023EE8D /* GlobalConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlobalConstants.swift; sourceTree = "<group>"; };
 		27A2FF971B9A20A10023EE8D /* NotificationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
+		27A68B1B1BC43F8D00C34233 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = "Pods/../build/Debug-iphoneos/Alamofire.framework"; sourceTree = "<group>"; };
+		27A68B1D1BC43F9000C34233 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = "Pods/../build/Debug-iphoneos/SwiftyJSON.framework"; sourceTree = "<group>"; };
+		27A68B1F1BC4404400C34233 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = "Pods/../build/Debug-iphoneos/Alamofire.framework"; sourceTree = "<group>"; };
+		27A68B211BC4404700C34233 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = "Pods/../build/Debug-iphoneos/SwiftyJSON.framework"; sourceTree = "<group>"; };
+		27A68B241BC4414600C34233 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = "Pods/../build/Debug-iphoneos/Alamofire.framework"; sourceTree = "<group>"; };
+		27A68B261BC4414A00C34233 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = "Pods/../build/Debug-iphoneos/SwiftyJSON.framework"; sourceTree = "<group>"; };
 		27F7DD381B94D3C900C6A7DA /* Array.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Array.swift; sourceTree = "<group>"; };
+		2DBF12A9C5431E2C45C23560 /* Pods_SplatTrackToday.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SplatTrackToday.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8A569C456F96E8A85EFDE826 /* Pods_SplatTrack.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SplatTrack.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DF6515C51C3F44BE87103387 /* Pods-SplatTrackToday.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SplatTrackToday.release.xcconfig"; path = "Pods/Target Support Files/Pods-SplatTrackToday/Pods-SplatTrackToday.release.xcconfig"; sourceTree = "<group>"; };
 		E703548B0908F1F1ADA2A9F9 /* Pods-SplatTrack.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SplatTrack.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SplatTrack/Pods-SplatTrack.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -96,6 +109,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				271A36221BBE3FDB0041EB84 /* NotificationCenter.framework in Frameworks */,
+				584A6BB8BD8FD391D5EFDAE3 /* Pods_SplatTrackToday.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -126,6 +140,14 @@
 				271A36291BBE3FDB0041EB84 /* Info.plist */,
 			);
 			path = SplatTrackToday;
+			sourceTree = "<group>";
+		};
+		271EF1701BC1BD730087BE32 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				271EF1711BC1BD860087BE32 /* MapData.swift */,
+			);
+			name = Models;
 			sourceTree = "<group>";
 		};
 		27748A8B1B94A1ED00090E19 /* Resources */ = {
@@ -163,6 +185,7 @@
 		27944CF11B9494210064C69C /* SplatTrack */ = {
 			isa = PBXGroup;
 			children = (
+				271EF1701BC1BD730087BE32 /* Models */,
 				271EF16F1BC1BC6E0087BE32 /* SplatTrack.entitlements */,
 				27A2FF961B9A208F0023EE8D /* Utility */,
 				27F7DD371B94D3B800C6A7DA /* Extensions */,
@@ -224,8 +247,15 @@
 		5C47792DD39640CB4CC91CAE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				27A68B261BC4414A00C34233 /* SwiftyJSON.framework */,
+				27A68B241BC4414600C34233 /* Alamofire.framework */,
+				27A68B211BC4404700C34233 /* SwiftyJSON.framework */,
+				27A68B1F1BC4404400C34233 /* Alamofire.framework */,
+				27A68B1D1BC43F9000C34233 /* SwiftyJSON.framework */,
+				27A68B1B1BC43F8D00C34233 /* Alamofire.framework */,
 				8A569C456F96E8A85EFDE826 /* Pods_SplatTrack.framework */,
 				271A36211BBE3FDB0041EB84 /* NotificationCenter.framework */,
+				2DBF12A9C5431E2C45C23560 /* Pods_SplatTrackToday.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -235,6 +265,8 @@
 			children = (
 				E703548B0908F1F1ADA2A9F9 /* Pods-SplatTrack.debug.xcconfig */,
 				18577BB5900A82EF889E9C42 /* Pods-SplatTrack.release.xcconfig */,
+				07D51072891A3582D5722E9D /* Pods-SplatTrackToday.debug.xcconfig */,
+				DF6515C51C3F44BE87103387 /* Pods-SplatTrackToday.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -246,9 +278,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 271A362F1BBE3FDB0041EB84 /* Build configuration list for PBXNativeTarget "SplatTrackToday" */;
 			buildPhases = (
+				4AC3AC5ABFBB132F703A8324 /* Check Pods Manifest.lock */,
 				271A361C1BBE3FDB0041EB84 /* Sources */,
 				271A361D1BBE3FDB0041EB84 /* Frameworks */,
 				271A361E1BBE3FDB0041EB84 /* Resources */,
+				898D12660CD372D67E367B9E /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -414,6 +448,36 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
+		4AC3AC5ABFBB132F703A8324 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		898D12660CD372D67E367B9E /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SplatTrackToday/Pods-SplatTrackToday-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		BC6C658A87F2C257A967BB2A /* Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -436,6 +500,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				27A68B231BC440D000C34233 /* MapData.swift in Sources */,
 				271A36251BBE3FDB0041EB84 /* TodayViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -448,6 +513,7 @@
 				272FF0F81B962C260096BCDF /* UIImage.swift in Sources */,
 				273B11411B98D58800E51AF0 /* SettingsTableViewController.swift in Sources */,
 				27944CF71B9494210064C69C /* ViewController.swift in Sources */,
+				271EF1721BC1BD860087BE32 /* MapData.swift in Sources */,
 				27A2FF951B9A1F2D0023EE8D /* GlobalConstants.swift in Sources */,
 				2778DFE01B9634C4002E5AE5 /* StageCardView.swift in Sources */,
 				27A2FF981B9A20A10023EE8D /* NotificationManager.swift in Sources */,
@@ -508,11 +574,16 @@
 /* Begin XCBuildConfiguration section */
 		271A362D1BBE3FDB0041EB84 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 07D51072891A3582D5722E9D /* Pods-SplatTrackToday.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = SplatTrackToday/SplatTrackToday.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/build/Debug-iphoneos",
+				);
 				INFOPLIST_FILE = SplatTrackToday/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.petro.SplatTrack.SplatTrackToday;
@@ -524,10 +595,15 @@
 		};
 		271A362E1BBE3FDB0041EB84 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DF6515C51C3F44BE87103387 /* Pods-SplatTrackToday.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = SplatTrackToday/SplatTrackToday.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/build/Debug-iphoneos",
+				);
 				INFOPLIST_FILE = SplatTrackToday/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.petro.SplatTrack.SplatTrackToday;
@@ -632,6 +708,10 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/build/Debug-iphoneos",
+				);
 				INFOPLIST_FILE = SplatTrack/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -650,6 +730,10 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/build/Debug-iphoneos",
+				);
 				INFOPLIST_FILE = SplatTrack/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

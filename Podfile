@@ -7,6 +7,11 @@ target 'SplatTrack' do
 	pod 'SwiftyJSON', :git => 'https://github.com/SwiftyJSON/SwiftyJSON.git'
 end
 
+target 'SplatTrackToday' do
+	pod 'Alamofire', '~> 2.0.2'
+	pod 'SwiftyJSON', :git => 'https://github.com/SwiftyJSON/SwiftyJSON.git'
+end
+
 target 'SplatTrackTests' do
 
 end

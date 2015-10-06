@@ -7,23 +7,14 @@
 //
 
 import UIKit
-import Alamofire
-import SwiftyJSON
 
-struct MapData {
-    var regularStageOneName: String?
-    var regularStageTwoName: String?
-    var rankedStageOneName: String?
-    var rankedStageTwoName: String?
-    var rankedRulesetName: String?
-}
+
 
 class ViewController: UIViewController {
     
     // MARK: Constants
     let ScrollSpeed = 100.0 // bigger = slower
     let UpdateTime: NSTimeInterval = 120.0
-    let SplatURL = "https://splatoon.ink/schedule.json"
     let RulesFormatString = "Current %@ Stages:"
     let StageImageMap = [
         "Arowana Mall": "Stage_Arowana_Mall",
@@ -103,13 +94,30 @@ class ViewController: UIViewController {
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
-        
-        // Update data
-        if (abs(lastUpdated.timeIntervalSinceNow) > UpdateTime) {
+            
+            
+        // If mapdata is stored, and not stale, bring it out
+        if let mapData = MapData.constructFromDefaults() {
+            if (!mapData.isStale()) {
+                updateMapData(mapData)
+            } else {
+                contentView.hidden = true
+                loadingView.hidden = false
+                MapData.retrieveMapDataFromServer(updateMapData, failure: { () -> Void in
+                    self.presentViewController(self.alertController, animated: true) {
+                        // nothing
+                    }
+                })
+            }
+            
+        } else {
             contentView.hidden = true
             loadingView.hidden = false
-            fetchMapData(updateMapData)
-            lastUpdated = NSDate()
+            MapData.retrieveMapDataFromServer(updateMapData, failure: { () -> Void in
+                self.presentViewController(self.alertController, animated: true) {
+                    // nothing
+                }
+            })
         }
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "applicationWillEnterForeground:", name: UIApplicationWillEnterForegroundNotification, object: nil)
@@ -132,51 +140,22 @@ class ViewController: UIViewController {
             .removeObserver(self, name: UIApplicationWillEnterForegroundNotification, object: nil)
     }
     
-    // MARK: Update
-    func fetchMapData(completion: (MapData?) -> Void) {
-        // Fuck your cache
-        NSURLCache.sharedURLCache().removeAllCachedResponses()
-        
-        // Hit splatoon.ink API for data
-        Alamofire.request(.GET, SplatURL).responseJSON {[unowned self] (_, _, res) in
-            switch res {
-            case .Success(let json):
-                var json = JSON(json)
-                var mapData = MapData()
-                
-                // Extract stage strings
-                let regularStages = json["schedule"][0]["regular"]["maps"],
-                rankedStages = json["schedule"][0]["ranked"]["maps"]
-                
-                mapData.regularStageOneName = regularStages[0]["nameEN"].string
-                mapData.regularStageTwoName = regularStages[1]["nameEN"].string
-                mapData.rankedStageOneName = rankedStages[0]["nameEN"].string
-                mapData.rankedStageTwoName = rankedStages[1]["nameEN"].string
-                mapData.rankedRulesetName = json["schedule"][0]["ranked"]["rulesEN"].string
-                completion(mapData)
-            case .Failure(_, _):
-                self.presentViewController(self.alertController, animated: true) {
-                    // nothing
-                }
-            }
-        }
-    }
+    // MARK: UI Update
     
-    func updateMapData(mapData: MapData?) {
+    func updateMapData(mapData: MapData) {
+        let data = mapData.rotations[0]
         // Change text of labels
-        if let data = mapData {
-            regularStageOneCardView.stageName = data.regularStageOneName
-            regularStageTwoCardView.stageName = data.regularStageTwoName
-            rankedStageOneCardView.stageName = data.rankedStageOneName
-            rankedStageTwoCardView.stageName = data.rankedStageTwoName
-            rankedHeader.text = String(format: self.RulesFormatString, data.rankedRulesetName!)
+        regularStageOneCardView.stageName = data.regularStageOneName
+        regularStageTwoCardView.stageName = data.regularStageTwoName
+        rankedStageOneCardView.stageName = data.rankedStageOneName
+        rankedStageTwoCardView.stageName = data.rankedStageTwoName
+        rankedHeader.text = String(format: self.RulesFormatString, data.rankedRulesetName)
             
-            // Images
-            regularStageOneCardView.imageName = self.StageImageMap[data.regularStageOneName!] ?? ""
-            regularStageTwoCardView.imageName = self.StageImageMap[data.regularStageTwoName!] ?? ""
-            rankedStageOneCardView.imageName = self.StageImageMap[data.rankedStageOneName!] ?? ""
-            rankedStageTwoCardView.imageName = self.StageImageMap[data.rankedStageTwoName!] ?? ""
-        }
+        // Images
+        regularStageOneCardView.imageName = self.StageImageMap[data.regularStageOneName] ?? ""
+        regularStageTwoCardView.imageName = self.StageImageMap[data.regularStageTwoName] ?? ""
+        rankedStageOneCardView.imageName = self.StageImageMap[data.rankedStageOneName] ?? ""
+        rankedStageTwoCardView.imageName = self.StageImageMap[data.rankedStageTwoName] ?? ""
         
         loadingView.hidden = true
         contentView.hidden = false
@@ -265,7 +244,11 @@ class ViewController: UIViewController {
         }
     
         let retryAction = UIAlertAction(title: "Retry", style: .Default) { (action) in
-            self.fetchMapData(self.updateMapData)
+            MapData.retrieveMapDataFromServer(self.updateMapData, failure: { () -> Void in
+                self.presentViewController(self.alertController, animated: true) {
+                    // nothing
+                }
+            })
         }
         alertController.addAction(OKAction)
         alertController.addAction(retryAction)

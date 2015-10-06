@@ -8,16 +8,6 @@
 
 import UIKit
 import NotificationCenter
-import Alamofire
-import SwiftyJSON
-
-struct MapData {
-    var regularStageOneName: String?
-    var regularStageTwoName: String?
-    var rankedStageOneName: String?
-    var rankedStageTwoName: String?
-    var rankedRulesetName: String?
-}
 
 class TodayViewController: UIViewController, NCWidgetProviding {
     
@@ -46,31 +36,14 @@ class TodayViewController: UIViewController, NCWidgetProviding {
         // If recently updated, ignore
         
         // Hit splatoon.ink API for data
-        Alamofire.request(.GET, SplatURL).responseJSON {[unowned self](_, _, res) in
-            switch res {
-            case .Success(let json):
-                var json = JSON(json)
-                var mapData = MapData()
-                
-                // Extract stage strings
-                let regularStages = json["schedule"][0]["regular"]["maps"],
-                rankedStages = json["schedule"][0]["ranked"]["maps"]
-                
-                mapData.regularStageOneName = regularStages[0]["nameEN"].string
-                mapData.regularStageTwoName = regularStages[1]["nameEN"].string
-                mapData.rankedStageOneName = rankedStages[0]["nameEN"].string
-                mapData.rankedStageTwoName = rankedStages[1]["nameEN"].string
-                mapData.rankedRulesetName = json["schedule"][0]["ranked"]["rulesEN"].string
-                
-                self.rankedModeLabel.text = "Current \(mapData.rankedRulesetName!) Stages:"
-                self.rankedStagesLabel.text = "\(mapData.rankedStageOneName!) & \(mapData.rankedStageTwoName!)"
-                self.regularStagesLabel.text = "\(mapData.regularStageOneName!) & \(mapData.regularStageTwoName!)"
-                
-                
-                completionHandler(NCUpdateResult.NewData)
-            case .Failure(_, _):
+        MapData.retrieveMapDataFromServer({ (mapData) -> Void in
+            let currentRotation = mapData.rotations[0]
+            self.rankedModeLabel.text = "Current \(currentRotation.rankedRulesetName) Stages:"
+            self.rankedStagesLabel.text = "\(currentRotation.rankedStageOneName) & \(currentRotation.rankedStageTwoName)"
+            self.regularStagesLabel.text = "\(currentRotation.regularStageOneName) & \(currentRotation.regularStageTwoName)"
+            completionHandler(NCUpdateResult.NewData)
+            }) { () -> Void in
                 completionHandler(NCUpdateResult.Failed)
-            }
         }
     }
     
