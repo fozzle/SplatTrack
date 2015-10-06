@@ -17,7 +17,7 @@ class ViewController: UIViewController {
     
     // MARK: Constants
     let UpdateTime: NSTimeInterval = 120.0
-    let RulesFormatString = "Current %@ Stages:"
+    let RulesFormatString = "%@ Stages:"
     let StageImageMap = [
         "Arowana Mall": "Stage_Arowana_Mall",
         "Blackbelly Skatepark": "Stage_Blackbelly_Skatepark",
@@ -47,6 +47,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var rankedHeader: UILabel!
     @IBOutlet weak var regularHeader: UILabel!
     
+    
     // Container view
     @IBOutlet weak var contentView: UIView!
     @IBOutlet weak var loadingView: UIView!
@@ -68,7 +69,12 @@ class ViewController: UIViewController {
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
             
-            
+        if (PageIndex > 0) {
+            navigationController?.navigationBar.topItem!.title = "Upcoming Stages"
+        } else {
+            navigationController?.navigationBar.topItem!.title = "Current Stages"
+        }
+        
         // If mapdata is stored, and not stale, bring it out
         contentView.hidden = true
         loadingView.hidden = false
@@ -90,6 +96,7 @@ class ViewController: UIViewController {
         rankedStageOneCardView.stageName = data.rankedStageOneName
         rankedStageTwoCardView.stageName = data.rankedStageTwoName
         rankedHeader.text = String(format: self.RulesFormatString, data.rankedRulesetName)
+        
             
         // Images
         regularStageOneCardView.imageName = self.StageImageMap[data.regularStageOneName] ?? ""
