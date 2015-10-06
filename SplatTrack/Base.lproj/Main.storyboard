@@ -195,7 +195,7 @@
                     <navigationItem key="navigationItem" title="Current Stages" id="laj-Hi-mpG">
                         <barButtonItem key="rightBarButtonItem" image="Settings" style="done" id="kLX-vC-iL0">
                             <connections>
-                                <segue destination="R71-M7-5BX" kind="show" id="QR6-GU-IAt"/>
+                                <segue destination="R71-M7-5BX" kind="show" identifier="settings" id="QR6-GU-IAt"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

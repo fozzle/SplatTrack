@@ -42,6 +42,12 @@ class BackgroundViewController : UIViewController {
         self.applyBackgroundAnimation()
     }
     
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "settings" {
+            navigationItem.title = nil   
+        }
+    }
+    
     override func viewWillDisappear(animated: Bool) {
         super.viewWillDisappear(animated)
         NSNotificationCenter
