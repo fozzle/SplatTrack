@@ -15,7 +15,7 @@ class PageViewController : UIPageViewController, UIPageViewControllerDataSource,
     let INDICES = [0,1,2]
     
     func presentationCountForPageViewController(pageViewController: UIPageViewController) -> Int {
-        return 3
+        return INDICES.count
     }
     
     func presentationIndexForPageViewController(pageViewController: UIPageViewController) -> Int {

@@ -20,7 +20,7 @@ Map Data is to be constructed and stored using the group.petro.SplatTrackTodaySh
 Serialized MapData takes the form:
 
 {
-    updated: NSDate
+    staleTime: NSDate
     rotations: NSArray, with contents like so
         [{
             regularStageOneName: String,
@@ -60,7 +60,7 @@ JSON MapData takes the form:
     ]
 */
 struct MapData {
-    var updated: NSDate
+    var staleTime: NSDate
     var rotations: [RotationInfo]
     
     enum DataSource {
@@ -69,7 +69,7 @@ struct MapData {
     }
     
     init(fromDictionary: NSDictionary) {
-        updated = fromDictionary["updated"] as! NSDate
+        staleTime = fromDictionary["staleTime"] as! NSDate
         let bullshit = fromDictionary["rotations"] as! [NSDictionary]
         var moreBullshit = [RotationInfo]()
         for rotation: NSDictionary in bullshit {
@@ -79,7 +79,7 @@ struct MapData {
     }
     
     init(fromJSON: JSON) {
-        updated = NSDate()
+        staleTime = NSDate(timeIntervalSince1970:NSTimeInterval(fromJSON["schedule"][0]["endTime"].intValue / 1000))
         
         let schedule = fromJSON["schedule"].array
         var stupidFuckingSwift = [RotationInfo]()
@@ -93,7 +93,7 @@ struct MapData {
         let serializedRotations : NSArray = (self.rotations.map { (element) -> NSDictionary in
             return element.serializeToDictionary()
         })
-        let serializedDict: NSDictionary  = ["updated": self.updated, "rotations": serializedRotations]
+        let serializedDict: NSDictionary  = ["staleTime": self.staleTime, "rotations": serializedRotations]
         return serializedDict;
     }
     
@@ -143,8 +143,8 @@ struct MapData {
     }
     
     func isStale() -> Bool {
-        // Check if updated time crosses rotation time, if so, it's stale
-        return true
+        // Check if stored stale time has passed
+        return staleTime.timeIntervalSinceNow < 0.0
     }
 }
 
@@ -156,6 +156,8 @@ struct MapData {
     rankedStageOneName: String,
     rankedStageTwoName: String,
     rankedRulesetName: String
+    endTime: NSDate
+    startTime: NSDate
 }
 */
 struct RotationInfo {
@@ -164,6 +166,8 @@ struct RotationInfo {
     var rankedStageOneName: String
     var rankedStageTwoName: String
     var rankedRulesetName: String
+    var endTime: NSDate
+    var startTime: NSDate
     
     init(fromDictionary: NSDictionary) {
         regularStageOneName = fromDictionary["regularStageOneName"] as! String
@@ -171,6 +175,8 @@ struct RotationInfo {
         rankedStageOneName = fromDictionary["rankedStageOneName"] as! String
         rankedStageTwoName = fromDictionary["rankedStageTwoName"] as! String
         rankedRulesetName = fromDictionary["rankedRulesetName"] as! String
+        endTime = fromDictionary["endTime"] as! NSDate
+        startTime = fromDictionary["startTime"] as! NSDate
     }
     
     init(fromJSON: JSON) {
@@ -179,6 +185,8 @@ struct RotationInfo {
         rankedStageOneName = fromJSON["ranked"]["maps"][0]["nameEN"].string!
         rankedStageTwoName = fromJSON["ranked"]["maps"][1]["nameEN"].string!
         rankedRulesetName = fromJSON["ranked"]["rulesEN"].string!
+        endTime = NSDate(timeIntervalSince1970:NSTimeInterval(fromJSON["endTime"].intValue / 1000))
+        startTime = NSDate(timeIntervalSince1970: NSTimeInterval(fromJSON["startTime"].intValue / 1000))
     }
     
     func serializeToDictionary() -> NSDictionary {
@@ -187,7 +195,9 @@ struct RotationInfo {
             "regularStageTwoName": regularStageTwoName,
             "rankedStageOneName": rankedStageOneName,
             "rankedStageTwoName": rankedStageTwoName,
-            "rankedRulesetName": rankedRulesetName
+            "rankedRulesetName": rankedRulesetName,
+            "startTime": startTime,
+            "endTime": endTime
         ]
         return dict
     }

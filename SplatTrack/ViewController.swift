@@ -16,7 +16,6 @@ class ViewController: UIViewController {
     var PageIndex = 0
     
     // MARK: Constants
-    let UpdateTime: NSTimeInterval = 120.0
     let RulesFormatString = "%@ Stages:"
     let StageImageMap = [
         "Arowana Mall": "Stage_Arowana_Mall",
