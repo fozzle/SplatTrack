@@ -29,18 +29,22 @@ class TodayViewController: UIViewController, NCWidgetProviding {
     }
 
     func widgetPerformUpdateWithCompletionHandler(completionHandler: ((NCUpdateResult) -> Void)) {
-        // If recently updated, ignore
-        
-        // Hit splatoon.ink API for data
-        MapData.retrieveMapDataFromServer({ (mapData) -> Void in
+        // Get mapData
+        MapData.getFreshMapData({ (mapData, source: MapData.DataSource) -> Void in
             let currentRotation = mapData.rotations[0]
             self.rankedModeLabel.text = "Current \(currentRotation.rankedRulesetName) Stages:"
             self.rankedStagesLabel.text = "\(currentRotation.rankedStageOneName) & \(currentRotation.rankedStageTwoName)"
             self.regularStagesLabel.text = "\(currentRotation.regularStageOneName) & \(currentRotation.regularStageTwoName)"
-            completionHandler(NCUpdateResult.NewData)
-            }) { () -> Void in
-                completionHandler(NCUpdateResult.Failed)
-        }
+            switch source {
+            case .Network:
+                completionHandler(.NewData)
+            case .Cached:
+                completionHandler(.NoData)
+            }
+            
+            }, failure: { () -> Void in
+                completionHandler(.Failed)
+        })
     }
     
 }

@@ -97,27 +97,12 @@ class ViewController: UIViewController {
             
             
         // If mapdata is stored, and not stale, bring it out
-        if let mapData = MapData.constructFromDefaults() {
-            if (!mapData.isStale()) {
-                updateMapData(mapData)
-            } else {
-                contentView.hidden = true
-                loadingView.hidden = false
-                MapData.retrieveMapDataFromServer(updateMapData, failure: { () -> Void in
-                    self.presentViewController(self.alertController, animated: true) {
-                        // nothing
-                    }
-                })
+        contentView.hidden = true
+        loadingView.hidden = false
+        MapData.getFreshMapData(updateMapData) { () -> Void in
+            self.presentViewController(self.alertController, animated: true) {
+                // nothing
             }
-            
-        } else {
-            contentView.hidden = true
-            loadingView.hidden = false
-            MapData.retrieveMapDataFromServer(updateMapData, failure: { () -> Void in
-                self.presentViewController(self.alertController, animated: true) {
-                    // nothing
-                }
-            })
         }
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "applicationWillEnterForeground:", name: UIApplicationWillEnterForegroundNotification, object: nil)
@@ -142,7 +127,7 @@ class ViewController: UIViewController {
     
     // MARK: UI Update
     
-    func updateMapData(mapData: MapData) {
+    func updateMapData(mapData: MapData, source: MapData.DataSource = .Network) {
         let data = mapData.rotations[0]
         // Change text of labels
         regularStageOneCardView.stageName = data.regularStageOneName
@@ -244,7 +229,7 @@ class ViewController: UIViewController {
         }
     
         let retryAction = UIAlertAction(title: "Retry", style: .Default) { (action) in
-            MapData.retrieveMapDataFromServer(self.updateMapData, failure: { () -> Void in
+            MapData.getFreshMapData(self.updateMapData, failure: { () -> Void in
                 self.presentViewController(self.alertController, animated: true) {
                     // nothing
                 }

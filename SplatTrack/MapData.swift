@@ -63,6 +63,11 @@ struct MapData {
     var updated: NSDate
     var rotations: [RotationInfo]
     
+    enum DataSource {
+        case Cached
+        case Network
+    }
+    
     init(fromDictionary: NSDictionary) {
         updated = fromDictionary["updated"] as! NSDate
         let bullshit = fromDictionary["rotations"] as! [NSDictionary]
@@ -84,7 +89,7 @@ struct MapData {
         rotations = stupidFuckingSwift
     }
     
-    func serializeToDictionary() -> NSDictionary? {
+    private func serializeToDictionary() -> NSDictionary? {
         let serializedRotations : NSArray = (self.rotations.map { (element) -> NSDictionary in
             return element.serializeToDictionary()
         })
@@ -92,13 +97,13 @@ struct MapData {
         return serializedDict;
     }
     
-    func saveToDefaults() {
+    private func saveToDefaults() {
         let sharedDefaults = NSUserDefaults(suiteName: GROUP_DEFAULTS_SUITENAME)
         sharedDefaults?.setObject(self.serializeToDictionary(), forKey: MAPDATA_KEY)
         sharedDefaults?.synchronize()
     }
     
-    static func constructFromDefaults() -> MapData? {
+    private static func constructFromDefaults() -> MapData? {
         let sharedDefaults = NSUserDefaults(suiteName: GROUP_DEFAULTS_SUITENAME)
         if let storedMapData = sharedDefaults?.dictionaryForKey(MAPDATA_KEY) {
             return MapData(fromDictionary:storedMapData)
@@ -107,23 +112,39 @@ struct MapData {
         }
     }
 
-    static func retrieveMapDataFromServer(completion: (MapData) -> Void, failure: () -> Void) {
+    private static func retrieveMapDataFromServer(completion: (MapData, source: DataSource) -> Void, failure: () -> Void) {
+        // Cache fuckups
+        NSURLCache.sharedURLCache().removeAllCachedResponses()
+        
         // Hit splatoon.ink API for data
         Alamofire.request(.GET, SPLATOON_URL).responseJSON {(_, _, res) in
             switch res {
             case .Success(let json):
                 let mapData = MapData(fromJSON: JSON(json))
                 mapData.saveToDefaults()
-                completion(mapData)
+                completion(mapData, source: .Network)
             case .Failure(_, _):
                 failure()
             }
         }
     }
     
+    static func getFreshMapData(completion: (MapData, source: DataSource) -> Void, failure: () -> Void) {
+        if let mapData = MapData.constructFromDefaults() {
+            if (!mapData.isStale()) {
+                completion(mapData, source: .Cached)
+            } else {
+                MapData.retrieveMapDataFromServer(completion, failure: failure)
+            }
+            
+        } else {
+            MapData.retrieveMapDataFromServer(completion, failure: failure)
+        }
+    }
+    
     func isStale() -> Bool {
         // Check if updated time crosses rotation time, if so, it's stale
-        return false
+        return true
     }
 }
 
