@@ -14,6 +14,7 @@ class ViewController: UIViewController {
     
     // MARK: Instance var
     var PageIndex = 0
+    var currentMapData : MapData?
     
     // MARK: Constants
     let RulesFormatString = "%@ Stages:"
@@ -51,16 +52,12 @@ class ViewController: UIViewController {
     @IBOutlet weak var contentView: UIView!
     @IBOutlet weak var loadingView: UIView!
     
-    // MARK: Instance Variables
-    private var alertController: UIAlertController = UIAlertController(title: "Update Failed", message: "SplatTrack failed to update map data. Check your internet connection and try again.", preferredStyle: .Alert)
-    
     // MARK: View Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
 
         contentView.hidden = true
         loadingView.hidden = false
-        setupAlertViewController()
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -71,36 +68,27 @@ class ViewController: UIViewController {
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         
-        contentView.hidden = true
-        loadingView.hidden = false
-        
         if (PageIndex > 0) {
-            navigationController?.navigationBar.topItem!.title = "At ()"
+            navigationController?.navigationBar.topItem!.title = "Upcoming"
         } else {
             navigationController?.navigationBar.topItem!.title = "Current"
         }
         
-        // If mapdata is stored, and not stale, bring it out
-        contentView.hidden = true
-        loadingView.hidden = false
-        MapData.getFreshMapData(updateMapData) { () -> Void in
-            self.presentViewController(self.alertController, animated: true) {
-                // nothing
-            }
+        if let mapData = currentMapData {
+            updateMapData(mapData)
         }
-        
     }
     
     // MARK: UI Update
     
-    func updateMapData(mapData: MapData, source: MapData.DataSource = .Network) {
+    func updateMapData(mapData: MapData) {
         let data = mapData.rotations[PageIndex]
         
         if (PageIndex > 0) {
             let formatter = NSDateFormatter();
             formatter.timeStyle = NSDateFormatterStyle.ShortStyle
             let startString = formatter.stringFromDate(data.startTime)
-            navigationController?.navigationBar.topItem!.title = "At (\(startString))"
+            navigationController?.navigationBar.topItem!.title = "At \(startString)"
         }
         
         // Change text of labels
@@ -139,22 +127,6 @@ class ViewController: UIViewController {
             header.textColor = colorManager.headerColor
         }
 
-    }
-    
-    func setupAlertViewController() {
-        let OKAction = UIAlertAction(title: "OK", style: .Cancel) { (action) in
-            // ...
-        }
-    
-        let retryAction = UIAlertAction(title: "Retry", style: .Default) { (action) in
-            MapData.getFreshMapData(self.updateMapData, failure: { () -> Void in
-                self.presentViewController(self.alertController, animated: true) {
-                    // nothing
-                }
-            })
-        }
-        alertController.addAction(OKAction)
-        alertController.addAction(retryAction)
     }
 
 }
