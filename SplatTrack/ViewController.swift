@@ -53,21 +53,9 @@ class ViewController: UIViewController {
     @IBOutlet weak var loadingView: UIView!
     
     // MARK: View Lifecycle
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        contentView.hidden = true
-        loadingView.hidden = false
-    }
-    
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         themeViews()
-    }
-    
-    override func viewDidAppear(animated: Bool) {
-        super.viewDidAppear(animated)
-        
         if (PageIndex > 0) {
             navigationController?.navigationBar.topItem!.title = "Upcoming"
         } else {
