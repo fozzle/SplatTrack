@@ -30,7 +30,7 @@
                                     <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4LF-gq-WVx" userLabel="LoadingView">
                                         <rect key="frame" x="196" y="168" width="200" height="200"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Updating..." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CSW-Z3-aiA">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Updating..." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CSW-Z3-aiA">
                                                 <rect key="frame" x="57" y="92" width="87" height="18"/>
                                                 <animations/>
                                                 <fontDescription key="fontDescription" name="ProjectPaintball" family="Project Paintball" pointSize="16"/>
@@ -46,17 +46,17 @@
                                             <constraint firstAttribute="height" constant="200" id="wdl-ED-aju"/>
                                         </constraints>
                                     </view>
-                                    <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FPc-Eb-Z2v" userLabel="ContentView">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FPc-Eb-Z2v" userLabel="ContentView">
                                         <rect key="frame" x="0.0" y="0.0" width="592" height="1111"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="&lt;Rules&gt; Stages:" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xp5-es-Sb6">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&lt;Rules&gt; Stages:" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xp5-es-Sb6">
                                                 <rect key="frame" x="8" y="560" width="576" height="27"/>
                                                 <animations/>
                                                 <fontDescription key="fontDescription" name="ProjectPaintball" family="Project Paintball" pointSize="24"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tOJ-8h-zhC" userLabel="Stage1RegularCard" customClass="StageCardView" customModule="SplatTrack" customModuleProvider="target">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tOJ-8h-zhC" userLabel="Stage1RegularCard" customClass="StageCardView" customModule="SplatTrack" customModuleProvider="target">
                                                 <rect key="frame" x="171" y="43" width="250" height="250"/>
                                                 <animations/>
                                                 <color key="backgroundColor" red="0.43529411764705883" green="0.44313725490196076" blue="0.47450980392156861" alpha="1" colorSpace="calibratedRGB"/>
@@ -65,7 +65,7 @@
                                                     <constraint firstAttribute="width" constant="250" id="s0g-5W-yYP"/>
                                                 </constraints>
                                             </view>
-                                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YCe-3r-nFd" userLabel="Stage2RegularCard" customClass="StageCardView" customModule="SplatTrack" customModuleProvider="target">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YCe-3r-nFd" userLabel="Stage2RegularCard" customClass="StageCardView" customModule="SplatTrack" customModuleProvider="target">
                                                 <rect key="frame" x="171" y="302" width="250" height="250"/>
                                                 <animations/>
                                                 <color key="backgroundColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
@@ -74,7 +74,7 @@
                                                     <constraint firstAttribute="height" constant="250" id="ien-pN-zgy"/>
                                                 </constraints>
                                             </view>
-                                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MCh-Qb-t4A" userLabel="Stage2RankedCard" customClass="StageCardView" customModule="SplatTrack" customModuleProvider="target">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MCh-Qb-t4A" userLabel="Stage2RankedCard" customClass="StageCardView" customModule="SplatTrack" customModuleProvider="target">
                                                 <rect key="frame" x="171" y="853" width="250" height="250"/>
                                                 <animations/>
                                                 <color key="backgroundColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
@@ -83,7 +83,7 @@
                                                     <constraint firstAttribute="width" constant="250" id="gI4-XH-14A"/>
                                                 </constraints>
                                             </view>
-                                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nc2-Ce-jJD" userLabel="Stage1RankedCard" customClass="StageCardView" customModule="SplatTrack" customModuleProvider="target">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nc2-Ce-jJD" userLabel="Stage1RankedCard" customClass="StageCardView" customModule="SplatTrack" customModuleProvider="target">
                                                 <rect key="frame" x="171" y="595" width="250" height="250"/>
                                                 <animations/>
                                                 <color key="backgroundColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
@@ -92,7 +92,7 @@
                                                     <constraint firstAttribute="height" constant="250" id="HpM-Cu-Zda"/>
                                                 </constraints>
                                             </view>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Turf War Stages:" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o9X-FA-q73">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Turf War Stages:" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o9X-FA-q73">
                                                 <rect key="frame" x="8" y="8" width="576" height="27"/>
                                                 <animations/>
                                                 <fontDescription key="fontDescription" name="ProjectPaintball" family="Project Paintball" pointSize="24"/>
