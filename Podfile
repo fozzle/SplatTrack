@@ -5,6 +5,7 @@ use_frameworks!
 target 'SplatTrack' do
 	pod 'Alamofire', '~> 2.0.2'
 	pod 'SwiftyJSON', :git => 'https://github.com/SwiftyJSON/SwiftyJSON.git'
+    pod 'Parse'
 end
 
 target 'SplatTrackToday' do

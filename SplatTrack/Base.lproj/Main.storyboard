@@ -168,7 +168,7 @@
             </objects>
             <point key="canvasLocation" x="1713" y="1382"/>
         </scene>
-        <!--Current Stages-->
+        <!--Current-->
         <scene sceneID="JeJ-um-Kof">
             <objects>
                 <viewController id="YWe-Rl-ZtR" customClass="BackgroundViewController" customModule="SplatTrack" customModuleProvider="target" sceneMemberID="viewController">
@@ -206,13 +206,7 @@
                         </constraints>
                     </view>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" title="Current Stages" id="laj-Hi-mpG">
-                        <barButtonItem key="rightBarButtonItem" image="Settings" style="done" id="kLX-vC-iL0">
-                            <connections>
-                                <segue destination="R71-M7-5BX" kind="show" identifier="settings" id="QR6-GU-IAt"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Current" id="laj-Hi-mpG"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="backgroundView" destination="C47-a2-LfL" id="a2y-CN-JWl"/>
@@ -244,7 +238,7 @@
                             <tableViewSection id="Ttq-ji-4Ys">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="aCW-MY-TkZ">
-                                        <rect key="frame" x="0.0" y="99" width="600" height="44"/>
+                                        <rect key="frame" x="0.0" y="35" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="aCW-MY-TkZ" id="8g1-Bu-91y">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
@@ -253,9 +247,6 @@
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="B8G-AZ-5rN">
                                                     <rect key="frame" x="543" y="6" width="51" height="31"/>
                                                     <animations/>
-                                                    <connections>
-                                                        <action selector="notificationSwitchChanged:" destination="R71-M7-5BX" eventType="valueChanged" id="uPS-ge-R66"/>
-                                                    </connections>
                                                 </switch>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enable stage change notifications" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fLx-5X-GCf">
                                                     <rect key="frame" x="8" y="12" width="527" height="20"/>
@@ -288,9 +279,6 @@
                     <navigationItem key="navigationItem" title="Settings" id="MQa-j6-z3B">
                         <barButtonItem key="backBarButtonItem" title=" " id="akp-Xo-kB6"/>
                     </navigationItem>
-                    <connections>
-                        <outlet property="notificationSwitch" destination="B8G-AZ-5rN" id="C6Y-9Q-OZo"/>
-                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="38I-KS-oax" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -316,7 +304,4 @@
             <point key="canvasLocation" x="305" y="346"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="Settings" width="20" height="20"/>
-    </resources>
 </document>

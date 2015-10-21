@@ -79,7 +79,7 @@ struct MapData {
     }
     
     init(fromJSON: JSON) {
-        staleTime = NSDate(timeIntervalSince1970:NSTimeInterval(fromJSON["schedule"][0]["endTime"].intValue / 1000))
+        staleTime = NSDate(timeIntervalSince1970:NSTimeInterval(fromJSON["schedule"][0]["endTime"].int64Value / 1000))
         
         let schedule = fromJSON["schedule"].array
         var stupidFuckingSwift = [RotationInfo]()
@@ -185,8 +185,8 @@ struct RotationInfo {
         rankedStageOneName = fromJSON["ranked"]["maps"][0]["nameEN"].string!
         rankedStageTwoName = fromJSON["ranked"]["maps"][1]["nameEN"].string!
         rankedRulesetName = fromJSON["ranked"]["rulesEN"].string!
-        endTime = NSDate(timeIntervalSince1970:NSTimeInterval(fromJSON["endTime"].intValue / 1000))
-        startTime = NSDate(timeIntervalSince1970: NSTimeInterval(fromJSON["startTime"].intValue / 1000))
+        endTime = NSDate(timeIntervalSince1970:NSTimeInterval(fromJSON["endTime"].int64Value / 1000))
+        startTime = NSDate(timeIntervalSince1970: NSTimeInterval(fromJSON["startTime"].int64Value / 1000))
     }
     
     func serializeToDictionary() -> NSDictionary {

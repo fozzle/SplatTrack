@@ -15,47 +15,11 @@ class NotificationManager {
     static private let NotificationTypes : UIUserNotificationType = [.Alert, .Sound]
     static private let NotificationSettings = UIUserNotificationSettings(forTypes: NotificationTypes, categories: nil)
     
-    static func areNotificationsScheduled() -> Bool {
-        return UIApplication.sharedApplication().scheduledLocalNotifications!.count > 0
-    }
-    
-    static func scheduleNotifications() {
-        cancelNotifications()
-        let calendar = NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian)
-        calendar?.timeZone = NSTimeZone(abbreviation: "UTC")!
-        
-        for hour in StageChangeHoursUTC {
-            let component = NSDateComponents()
-            component.hour = hour
-            component.minute = 0
-            component.second = 0
-            let scheduledTime = calendar?.dateFromComponents(component)
-            
-            let notification = UILocalNotification()
-            notification.fireDate = scheduledTime
-            notification.timeZone = NSTimeZone(abbreviation: "UTC")
-            notification.alertBody = NotificationBody
-            notification.alertAction = "View"
-            notification.alertTitle = "Stage Change!"
-            notification.repeatInterval = NSCalendarUnit.Day
-            
-            UIApplication.sharedApplication().scheduleLocalNotification(notification)
-        }
-    }
-    
     static func registerForNotifications() {
         UIApplication.sharedApplication().registerUserNotificationSettings(NotificationSettings)
     }
     
-    static func cancelNotifications() {
-        UIApplication.sharedApplication().cancelAllLocalNotifications()
-    }
-    
     static func areNotificationsEnabled() -> Bool {
-        return (UIApplication.sharedApplication().currentUserNotificationSettings()!.types.union([UIUserNotificationType.Alert, UIUserNotificationType.Sound])) != UIUserNotificationType.None
-    }
-    
-    static func haveAskedForPermission() -> Bool {
-        return NSUserDefaults.standardUserDefaults().boolForKey(GlobalConstants.NotificationsAskedKey)
+        return (UIApplication.sharedApplication().currentUserNotificationSettings()!.types.intersect([UIUserNotificationType.Alert, UIUserNotificationType.Sound])) != UIUserNotificationType.None
     }
 }

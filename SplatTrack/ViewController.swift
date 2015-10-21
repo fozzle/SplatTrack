@@ -75,9 +75,9 @@ class ViewController: UIViewController {
         loadingView.hidden = false
         
         if (PageIndex > 0) {
-            navigationController?.navigationBar.topItem!.title = "Upcoming Stages"
+            navigationController?.navigationBar.topItem!.title = "At ()"
         } else {
-            navigationController?.navigationBar.topItem!.title = "Current Stages"
+            navigationController?.navigationBar.topItem!.title = "Current"
         }
         
         // If mapdata is stored, and not stale, bring it out
@@ -95,6 +95,14 @@ class ViewController: UIViewController {
     
     func updateMapData(mapData: MapData, source: MapData.DataSource = .Network) {
         let data = mapData.rotations[PageIndex]
+        
+        if (PageIndex > 0) {
+            let formatter = NSDateFormatter();
+            formatter.timeStyle = NSDateFormatterStyle.ShortStyle
+            let startString = formatter.stringFromDate(data.startTime)
+            navigationController?.navigationBar.topItem!.title = "At (\(startString))"
+        }
+        
         // Change text of labels
         regularStageOneCardView.stageName = data.regularStageOneName
         regularStageTwoCardView.stageName = data.regularStageTwoName
