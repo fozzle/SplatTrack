@@ -49,10 +49,23 @@ class PageViewController : UIPageViewController, UIPageViewControllerDataSource,
         let contentController = cachedViewControllers[currentIndex]
         self.setViewControllers([contentController], direction: UIPageViewControllerNavigationDirection.Forward, animated: true, completion: nil)
         setupAlertViewController()
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector:Selector("applicationDidEnterForeground"), name: UIApplicationWillEnterForegroundNotification, object: nil)
     }
     
     override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
         // If mapdata is stored, and not stale, bring it out
+        updateMapData()
+    }
+    
+    func applicationDidEnterForeground() {
+        updateMapData()
+    }
+    
+    // Update child VCs
+    
+    func updateMapData() {
         if let mapData = currentMapData {
             if (!mapData.isStale()) {
                 setMapData(mapData)
@@ -65,7 +78,6 @@ class PageViewController : UIPageViewController, UIPageViewControllerDataSource,
         }
     }
     
-    // Update child VCs
     func setMapData(mapData: MapData, source: MapData.DataSource = .Network) {
         if source == .Network {
             currentMapData = mapData
