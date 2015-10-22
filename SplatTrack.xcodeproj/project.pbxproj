@@ -38,6 +38,12 @@
 		275B35641BD981D7006FEDCC /* Pods_SplatTrackToday.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DBF12A9C5431E2C45C23560 /* Pods_SplatTrackToday.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		275B35661BD981D7006FEDCC /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 271A36261BBE3FDB0041EB84 /* MainInterface.storyboard */; };
 		275B356C1BD9823F006FEDCC /* SplatTrackToday AdHoc Distribution.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 275B356A1BD981D7006FEDCC /* SplatTrackToday AdHoc Distribution.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		275B35721BD994CC006FEDCC /* WidgetRotationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 275B35711BD994CC006FEDCC /* WidgetRotationView.xib */; settings = {ASSET_TAGS = (); }; };
+		275B35731BD994CC006FEDCC /* WidgetRotationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 275B35711BD994CC006FEDCC /* WidgetRotationView.xib */; settings = {ASSET_TAGS = (); }; };
+		275B35751BD99534006FEDCC /* WidgetRotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 275B35741BD99534006FEDCC /* WidgetRotationView.swift */; settings = {ASSET_TAGS = (); }; };
+		275B35761BD99534006FEDCC /* WidgetRotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 275B35741BD99534006FEDCC /* WidgetRotationView.swift */; settings = {ASSET_TAGS = (); }; };
+		275B35771BD99BFE006FEDCC /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 27944CFB1B9494210064C69C /* Images.xcassets */; settings = {ASSET_TAGS = (); }; };
+		275B35781BD99BFE006FEDCC /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 27944CFB1B9494210064C69C /* Images.xcassets */; settings = {ASSET_TAGS = (); }; };
 		27748A8D1B94A22D00090E19 /* ProjectPaintball.otf in Resources */ = {isa = PBXBuildFile; fileRef = 27748A8C1B94A22D00090E19 /* ProjectPaintball.otf */; };
 		2778DFE01B9634C4002E5AE5 /* StageCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2778DFDF1B9634C4002E5AE5 /* StageCardView.swift */; };
 		2778DFE21B9634D7002E5AE5 /* StageCardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2778DFE11B9634D7002E5AE5 /* StageCardView.xib */; };
@@ -124,6 +130,8 @@
 		275B355C1BD97BB5006FEDCC /* AdHoc-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "AdHoc-Info.plist"; path = "/Users/kyle/Code/SplatTrack/AdHoc-Info.plist"; sourceTree = "<absolute>"; };
 		275B356A1BD981D7006FEDCC /* SplatTrackToday AdHoc Distribution.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "SplatTrackToday AdHoc Distribution.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		275B356B1BD981D7006FEDCC /* SplatTrackToday copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "SplatTrackToday copy-Info.plist"; path = "/Users/kyle/Code/SplatTrack/SplatTrackToday copy-Info.plist"; sourceTree = "<absolute>"; };
+		275B35711BD994CC006FEDCC /* WidgetRotationView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WidgetRotationView.xib; sourceTree = "<group>"; };
+		275B35741BD99534006FEDCC /* WidgetRotationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WidgetRotationView.swift; sourceTree = "<group>"; };
 		27748A8C1B94A22D00090E19 /* ProjectPaintball.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = ProjectPaintball.otf; path = Resources/ProjectPaintball.otf; sourceTree = "<group>"; };
 		2778DFDF1B9634C4002E5AE5 /* StageCardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StageCardView.swift; sourceTree = "<group>"; };
 		2778DFE11B9634D7002E5AE5 /* StageCardView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StageCardView.xib; sourceTree = "<group>"; };
@@ -208,6 +216,8 @@
 				271A36241BBE3FDB0041EB84 /* TodayViewController.swift */,
 				271A36261BBE3FDB0041EB84 /* MainInterface.storyboard */,
 				271A36291BBE3FDB0041EB84 /* Info.plist */,
+				275B35711BD994CC006FEDCC /* WidgetRotationView.xib */,
+				275B35741BD99534006FEDCC /* WidgetRotationView.swift */,
 			);
 			path = SplatTrackToday;
 			sourceTree = "<group>";
@@ -218,6 +228,26 @@
 				271EF1711BC1BD860087BE32 /* MapData.swift */,
 			);
 			name = Models;
+			sourceTree = "<group>";
+		};
+		275B356F1BD98E12006FEDCC /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				278497291BC453F400B1FFAF /* BackgroundViewController.swift */,
+				278497271BC44DE100B1FFAF /* PageViewController.swift */,
+				27944CF61B9494210064C69C /* ViewController.swift */,
+				273B11401B98D58800E51AF0 /* SettingsTableViewController.swift */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		275B35701BD98E32006FEDCC /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				2778DFDF1B9634C4002E5AE5 /* StageCardView.swift */,
+				2778DFE11B9634D7002E5AE5 /* StageCardView.xib */,
+			);
+			name = Views;
 			sourceTree = "<group>";
 		};
 		27748A8B1B94A1ED00090E19 /* Resources */ = {
@@ -258,22 +288,16 @@
 		27944CF11B9494210064C69C /* SplatTrack */ = {
 			isa = PBXGroup;
 			children = (
-				278497291BC453F400B1FFAF /* BackgroundViewController.swift */,
-				278497271BC44DE100B1FFAF /* PageViewController.swift */,
+				275B35701BD98E32006FEDCC /* Views */,
+				275B356F1BD98E12006FEDCC /* ViewControllers */,
 				271EF1701BC1BD730087BE32 /* Models */,
 				271EF16F1BC1BC6E0087BE32 /* SplatTrack.entitlements */,
 				27A2FF961B9A208F0023EE8D /* Utility */,
 				27F7DD371B94D3B800C6A7DA /* Extensions */,
 				27944CF41B9494210064C69C /* AppDelegate.swift */,
-				27944CF61B9494210064C69C /* ViewController.swift */,
 				27944CF81B9494210064C69C /* Main.storyboard */,
 				27944CFD1B9494210064C69C /* LaunchScreen.xib */,
 				27944CF21B9494210064C69C /* Supporting Files */,
-				2778DFDF1B9634C4002E5AE5 /* StageCardView.swift */,
-				2778DFE11B9634D7002E5AE5 /* StageCardView.xib */,
-				273B11401B98D58800E51AF0 /* SettingsTableViewController.swift */,
-				27A2FF941B9A1F2C0023EE8D /* GlobalConstants.swift */,
-				278C8C161BD7FF6200436ABB /* SplatTrack-Bridging-Header.h */,
 			);
 			path = SplatTrack;
 			sourceTree = "<group>";
@@ -307,6 +331,8 @@
 		27A2FF961B9A208F0023EE8D /* Utility */ = {
 			isa = PBXGroup;
 			children = (
+				278C8C161BD7FF6200436ABB /* SplatTrack-Bridging-Header.h */,
+				27A2FF941B9A1F2C0023EE8D /* GlobalConstants.swift */,
 				27A2FF971B9A20A10023EE8D /* NotificationManager.swift */,
 				2784972B1BC45D9D00B1FFAF /* SplatoonColorManager.swift */,
 			);
@@ -517,6 +543,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				275B35771BD99BFE006FEDCC /* Images.xcassets in Resources */,
+				275B35721BD994CC006FEDCC /* WidgetRotationView.xib in Resources */,
 				271A36281BBE3FDB0041EB84 /* MainInterface.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -537,6 +565,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				275B35781BD99BFE006FEDCC /* Images.xcassets in Resources */,
+				275B35731BD994CC006FEDCC /* WidgetRotationView.xib in Resources */,
 				275B35661BD981D7006FEDCC /* MainInterface.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -692,6 +722,7 @@
 			files = (
 				27A68B231BC440D000C34233 /* MapData.swift in Sources */,
 				271A36251BBE3FDB0041EB84 /* TodayViewController.swift in Sources */,
+				275B35751BD99534006FEDCC /* WidgetRotationView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -720,6 +751,7 @@
 			files = (
 				275B35601BD981D7006FEDCC /* MapData.swift in Sources */,
 				275B35611BD981D7006FEDCC /* TodayViewController.swift in Sources */,
+				275B35761BD99534006FEDCC /* WidgetRotationView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

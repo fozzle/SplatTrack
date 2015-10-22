@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="M4Y-Lb-cyx">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="M4Y-Lb-cyx">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -14,48 +14,43 @@
                         <viewControllerLayoutGuide type="bottom" id="FKl-LY-JtV"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" simulatedAppContext="notificationCenter" id="S3S-Oj-5AN">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="150"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="300"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalCompressionResistancePriority="749" text="Hammerhead Bridge and Arowana Mall" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8PI-kb-1Rr">
-                                <rect key="frame" x="16" y="115" width="280" height="27"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Current %@ Stages:" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qzi-vf-2t1">
-                                <rect key="frame" x="16" y="86" width="280" height="21"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Current Turf War Stages:" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UYO-5r-xac">
-                                <rect key="frame" x="16" y="8" width="280" height="21"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="lightTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Hammerhead Bridge and Arowana Mall" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kyq-EZ-35Y">
-                                <rect key="frame" x="16" y="37" width="280" height="41"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="asd-h5-Kne" customClass="WidgetRotationView" customModule="SplatTrackToday" customModuleProvider="target">
+                                <rect key="frame" x="16" y="100" width="288" height="100"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="44v-R5-e6t"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BKW-nC-Fui" customClass="WidgetRotationView" customModule="SplatTrackToday" customModuleProvider="target">
+                                <rect key="frame" x="16" y="200" width="288" height="100"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="Sai-Sf-Dch"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mUc-Lg-dRx" customClass="WidgetRotationView" customModule="SplatTrackToday" customModuleProvider="target">
+                                <rect key="frame" x="16" y="0.0" width="288" height="100"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="4II-Ev-oxx"/>
+                                </constraints>
+                            </view>
                         </subviews>
+                        <animations/>
                         <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="Kyq-EZ-35Y" secondAttribute="trailing" constant="8" id="6QE-K9-4eu"/>
-                            <constraint firstItem="Kyq-EZ-35Y" firstAttribute="top" secondItem="UYO-5r-xac" secondAttribute="bottom" constant="8" id="6ZX-A4-Fax"/>
-                            <constraint firstItem="UYO-5r-xac" firstAttribute="top" secondItem="Ft6-oW-KC0" secondAttribute="bottom" constant="8" id="Azr-FW-Z07"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="Qzi-vf-2t1" secondAttribute="trailing" constant="8" id="J3i-Dc-mHS"/>
-                            <constraint firstAttribute="leadingMargin" secondItem="Kyq-EZ-35Y" secondAttribute="leading" id="JOu-xP-XKO"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="UYO-5r-xac" secondAttribute="trailing" constant="8" id="O2e-GX-cM7"/>
-                            <constraint firstItem="8PI-kb-1Rr" firstAttribute="leading" secondItem="S3S-Oj-5AN" secondAttribute="leadingMargin" id="PFV-Cy-cFc"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="8PI-kb-1Rr" secondAttribute="trailing" constant="8" id="WMN-O1-h95"/>
-                            <constraint firstAttribute="leadingMargin" secondItem="UYO-5r-xac" secondAttribute="leading" id="WoG-Ke-ggo"/>
-                            <constraint firstItem="8PI-kb-1Rr" firstAttribute="top" secondItem="Qzi-vf-2t1" secondAttribute="bottom" constant="8" id="g7E-Sy-yR5"/>
-                            <constraint firstItem="Qzi-vf-2t1" firstAttribute="leading" secondItem="S3S-Oj-5AN" secondAttribute="leadingMargin" id="jVc-al-TaV"/>
-                            <constraint firstItem="Qzi-vf-2t1" firstAttribute="top" secondItem="Kyq-EZ-35Y" secondAttribute="bottom" constant="8" id="zU5-mQ-zZL"/>
-                            <constraint firstItem="FKl-LY-JtV" firstAttribute="top" secondItem="8PI-kb-1Rr" secondAttribute="bottom" constant="8" id="zqr-OB-kIk"/>
+                            <constraint firstItem="BKW-nC-Fui" firstAttribute="leading" secondItem="S3S-Oj-5AN" secondAttribute="leadingMargin" id="0Kf-Q2-IMV"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="mUc-Lg-dRx" secondAttribute="trailing" id="7UP-m5-Hn2"/>
+                            <constraint firstItem="FKl-LY-JtV" firstAttribute="top" secondItem="BKW-nC-Fui" secondAttribute="bottom" id="81a-xr-9VM"/>
+                            <constraint firstItem="BKW-nC-Fui" firstAttribute="top" secondItem="asd-h5-Kne" secondAttribute="bottom" id="8Nr-9m-3ep"/>
+                            <constraint firstItem="asd-h5-Kne" firstAttribute="leading" secondItem="S3S-Oj-5AN" secondAttribute="leadingMargin" id="Tpd-j7-kFI"/>
+                            <constraint firstItem="asd-h5-Kne" firstAttribute="top" secondItem="mUc-Lg-dRx" secondAttribute="bottom" id="UiD-bw-ziX"/>
+                            <constraint firstItem="mUc-Lg-dRx" firstAttribute="top" secondItem="Ft6-oW-KC0" secondAttribute="bottom" id="V1d-3N-Dvr"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="BKW-nC-Fui" secondAttribute="trailing" id="aM4-8z-OcA"/>
+                            <constraint firstItem="mUc-Lg-dRx" firstAttribute="leading" secondItem="S3S-Oj-5AN" secondAttribute="leadingMargin" id="cUE-h8-NWB"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="asd-h5-Kne" secondAttribute="trailing" id="jLT-rW-x8o"/>
                         </constraints>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>
@@ -63,16 +58,16 @@
                     <nil key="simulatedTopBarMetrics"/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <size key="freeformSize" width="320" height="150"/>
+                    <size key="freeformSize" width="320" height="300"/>
                     <connections>
-                        <outlet property="rankedModeLabel" destination="Qzi-vf-2t1" id="sye-E9-CXn"/>
-                        <outlet property="rankedStagesLabel" destination="8PI-kb-1Rr" id="uV3-94-gnz"/>
-                        <outlet property="regularStagesLabel" destination="Kyq-EZ-35Y" id="dLs-Tw-D4P"/>
+                        <outlet property="firstRotationView" destination="mUc-Lg-dRx" id="lgk-8p-W3N"/>
+                        <outlet property="secondRotationView" destination="asd-h5-Kne" id="sGw-I5-lnC"/>
+                        <outlet property="thirdRotationView" destination="BKW-nC-Fui" id="CSO-T9-zWI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vXp-U4-Rya" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="516" y="284"/>
+            <point key="canvasLocation" x="516" y="283"/>
         </scene>
     </scenes>
 </document>
