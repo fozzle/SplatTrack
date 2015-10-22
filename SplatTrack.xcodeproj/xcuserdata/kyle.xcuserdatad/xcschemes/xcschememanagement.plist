@@ -7,12 +7,17 @@
 		<key>SplatTrack AdHoc Release.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>9</integer>
+			<integer>8</integer>
 		</dict>
 		<key>SplatTrack.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>0</integer>
+		</dict>
+		<key>SplatTrackToday copy.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>9</integer>
 		</dict>
 		<key>SplatTrackToday.xcscheme</key>
 		<dict>
@@ -28,6 +33,11 @@
 			<true/>
 		</dict>
 		<key>275B353B1BD97BB5006FEDCC</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>275B355D1BD981D7006FEDCC</key>
 		<dict>
 			<key>primary</key>
 			<true/>
