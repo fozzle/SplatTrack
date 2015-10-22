@@ -11,4 +11,5 @@ import Foundation
 struct GlobalConstants {
     static let NotificationsAskedKey = "SplatTrackNotificationsAskedKey"
     static let NotificationsPermissionSet = "SplatTrackNotificationsPermissionsSet"
+    static let SplatStageChange = "SplatTrackStageChangeNotification"
 }

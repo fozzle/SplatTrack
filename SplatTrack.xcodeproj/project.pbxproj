@@ -811,7 +811,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.petro.SplatTrack.SplatTrackToday;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "1fcdd6c9-6d6d-4311-9098-9dcd3e401952";
+				PROVISIONING_PROFILE = "39fa6536-b944-4aca-9863-e2f52550b242";
 				SKIP_INSTALL = YES;
 			};
 			name = Debug;
@@ -828,7 +828,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.petro.SplatTrack.SplatTrackToday;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "72da09c1-c43c-488f-9e25-cd820fa0fe88";
+				PROVISIONING_PROFILE = "b405f16e-0f25-44c8-a7b9-b5d90151f1f3";
 				SKIP_INSTALL = YES;
 			};
 			name = Release;

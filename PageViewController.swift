@@ -50,7 +50,8 @@ class PageViewController : UIPageViewController, UIPageViewControllerDataSource,
         self.setViewControllers([contentController], direction: UIPageViewControllerNavigationDirection.Forward, animated: true, completion: nil)
         setupAlertViewController()
         
-        NSNotificationCenter.defaultCenter().addObserver(self, selector:Selector("applicationDidEnterForeground"), name: UIApplicationWillEnterForegroundNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector:Selector("updateMapData"), name: UIApplicationWillEnterForegroundNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector:Selector("updateMapData"), name: GlobalConstants.SplatStageChange, object: nil)
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -59,12 +60,7 @@ class PageViewController : UIPageViewController, UIPageViewControllerDataSource,
         updateMapData()
     }
     
-    func applicationDidEnterForeground() {
-        updateMapData()
-    }
-    
     // Update child VCs
-    
     func updateMapData() {
         if let mapData = currentMapData {
             if (!mapData.isStale()) {
