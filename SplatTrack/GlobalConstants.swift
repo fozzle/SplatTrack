@@ -10,4 +10,5 @@ import Foundation
 
 struct GlobalConstants {
     static let SplatStageChange = "SplatTrackStageChangeNotification"
+    static let SplatNoBackgroundScroll = "SplatNoBackgroundScroll"
 }

@@ -35,7 +35,7 @@ class BackgroundViewController : UIViewController {
     }
     
     override func viewDidLayoutSubviews() {
-//        Useful for orientation support?
+        // Useful for orientation support?
         setupBackgroundLayer()
         applyBackgroundAnimation()
     }
@@ -72,12 +72,18 @@ class BackgroundViewController : UIViewController {
     }
     
     func applyBackgroundAnimation(force: Bool=false) {
-        if ((backgroundLayer?.animationForKey("position") ) == nil || force) {
+        if (shouldAnimate() && ((backgroundLayer?.animationForKey("position") ) == nil || force)) {
             backgroundLayer?.addAnimation(backgroundAnimation!, forKey: "position")
         }
     }
     
+    func shouldAnimate() -> Bool {
+        return !NSUserDefaults.standardUserDefaults().boolForKey(GlobalConstants.SplatNoBackgroundScroll)
+    }
+    
     func setupBackgroundLayer() {
+        backgroundView.backgroundColor = UIColor(patternImage: UIImage(named: "background")!)
+        
         if (backgroundLayer != nil) {
             backgroundLayer?.removeFromSuperlayer()
         }

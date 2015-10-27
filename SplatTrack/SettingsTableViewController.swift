@@ -10,8 +10,15 @@ import UIKit
 
 class SettingsTableViewController: UITableViewController {
     
+    @IBOutlet weak var backgroundScrollSwitch: UISwitch!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        backgroundScrollSwitch.tintColor = SplatoonColorManager.sharedInstance.bodyColor
+        backgroundScrollSwitch.onTintColor = SplatoonColorManager.sharedInstance.bodyColor
+        
+        backgroundScrollSwitch.on = NSUserDefaults.standardUserDefaults().boolForKey(GlobalConstants.SplatNoBackgroundScroll)
     }
 
     // MARK: - Table view data source
@@ -30,5 +37,9 @@ class SettingsTableViewController: UITableViewController {
         // Needed because iPads don't set the background color properly from IB
         cell.backgroundColor = UIColor.blackColor()
     }
-
+    
+    
+    @IBAction func backgroundScrollSwitchChanged(sender: UISwitch) {
+        NSUserDefaults.standardUserDefaults().setBool(sender.on, forKey: GlobalConstants.SplatNoBackgroundScroll)
+    }
 }
