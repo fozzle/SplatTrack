@@ -15,6 +15,9 @@ class SettingsTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        backgroundScrollSwitch.tintColor = SplatoonColorManager.sharedInstance.bodyColor
+        backgroundScrollSwitch.onTintColor = SplatoonColorManager.sharedInstance.bodyColor
+        
         backgroundScrollSwitch.on = NSUserDefaults.standardUserDefaults().boolForKey(GlobalConstants.SplatNoBackgroundScroll)
     }
 
