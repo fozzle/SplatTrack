@@ -31,7 +31,7 @@ class ViewController: UIViewController {
         "Urchin Underpass": "Stage_Urchin_Underpass",
         "Walleye Warehouse": "Stage_Walleye_Warehouse",
         "Hammerhead Bridge": "Stage_Hammerhead_Bridge",
-        "Museum D'Alfonsino": "Stage_Museum_DAlfonsino"
+        "Museum d'Alfonsino": "Stage_Museum_DAlfonsino"
     ]
     
     
