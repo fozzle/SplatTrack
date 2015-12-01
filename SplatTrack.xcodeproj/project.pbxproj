@@ -7,25 +7,25 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		271A36221BBE3FDB0041EB84 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 271A36211BBE3FDB0041EB84 /* NotificationCenter.framework */; settings = {ASSET_TAGS = (); }; };
+		271A36221BBE3FDB0041EB84 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 271A36211BBE3FDB0041EB84 /* NotificationCenter.framework */; };
 		271A36251BBE3FDB0041EB84 /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 271A36241BBE3FDB0041EB84 /* TodayViewController.swift */; };
 		271A36281BBE3FDB0041EB84 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 271A36261BBE3FDB0041EB84 /* MainInterface.storyboard */; };
 		271A362C1BBE3FDB0041EB84 /* SplatTrackToday.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 271A36201BBE3FDB0041EB84 /* SplatTrackToday.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		271EF1721BC1BD860087BE32 /* MapData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 271EF1711BC1BD860087BE32 /* MapData.swift */; settings = {ASSET_TAGS = (); }; };
+		271EF1721BC1BD860087BE32 /* MapData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 271EF1711BC1BD860087BE32 /* MapData.swift */; };
 		272FF0F81B962C260096BCDF /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 272FF0F71B962C260096BCDF /* UIImage.swift */; };
 		273B11411B98D58800E51AF0 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 273B11401B98D58800E51AF0 /* SettingsTableViewController.swift */; };
 		275B35401BD97BB5006FEDCC /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27F7DD381B94D3C900C6A7DA /* Array.swift */; };
-		275B35411BD97BB5006FEDCC /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 278497271BC44DE100B1FFAF /* PageViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		275B35411BD97BB5006FEDCC /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 278497271BC44DE100B1FFAF /* PageViewController.swift */; };
 		275B35421BD97BB5006FEDCC /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 272FF0F71B962C260096BCDF /* UIImage.swift */; };
 		275B35431BD97BB5006FEDCC /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 273B11401B98D58800E51AF0 /* SettingsTableViewController.swift */; };
 		275B35441BD97BB5006FEDCC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27944CF61B9494210064C69C /* ViewController.swift */; };
-		275B35451BD97BB5006FEDCC /* MapData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 271EF1711BC1BD860087BE32 /* MapData.swift */; settings = {ASSET_TAGS = (); }; };
+		275B35451BD97BB5006FEDCC /* MapData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 271EF1711BC1BD860087BE32 /* MapData.swift */; };
 		275B35461BD97BB5006FEDCC /* GlobalConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A2FF941B9A1F2C0023EE8D /* GlobalConstants.swift */; };
 		275B35471BD97BB5006FEDCC /* StageCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2778DFDF1B9634C4002E5AE5 /* StageCardView.swift */; };
-		275B35481BD97BB5006FEDCC /* BackgroundViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 278497291BC453F400B1FFAF /* BackgroundViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		275B35481BD97BB5006FEDCC /* BackgroundViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 278497291BC453F400B1FFAF /* BackgroundViewController.swift */; };
 		275B35491BD97BB5006FEDCC /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A2FF971B9A20A10023EE8D /* NotificationManager.swift */; };
 		275B354A1BD97BB5006FEDCC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27944CF41B9494210064C69C /* AppDelegate.swift */; };
-		275B354B1BD97BB5006FEDCC /* SplatoonColorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2784972B1BC45D9D00B1FFAF /* SplatoonColorManager.swift */; settings = {ASSET_TAGS = (); }; };
+		275B354B1BD97BB5006FEDCC /* SplatoonColorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2784972B1BC45D9D00B1FFAF /* SplatoonColorManager.swift */; };
 		275B354D1BD97BB5006FEDCC /* Pods_SplatTrack.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A569C456F96E8A85EFDE826 /* Pods_SplatTrack.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		275B354F1BD97BB5006FEDCC /* StageCardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2778DFE11B9634D7002E5AE5 /* StageCardView.xib */; };
 		275B35501BD97BB5006FEDCC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 27944CF81B9494210064C69C /* Main.storyboard */; };
@@ -34,16 +34,16 @@
 		275B35531BD97BB5006FEDCC /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 27944CFB1B9494210064C69C /* Images.xcassets */; };
 		275B35601BD981D7006FEDCC /* MapData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 271EF1711BC1BD860087BE32 /* MapData.swift */; };
 		275B35611BD981D7006FEDCC /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 271A36241BBE3FDB0041EB84 /* TodayViewController.swift */; };
-		275B35631BD981D7006FEDCC /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 271A36211BBE3FDB0041EB84 /* NotificationCenter.framework */; settings = {ASSET_TAGS = (); }; };
+		275B35631BD981D7006FEDCC /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 271A36211BBE3FDB0041EB84 /* NotificationCenter.framework */; };
 		275B35641BD981D7006FEDCC /* Pods_SplatTrackToday.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DBF12A9C5431E2C45C23560 /* Pods_SplatTrackToday.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		275B35661BD981D7006FEDCC /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 271A36261BBE3FDB0041EB84 /* MainInterface.storyboard */; };
 		275B356C1BD9823F006FEDCC /* SplatTrackToday AdHoc Distribution.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 275B356A1BD981D7006FEDCC /* SplatTrackToday AdHoc Distribution.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		27748A8D1B94A22D00090E19 /* ProjectPaintball.otf in Resources */ = {isa = PBXBuildFile; fileRef = 27748A8C1B94A22D00090E19 /* ProjectPaintball.otf */; };
 		2778DFE01B9634C4002E5AE5 /* StageCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2778DFDF1B9634C4002E5AE5 /* StageCardView.swift */; };
 		2778DFE21B9634D7002E5AE5 /* StageCardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2778DFE11B9634D7002E5AE5 /* StageCardView.xib */; };
-		278497281BC44DE100B1FFAF /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 278497271BC44DE100B1FFAF /* PageViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		2784972A1BC453F400B1FFAF /* BackgroundViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 278497291BC453F400B1FFAF /* BackgroundViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		2784972C1BC45D9D00B1FFAF /* SplatoonColorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2784972B1BC45D9D00B1FFAF /* SplatoonColorManager.swift */; settings = {ASSET_TAGS = (); }; };
+		278497281BC44DE100B1FFAF /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 278497271BC44DE100B1FFAF /* PageViewController.swift */; };
+		2784972A1BC453F400B1FFAF /* BackgroundViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 278497291BC453F400B1FFAF /* BackgroundViewController.swift */; };
+		2784972C1BC45D9D00B1FFAF /* SplatoonColorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2784972B1BC45D9D00B1FFAF /* SplatoonColorManager.swift */; };
 		27944CF51B9494210064C69C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27944CF41B9494210064C69C /* AppDelegate.swift */; };
 		27944CF71B9494210064C69C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27944CF61B9494210064C69C /* ViewController.swift */; };
 		27944CFA1B9494210064C69C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 27944CF81B9494210064C69C /* Main.storyboard */; };
