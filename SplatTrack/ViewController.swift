@@ -17,7 +17,7 @@ class ViewController: UIViewController {
     var currentMapData : MapData?
     
     // MARK: Constants
-    let RulesFormatString = "%@ Stages:"
+    let RulesFormatString = "%@"
     let StageImageMap = [
         "Arowana Mall": "Stage_Arowana_Mall",
         "Blackbelly Skatepark": "Stage_Blackbelly_Skatepark",
@@ -30,7 +30,9 @@ class ViewController: UIViewController {
         "Saltspray Rig": "Stage_Saltspray_Rig",
         "Urchin Underpass": "Stage_Urchin_Underpass",
         "Walleye Warehouse": "Stage_Walleye_Warehouse",
-        "Hammerhead Bridge": "Stage_Hammerhead_Bridge"
+        "Hammerhead Bridge": "Stage_Hammerhead_Bridge",
+        "Museum d'Alfonsino": "Stage_Museum_DAlfonsino",
+        "Mahi-Mahi Resort": "Stage_Mahi_Mahi_Resort"
     ]
     
     
@@ -84,7 +86,7 @@ class ViewController: UIViewController {
         regularStageTwoCardView.stageName = data.regularStageTwoName
         rankedStageOneCardView.stageName = data.rankedStageOneName
         rankedStageTwoCardView.stageName = data.rankedStageTwoName
-        rankedHeader.text = String(format: self.RulesFormatString, data.rankedRulesetName)
+        rankedHeader.text = data.rankedRulesetName
         
             
         // Images
