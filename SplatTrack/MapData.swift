@@ -68,11 +68,11 @@ struct MapData {
         case Network
     }
     
-    init(fromDictionary: NSDictionary) {
+    init(fromDictionary: Dictionary<String, AnyObject>) {
         staleTime = fromDictionary["staleTime"] as! NSDate
-        let bullshit = fromDictionary["rotations"] as! [NSDictionary]
+        let bullshit = fromDictionary["rotations"] as! [Dictionary<String, AnyObject>]
         var moreBullshit = [RotationInfo]()
-        for rotation: NSDictionary in bullshit {
+        for rotation: Dictionary<String, AnyObject> in bullshit {
             moreBullshit.append(RotationInfo(fromDictionary: rotation))
         }
         rotations = moreBullshit
@@ -89,11 +89,11 @@ struct MapData {
         rotations = stupidFuckingSwift
     }
     
-    private func serializeToDictionary() -> NSDictionary? {
-        let serializedRotations : NSArray = (self.rotations.map { (element) -> NSDictionary in
+    private func serializeToDictionary() -> Dictionary<String,AnyObject>? {
+        let serializedRotations : NSArray = (self.rotations.map { (element) -> Dictionary<String,AnyObject> in
             return element.serializeToDictionary()
         })
-        let serializedDict: NSDictionary  = ["staleTime": self.staleTime, "rotations": serializedRotations]
+        let serializedDict: Dictionary<String,AnyObject>  = ["staleTime": self.staleTime, "rotations": serializedRotations]
         return serializedDict;
     }
     
@@ -168,7 +168,7 @@ struct RotationInfo {
     var endTime: NSDate
     var startTime: NSDate
     
-    init(fromDictionary: NSDictionary) {
+    init(fromDictionary: Dictionary<String, AnyObject>) {
         
         regularStageNames = fromDictionary["regularStageNames"] as! [String]
         rankedStageNames = fromDictionary["rankedStageNames"] as! [String]
@@ -203,8 +203,8 @@ struct RotationInfo {
         startTime = NSDate(timeIntervalSince1970: NSTimeInterval(fromJSON["startTime"].int64Value / 1000))
     }
     
-    func serializeToDictionary() -> NSDictionary {
-        let dict: NSDictionary = [
+    func serializeToDictionary() -> Dictionary<String, AnyObject> {
+        let dict: Dictionary<String, AnyObject> = [
             "regularStageNames": regularStageNames,
             "rankedStageNames": rankedStageNames,
             "rankedRulesetName": rankedRulesetName,
