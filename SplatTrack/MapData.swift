@@ -161,41 +161,54 @@ struct MapData {
 }
 */
 struct RotationInfo {
-    var regularStageOneName: String
-    var regularStageTwoName: String
-    var rankedStageOneName: String
-    var rankedStageTwoName: String
+    var regularStageNames: [String]
+    var rankedStageNames: [String]
     var rankedRulesetName: String
+    var splatfest: Bool
     var endTime: NSDate
     var startTime: NSDate
     
     init(fromDictionary: NSDictionary) {
-        regularStageOneName = fromDictionary["regularStageOneName"] as! String
-        regularStageTwoName = fromDictionary["regularStageTwoName"] as! String
-        rankedStageOneName = fromDictionary["rankedStageOneName"] as! String
-        rankedStageTwoName = fromDictionary["rankedStageTwoName"] as! String
+        
+        regularStageNames = fromDictionary["regularStageNames"] as! [String]
+        rankedStageNames = fromDictionary["rankedStageNames"] as! [String]
         rankedRulesetName = fromDictionary["rankedRulesetName"] as! String
+        splatfest = fromDictionary["splatfest"] as! Bool
         endTime = fromDictionary["endTime"] as! NSDate
         startTime = fromDictionary["startTime"] as! NSDate
     }
     
     init(fromJSON: JSON) {
-        regularStageOneName = fromJSON["regular"]["maps"][0]["nameEN"].string!
-        regularStageTwoName = fromJSON["regular"]["maps"][1]["nameEN"].string!
-        rankedStageOneName = fromJSON["ranked"]["maps"][0]["nameEN"].string!
-        rankedStageTwoName = fromJSON["ranked"]["maps"][1]["nameEN"].string!
-        rankedRulesetName = fromJSON["ranked"]["rulesEN"].string!
+        regularStageNames = [String]()
+        if let regularMaps = fromJSON["regular"]["maps"].array {
+            for stage: JSON in regularMaps {
+                regularStageNames.append(stage["nameEN"].string!)
+            }
+        }
+        
+        rankedStageNames = [String]()
+        if let rankedMaps = fromJSON["ranked"]["maps"].array {
+            for stage: JSON in rankedMaps {
+                rankedStageNames.append(stage["nameEN"].string!)
+            }
+            rankedRulesetName = fromJSON["ranked"]["rulesEN"].string!
+        }
+        
+        rankedRulesetName = fromJSON["ranked"]["rulesEN"].string ?? "Unknown"
+        
+        let regularRules = fromJSON["regular"]["rules"]["en"].string ?? ""
+        splatfest = regularRules == "Splatfest"
+        
         endTime = NSDate(timeIntervalSince1970:NSTimeInterval(fromJSON["endTime"].int64Value / 1000))
         startTime = NSDate(timeIntervalSince1970: NSTimeInterval(fromJSON["startTime"].int64Value / 1000))
     }
     
     func serializeToDictionary() -> NSDictionary {
         let dict: NSDictionary = [
-            "regularStageOneName": regularStageOneName,
-            "regularStageTwoName": regularStageTwoName,
-            "rankedStageOneName": rankedStageOneName,
-            "rankedStageTwoName": rankedStageTwoName,
+            "regularStageNames": regularStageNames,
+            "rankedStageNames": rankedStageNames,
             "rankedRulesetName": rankedRulesetName,
+            "splatfest": splatfest,
             "startTime": startTime,
             "endTime": endTime
         ]
