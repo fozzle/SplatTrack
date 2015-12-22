@@ -45,6 +45,8 @@ class PageViewController : UIPageViewController, UIPageViewControllerDataSource,
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector:Selector("updateMapData"), name: UIApplicationWillEnterForegroundNotification, object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector:Selector("updateMapData"), name: GlobalConstants.SplatStageChange, object: nil)
+        
+        self.setViewControllers([getStagesViewControllerAtIndex(currentIndex)!], direction: UIPageViewControllerNavigationDirection.Forward, animated: true, completion: nil)
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -69,8 +71,10 @@ class PageViewController : UIPageViewController, UIPageViewControllerDataSource,
     
     func setMapData(mapData: MapData, source: MapData.DataSource = .Network) {
         currentMapData = mapData
-        
-        self.setViewControllers([getStagesViewControllerAtIndex(currentIndex)!], direction: UIPageViewControllerNavigationDirection.Forward, animated: true, completion: nil)
+        if let vc = self.viewControllers?.first as? ViewController {
+            vc.currentMapData = currentMapData
+            vc.updateMapData()
+        }
     }
     
     func refreshStaleData() {
@@ -100,6 +104,7 @@ class PageViewController : UIPageViewController, UIPageViewControllerDataSource,
     }
     
     func pageViewController(pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool) {
+        guard completed else { return }
         if let vc = pageViewController.viewControllers?.first as? ViewController {
             currentIndex = vc.PageIndex
         }
