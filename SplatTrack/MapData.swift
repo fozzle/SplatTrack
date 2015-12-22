@@ -90,7 +90,7 @@ struct MapData {
     }
     
     private func serializeToDictionary() -> Dictionary<String,AnyObject>? {
-        let serializedRotations : NSArray = (self.rotations.map { (element) -> Dictionary<String,AnyObject> in
+        let serializedRotations : [Dictionary<String,AnyObject>] = (self.rotations.map { (element) -> Dictionary<String,AnyObject> in
             return element.serializeToDictionary()
         })
         let serializedDict: Dictionary<String,AnyObject>  = ["staleTime": self.staleTime, "rotations": serializedRotations]
