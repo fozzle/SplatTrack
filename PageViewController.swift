@@ -71,6 +71,11 @@ class PageViewController : UIPageViewController, UIPageViewControllerDataSource,
     
     func setMapData(mapData: MapData, source: MapData.DataSource = .Network) {
         currentMapData = mapData
+        
+        // Sucks but necessary to ensure proper display of page control
+        self.dataSource = nil
+        self.dataSource = self
+        
         if let vc = self.viewControllers?.first as? ViewController {
             vc.currentMapData = currentMapData
             vc.updateMapData()
