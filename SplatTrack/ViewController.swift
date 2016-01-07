@@ -32,7 +32,8 @@ class ViewController: UIViewController {
         "Walleye Warehouse": "Stage_Walleye_Warehouse",
         "Hammerhead Bridge": "Stage_Hammerhead_Bridge",
         "Museum d'Alfonsino": "Stage_Museum_DAlfonsino",
-        "Mahi-Mahi Resort": "Stage_Mahi_Mahi_Resort"
+        "Mahi-Mahi Resort": "Stage_Mahi_Mahi_Resort",
+        "Piranha Pit": "Stage_Piranha_Pit"
     ]
     
     // Container view
