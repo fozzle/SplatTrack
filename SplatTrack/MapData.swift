@@ -68,11 +68,14 @@ struct MapData {
         case Network
     }
     
-    init(fromDictionary: Dictionary<String, AnyObject>) {
+    init?(fromDictionary: Dictionary<String, AnyObject>) {
         staleTime = fromDictionary["staleTime"] as! NSDate
         let bullshit = fromDictionary["rotations"] as! [Dictionary<String, AnyObject>]
         var moreBullshit = [RotationInfo]()
         for rotation: Dictionary<String, AnyObject> in bullshit {
+            if (rotation["regularStageNames"] == nil) {
+                return nil;
+            }
             moreBullshit.append(RotationInfo(fromDictionary: rotation))
         }
         rotations = moreBullshit
