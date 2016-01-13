@@ -2,7 +2,6 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="M4Y-Lb-cyx">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Today View Controller-->
@@ -16,42 +15,6 @@
                     <view key="view" contentMode="scaleToFill" simulatedAppContext="notificationCenter" id="S3S-Oj-5AN">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="300"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="asd-h5-Kne" customClass="WidgetRotationView" customModule="SplatTrackToday" customModuleProvider="target">
-                                <rect key="frame" x="16" y="100" width="288" height="100"/>
-                                <animations/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="100" id="44v-R5-e6t"/>
-                                </constraints>
-                            </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BKW-nC-Fui" customClass="WidgetRotationView" customModule="SplatTrackToday" customModuleProvider="target">
-                                <rect key="frame" x="16" y="200" width="288" height="100"/>
-                                <animations/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="100" id="Sai-Sf-Dch"/>
-                                </constraints>
-                            </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mUc-Lg-dRx" customClass="WidgetRotationView" customModule="SplatTrackToday" customModuleProvider="target">
-                                <rect key="frame" x="16" y="0.0" width="288" height="100"/>
-                                <animations/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="100" id="4II-Ev-oxx"/>
-                                </constraints>
-                            </view>
-                        </subviews>
-                        <animations/>
-                        <constraints>
-                            <constraint firstItem="BKW-nC-Fui" firstAttribute="leading" secondItem="S3S-Oj-5AN" secondAttribute="leadingMargin" id="0Kf-Q2-IMV"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="mUc-Lg-dRx" secondAttribute="trailing" id="7UP-m5-Hn2"/>
-                            <constraint firstItem="FKl-LY-JtV" firstAttribute="top" secondItem="BKW-nC-Fui" secondAttribute="bottom" id="81a-xr-9VM"/>
-                            <constraint firstItem="BKW-nC-Fui" firstAttribute="top" secondItem="asd-h5-Kne" secondAttribute="bottom" id="8Nr-9m-3ep"/>
-                            <constraint firstItem="asd-h5-Kne" firstAttribute="leading" secondItem="S3S-Oj-5AN" secondAttribute="leadingMargin" id="Tpd-j7-kFI"/>
-                            <constraint firstItem="asd-h5-Kne" firstAttribute="top" secondItem="mUc-Lg-dRx" secondAttribute="bottom" id="UiD-bw-ziX"/>
-                            <constraint firstItem="mUc-Lg-dRx" firstAttribute="top" secondItem="Ft6-oW-KC0" secondAttribute="bottom" id="V1d-3N-Dvr"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="BKW-nC-Fui" secondAttribute="trailing" id="aM4-8z-OcA"/>
-                            <constraint firstItem="mUc-Lg-dRx" firstAttribute="leading" secondItem="S3S-Oj-5AN" secondAttribute="leadingMargin" id="cUE-h8-NWB"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="asd-h5-Kne" secondAttribute="trailing" id="jLT-rW-x8o"/>
-                        </constraints>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>
                     <nil key="simulatedStatusBarMetrics"/>
@@ -59,11 +22,6 @@
                     <nil key="simulatedBottomBarMetrics"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="320" height="300"/>
-                    <connections>
-                        <outlet property="firstRotationView" destination="mUc-Lg-dRx" id="lgk-8p-W3N"/>
-                        <outlet property="secondRotationView" destination="asd-h5-Kne" id="sGw-I5-lnC"/>
-                        <outlet property="thirdRotationView" destination="BKW-nC-Fui" id="CSO-T9-zWI"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vXp-U4-Rya" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
