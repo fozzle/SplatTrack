@@ -12,20 +12,17 @@ import UIKit
 
 class PageViewController : UIPageViewController, UIPageViewControllerDataSource, UIPageViewControllerDelegate {
     
-    let INDICES = [0,1,2]
-    
     // MARK: Instance Variables
     private var alertController: UIAlertController = UIAlertController(title: "Update Failed", message: "SplatTrack failed to update map data. Check your internet connection and try again.", preferredStyle: .Alert)
-    private var cachedViewControllers : Array<ViewController> = []
     private var currentMapData : MapData?
     private var currentIndex = 0
     
     func presentationCountForPageViewController(pageViewController: UIPageViewController) -> Int {
-        return INDICES.count
+        return currentMapData?.rotations.count ?? 0
     }
     
     func presentationIndexForPageViewController(pageViewController: UIPageViewController) -> Int {
-        return 0
+        return currentIndex
     }
     
     func setupAlertViewController() {
@@ -42,16 +39,14 @@ class PageViewController : UIPageViewController, UIPageViewControllerDataSource,
 
     override func viewDidLoad() {
         self.dataSource = self
-        for index in INDICES {
-            cachedViewControllers.append(self.getStagesViewControllerAtIndex(index)!)
-        }
-        
-        let contentController = cachedViewControllers[currentIndex]
-        self.setViewControllers([contentController], direction: UIPageViewControllerNavigationDirection.Forward, animated: true, completion: nil)
+        self.delegate = self
+
         setupAlertViewController()
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector:Selector("updateMapData"), name: UIApplicationWillEnterForegroundNotification, object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector:Selector("updateMapData"), name: GlobalConstants.SplatStageChange, object: nil)
+        
+        self.setViewControllers([getStagesViewControllerAtIndex(currentIndex)!], direction: UIPageViewControllerNavigationDirection.Forward, animated: true, completion: nil)
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -75,15 +70,16 @@ class PageViewController : UIPageViewController, UIPageViewControllerDataSource,
     }
     
     func setMapData(mapData: MapData, source: MapData.DataSource = .Network) {
-        if source == .Network {
-            currentMapData = mapData
-        }
+        currentMapData = mapData
         
-        for vc in cachedViewControllers {
-            vc.currentMapData = mapData
-        }
+        // Sucks but necessary to ensure proper display of page control
+        self.dataSource = nil
+        self.dataSource = self
         
-        cachedViewControllers[currentIndex].updateMapData(mapData)
+        if let vc = self.viewControllers?.first as? ViewController {
+            vc.currentMapData = currentMapData
+            vc.updateMapData()
+        }
     }
     
     func refreshStaleData() {
@@ -96,11 +92,10 @@ class PageViewController : UIPageViewController, UIPageViewControllerDataSource,
     
     func pageViewController(pageViewController: UIPageViewController, viewControllerAfterViewController viewController: UIViewController) -> UIViewController? {
         let vc = viewController as! ViewController
-        if (vc.PageIndex >= INDICES.count - 1) {
+        if (vc.PageIndex >= presentationCountForPageViewController(pageViewController) - 1) {
             return nil
         } else {
-            currentIndex = vc.PageIndex + 1
-            return cachedViewControllers[currentIndex]
+            return getStagesViewControllerAtIndex(vc.PageIndex + 1)
         }
     }
     
@@ -109,14 +104,23 @@ class PageViewController : UIPageViewController, UIPageViewControllerDataSource,
         if (vc.PageIndex <= 0) {
             return nil
         } else {
-            currentIndex = vc.PageIndex - 1
-            return cachedViewControllers[currentIndex]
+            return getStagesViewControllerAtIndex(vc.PageIndex - 1)
         }
     }
+    
+    func pageViewController(pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool) {
+        guard completed else { return }
+        if let vc = pageViewController.viewControllers?.first as? ViewController {
+            currentIndex = vc.PageIndex
+        }
+    }
+    
+    
     
     func getStagesViewControllerAtIndex(index: Int) -> ViewController? {
         let stageViewController = self.storyboard?.instantiateViewControllerWithIdentifier("ViewController") as! ViewController
         stageViewController.PageIndex = index
+        stageViewController.currentMapData = currentMapData
         
         return stageViewController
     }
