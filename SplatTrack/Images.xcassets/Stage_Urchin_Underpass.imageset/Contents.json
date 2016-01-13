@@ -2,16 +2,8 @@
   "images" : [
     {
       "idiom" : "universal",
-      "scale" : "1x",
-      "filename" : "Stage_Urchin_Underpass.png"
-    },
-    {
-      "idiom" : "universal",
-      "scale" : "2x"
-    },
-    {
-      "idiom" : "universal",
-      "scale" : "3x"
+      "filename" : "Stage_Urchin_Underpass.jpg",
+      "scale" : "1x"
     }
   ],
   "info" : {
