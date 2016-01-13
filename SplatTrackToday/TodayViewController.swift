@@ -37,6 +37,7 @@ class TodayViewController: UIViewController, NCWidgetProviding {
         MapData.getFreshMapData({ (mapData, source: MapData.DataSource) -> Void in
             var rotationViews : Array<WidgetRotationView> = []
             for (i, rotation) in mapData.rotations.enumerate() {
+                
                 let rotationView = WidgetRotationView()
                 rotationView.translatesAutoresizingMaskIntoConstraints = false
                 rotationView.rotationData = rotation
@@ -65,14 +66,10 @@ class TodayViewController: UIViewController, NCWidgetProviding {
                     constraints.append(bottomSpace)
                 }
                 self.view.addConstraints(constraints)
+                
             }
             
-            switch source {
-            case .Network:
-                completionHandler(.NewData)
-            case .Cached:
-                completionHandler(.NoData)
-            }
+            completionHandler(.NewData)
             
             }, failure: { () -> Void in
                 completionHandler(.Failed)
