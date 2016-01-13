@@ -17,10 +17,10 @@ class WidgetRotationView : UIView {
                 formatter.timeStyle = NSDateFormatterStyle.ShortStyle
                 self.timeLabel.text = formatter.stringFromDate(rotation.startTime)
                 self.rankedModeLabel.text = rotation.rankedRulesetName
-                self.rankedStageOne.text = rotation.rankedStageOneName
-                self.rankedStageTwo.text = rotation.rankedStageTwoName
-                self.turfWarStageOne.text = rotation.regularStageOneName
-                self.turfWarStageTwo.text = rotation.regularStageTwoName
+                self.rankedStageOne.text = rotation.rankedStageNames[0]
+                self.rankedStageTwo.text = rotation.rankedStageNames[1]
+                self.turfWarStageOne.text = rotation.regularStageNames[0]
+                self.turfWarStageTwo.text = rotation.regularStageNames[1]
 
             }
             
