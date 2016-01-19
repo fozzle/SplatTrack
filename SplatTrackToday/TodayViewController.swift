@@ -11,16 +11,13 @@ import NotificationCenter
 
 class TodayViewController: UIViewController, NCWidgetProviding {
     
-//    @IBOutlet weak var firstRotationView: WidgetRotationView!
-//    @IBOutlet weak var secondRotationView: WidgetRotationView!
-//    @IBOutlet weak var thirdRotationView: WidgetRotationView!
-//    var rotationViews : Array<WidgetRotationView> = []
+    var ZeroHeightConstraint : NSLayoutConstraint?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view from its nib.
         
-//        rotationViews = [firstRotationView, secondRotationView, thirdRotationView]
+        ZeroHeightConstraint = NSLayoutConstraint(item: self.view, attribute: .Height, relatedBy: .Equal, toItem: nil, attribute: .NotAnAttribute, multiplier: 1, constant: 0)
     }
     
     override func didReceiveMemoryWarning() {
@@ -35,18 +32,26 @@ class TodayViewController: UIViewController, NCWidgetProviding {
     func widgetPerformUpdateWithCompletionHandler(completionHandler: ((NCUpdateResult) -> Void)) {
         // Get mapData
         MapData.getFreshMapData({ (mapData, source: MapData.DataSource) -> Void in
-            var rotationViews : Array<WidgetRotationView> = []
+            var rotationViews : Array<RotationWidget> = []
             for (i, rotation) in mapData.rotations.enumerate() {
                 
-                let rotationView = WidgetRotationView()
+                let rotationView: RotationWidget = self.getRotationView(rotation)
+                
                 rotationView.translatesAutoresizingMaskIntoConstraints = false
                 rotationView.rotationData = rotation
                 self.view.addSubview(rotationView)
                 rotationViews.append(rotationView)
                 
+                var heightConstant: CGFloat
+                if (rotation.splatfest) {
+                    heightConstant = 100
+                } else {
+                    heightConstant = 80
+                }
+                
                 let leadingSpace = NSLayoutConstraint(item: rotationView, attribute: .Leading, relatedBy: .Equal, toItem: self.view, attribute: .Leading, multiplier: 1, constant: 0)
                 let trailingSpace = NSLayoutConstraint(item: rotationView, attribute: .Trailing, relatedBy: .Equal, toItem: self.view, attribute: .Trailing, multiplier: 1, constant: 0)
-                let height = NSLayoutConstraint(item: rotationView, attribute: .Height, relatedBy: .Equal, toItem: nil, attribute: .NotAnAttribute, multiplier: 1, constant: 80)
+                let height = NSLayoutConstraint(item: rotationView, attribute: .Height, relatedBy: .Equal, toItem: nil, attribute: .NotAnAttribute, multiplier: 1, constant: heightConstant)
                 var constraints : Array<NSLayoutConstraint> = [leadingSpace, trailingSpace, height]
                 
                 // Top space depends on position in series
@@ -69,11 +74,25 @@ class TodayViewController: UIViewController, NCWidgetProviding {
                 
             }
             
+            if (rotationViews.count == 0) {
+                self.view.addConstraint(self.ZeroHeightConstraint!)
+            } else {
+                self.view.removeConstraint(self.ZeroHeightConstraint!)
+            }
+            
             completionHandler(.NewData)
             
             }, failure: { () -> Void in
                 completionHandler(.Failed)
         })
+    }
+    
+    func getRotationView(rotation: RotationInfo) -> RotationWidget {
+        if (rotation.splatfest) {
+            return SplatfestRotationView()
+        } else {
+            return WidgetRotationView()
+        }
     }
     
 }

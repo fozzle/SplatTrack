@@ -76,7 +76,11 @@ class PageViewController : UIPageViewController, UIPageViewControllerDataSource,
         self.dataSource = nil
         self.dataSource = self
         
-        if let vc = self.viewControllers?.first as? ViewController {
+        if (mapData.rotations.count == 0) {
+            self.presentViewController(self.alertController, animated: true) {
+                // nothing
+            }
+        } else if let vc = self.viewControllers?.first as? ViewController {
             vc.currentMapData = currentMapData
             vc.updateMapData()
         }

@@ -44,6 +44,9 @@
 		275B35761BD99534006FEDCC /* WidgetRotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 275B35741BD99534006FEDCC /* WidgetRotationView.swift */; };
 		275B35771BD99BFE006FEDCC /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 27944CFB1B9494210064C69C /* Images.xcassets */; };
 		275B35781BD99BFE006FEDCC /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 27944CFB1B9494210064C69C /* Images.xcassets */; };
+		276C4CDF1C4EB86F00E0F3E9 /* SplatfestRotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 276C4CDE1C4EB86F00E0F3E9 /* SplatfestRotationView.swift */; };
+		276C4CE11C4EB93E00E0F3E9 /* SplatfestRotationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 276C4CE01C4EB93E00E0F3E9 /* SplatfestRotationView.xib */; };
+		276C4CE31C4EBBA100E0F3E9 /* RotationWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 276C4CE21C4EBBA100E0F3E9 /* RotationWidget.swift */; };
 		27748A8D1B94A22D00090E19 /* ProjectPaintball.otf in Resources */ = {isa = PBXBuildFile; fileRef = 27748A8C1B94A22D00090E19 /* ProjectPaintball.otf */; };
 		2778DFE01B9634C4002E5AE5 /* StageCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2778DFDF1B9634C4002E5AE5 /* StageCardView.swift */; };
 		2778DFE21B9634D7002E5AE5 /* StageCardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2778DFE11B9634D7002E5AE5 /* StageCardView.xib */; };
@@ -132,6 +135,9 @@
 		275B356B1BD981D7006FEDCC /* SplatTrackToday copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "SplatTrackToday copy-Info.plist"; path = "/Users/kyle/Code/SplatTrack/SplatTrackToday copy-Info.plist"; sourceTree = "<absolute>"; };
 		275B35711BD994CC006FEDCC /* WidgetRotationView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WidgetRotationView.xib; sourceTree = "<group>"; };
 		275B35741BD99534006FEDCC /* WidgetRotationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WidgetRotationView.swift; sourceTree = "<group>"; };
+		276C4CDE1C4EB86F00E0F3E9 /* SplatfestRotationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplatfestRotationView.swift; sourceTree = "<group>"; };
+		276C4CE01C4EB93E00E0F3E9 /* SplatfestRotationView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SplatfestRotationView.xib; sourceTree = "<group>"; };
+		276C4CE21C4EBBA100E0F3E9 /* RotationWidget.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RotationWidget.swift; sourceTree = "<group>"; };
 		27748A8C1B94A22D00090E19 /* ProjectPaintball.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = ProjectPaintball.otf; path = Resources/ProjectPaintball.otf; sourceTree = "<group>"; };
 		2778DFDF1B9634C4002E5AE5 /* StageCardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StageCardView.swift; sourceTree = "<group>"; };
 		2778DFE11B9634D7002E5AE5 /* StageCardView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StageCardView.xib; sourceTree = "<group>"; };
@@ -217,7 +223,10 @@
 				271A36261BBE3FDB0041EB84 /* MainInterface.storyboard */,
 				271A36291BBE3FDB0041EB84 /* Info.plist */,
 				275B35711BD994CC006FEDCC /* WidgetRotationView.xib */,
+				276C4CE01C4EB93E00E0F3E9 /* SplatfestRotationView.xib */,
 				275B35741BD99534006FEDCC /* WidgetRotationView.swift */,
+				276C4CDE1C4EB86F00E0F3E9 /* SplatfestRotationView.swift */,
+				276C4CE21C4EBBA100E0F3E9 /* RotationWidget.swift */,
 			);
 			path = SplatTrackToday;
 			sourceTree = "<group>";
@@ -554,6 +563,7 @@
 				275B35771BD99BFE006FEDCC /* Images.xcassets in Resources */,
 				275B35721BD994CC006FEDCC /* WidgetRotationView.xib in Resources */,
 				271A36281BBE3FDB0041EB84 /* MainInterface.storyboard in Resources */,
+				276C4CE11C4EB93E00E0F3E9 /* SplatfestRotationView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -730,7 +740,9 @@
 			files = (
 				27A68B231BC440D000C34233 /* MapData.swift in Sources */,
 				271A36251BBE3FDB0041EB84 /* TodayViewController.swift in Sources */,
+				276C4CE31C4EBBA100E0F3E9 /* RotationWidget.swift in Sources */,
 				275B35751BD99534006FEDCC /* WidgetRotationView.swift in Sources */,
+				276C4CDF1C4EB86F00E0F3E9 /* SplatfestRotationView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
