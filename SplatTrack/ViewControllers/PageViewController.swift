@@ -17,30 +17,11 @@ class PageViewController : UIPageViewController, UIPageViewControllerDataSource,
     private var currentMapData : MapData?
     private var currentIndex = 0
     
-    func presentationCountForPageViewController(pageViewController: UIPageViewController) -> Int {
-        return currentMapData?.rotations.count ?? 0
-    }
-    
-    func presentationIndexForPageViewController(pageViewController: UIPageViewController) -> Int {
-        return currentIndex
-    }
-    
-    func setupAlertViewController() {
-        let OKAction = UIAlertAction(title: "OK", style: .Cancel) { (action) in
-            // ...
-        }
-        
-        let retryAction = UIAlertAction(title: "Retry", style: UIAlertActionStyle.Default) { (action) in
-            self.refreshStaleData()
-        }
-        alertController.addAction(OKAction)
-        alertController.addAction(retryAction)
-    }
-
+    // MARK: Lifecycle
     override func viewDidLoad() {
         self.dataSource = self
         self.delegate = self
-
+        
         setupAlertViewController()
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector:Selector("updateMapData"), name: UIApplicationWillEnterForegroundNotification, object: nil)
@@ -55,7 +36,55 @@ class PageViewController : UIPageViewController, UIPageViewControllerDataSource,
         updateMapData()
     }
     
-    // Update child VCs
+    // MARK: UIPageViewControllerDataSource
+    func presentationCountForPageViewController(pageViewController: UIPageViewController) -> Int {
+        return currentMapData?.rotations.count ?? 0
+    }
+    
+    func presentationIndexForPageViewController(pageViewController: UIPageViewController) -> Int {
+        return currentIndex
+    }
+    
+    
+    func pageViewController(pageViewController: UIPageViewController, viewControllerAfterViewController viewController: UIViewController) -> UIViewController? {
+        let vc = viewController as! RotationViewController
+        if (vc.PageIndex >= presentationCountForPageViewController(pageViewController) - 1) {
+            return nil
+        } else {
+            return getStagesViewControllerAtIndex(vc.PageIndex + 1)
+        }
+    }
+    
+    func pageViewController(pageViewController: UIPageViewController, viewControllerBeforeViewController viewController: UIViewController) -> UIViewController? {
+        let vc = viewController as! RotationViewController
+        if (vc.PageIndex <= 0) {
+            return nil
+        } else {
+            return getStagesViewControllerAtIndex(vc.PageIndex - 1)
+        }
+    }
+    
+    // MARK: UIPageViewControllerDelegate
+    func pageViewController(pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool) {
+        guard completed else { return }
+        if let vc = pageViewController.viewControllers?.first as? RotationViewController {
+            currentIndex = vc.PageIndex
+        }
+    }
+
+    // MARK: Other
+    func setupAlertViewController() {
+        let OKAction = UIAlertAction(title: "OK", style: .Cancel) { (action) in
+            // ...
+        }
+        
+        let retryAction = UIAlertAction(title: "Retry", style: UIAlertActionStyle.Default) { (action) in
+            self.refreshStaleData()
+        }
+        alertController.addAction(OKAction)
+        alertController.addAction(retryAction)
+    }
+
     func updateMapData() {
         if let mapData = currentMapData {
             if (!mapData.isStale()) {
@@ -93,33 +122,6 @@ class PageViewController : UIPageViewController, UIPageViewControllerDataSource,
             }
         }
     }
-    
-    func pageViewController(pageViewController: UIPageViewController, viewControllerAfterViewController viewController: UIViewController) -> UIViewController? {
-        let vc = viewController as! RotationViewController
-        if (vc.PageIndex >= presentationCountForPageViewController(pageViewController) - 1) {
-            return nil
-        } else {
-            return getStagesViewControllerAtIndex(vc.PageIndex + 1)
-        }
-    }
-    
-    func pageViewController(pageViewController: UIPageViewController, viewControllerBeforeViewController viewController: UIViewController) -> UIViewController? {
-        let vc = viewController as! RotationViewController
-        if (vc.PageIndex <= 0) {
-            return nil
-        } else {
-            return getStagesViewControllerAtIndex(vc.PageIndex - 1)
-        }
-    }
-    
-    func pageViewController(pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool) {
-        guard completed else { return }
-        if let vc = pageViewController.viewControllers?.first as? RotationViewController {
-            currentIndex = vc.PageIndex
-        }
-    }
-    
-    
     
     func getStagesViewControllerAtIndex(index: Int) -> RotationViewController? {
         let stageViewController = self.storyboard?.instantiateViewControllerWithIdentifier("RotationViewController") as! RotationViewController
