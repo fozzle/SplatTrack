@@ -13,7 +13,7 @@
         <!--Current Stages-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController storyboardIdentifier="ViewController" automaticallyAdjustsScrollViewInsets="NO" id="BYZ-38-t0r" customClass="ViewController" customModule="SplatTrack" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="RotationViewController" automaticallyAdjustsScrollViewInsets="NO" id="BYZ-38-t0r" customClass="RotationViewController" customModule="SplatTrack" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>

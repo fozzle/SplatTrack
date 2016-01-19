@@ -80,7 +80,7 @@ class PageViewController : UIPageViewController, UIPageViewControllerDataSource,
             self.presentViewController(self.alertController, animated: true) {
                 // nothing
             }
-        } else if let vc = self.viewControllers?.first as? ViewController {
+        } else if let vc = self.viewControllers?.first as? RotationViewController {
             vc.currentMapData = currentMapData
             vc.updateMapData()
         }
@@ -95,7 +95,7 @@ class PageViewController : UIPageViewController, UIPageViewControllerDataSource,
     }
     
     func pageViewController(pageViewController: UIPageViewController, viewControllerAfterViewController viewController: UIViewController) -> UIViewController? {
-        let vc = viewController as! ViewController
+        let vc = viewController as! RotationViewController
         if (vc.PageIndex >= presentationCountForPageViewController(pageViewController) - 1) {
             return nil
         } else {
@@ -104,7 +104,7 @@ class PageViewController : UIPageViewController, UIPageViewControllerDataSource,
     }
     
     func pageViewController(pageViewController: UIPageViewController, viewControllerBeforeViewController viewController: UIViewController) -> UIViewController? {
-        let vc = viewController as! ViewController
+        let vc = viewController as! RotationViewController
         if (vc.PageIndex <= 0) {
             return nil
         } else {
@@ -114,15 +114,15 @@ class PageViewController : UIPageViewController, UIPageViewControllerDataSource,
     
     func pageViewController(pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool) {
         guard completed else { return }
-        if let vc = pageViewController.viewControllers?.first as? ViewController {
+        if let vc = pageViewController.viewControllers?.first as? RotationViewController {
             currentIndex = vc.PageIndex
         }
     }
     
     
     
-    func getStagesViewControllerAtIndex(index: Int) -> ViewController? {
-        let stageViewController = self.storyboard?.instantiateViewControllerWithIdentifier("ViewController") as! ViewController
+    func getStagesViewControllerAtIndex(index: Int) -> RotationViewController? {
+        let stageViewController = self.storyboard?.instantiateViewControllerWithIdentifier("RotationViewController") as! RotationViewController
         stageViewController.PageIndex = index
         stageViewController.currentMapData = currentMapData
         

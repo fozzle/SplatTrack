@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  RotationViewController.swift
 //  SplatTrack
 //
 //  Created by Kyle Petrovich on 8/31/15.
@@ -10,7 +10,7 @@ import UIKit
 
 
 
-class ViewController: UIViewController {
+class RotationViewController: UIViewController {
     
     // MARK: Instance var
     var PageIndex = 0

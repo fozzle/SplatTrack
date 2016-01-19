@@ -18,7 +18,7 @@
 		275B35411BD97BB5006FEDCC /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 278497271BC44DE100B1FFAF /* PageViewController.swift */; };
 		275B35421BD97BB5006FEDCC /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 272FF0F71B962C260096BCDF /* UIImage.swift */; };
 		275B35431BD97BB5006FEDCC /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 273B11401B98D58800E51AF0 /* SettingsTableViewController.swift */; };
-		275B35441BD97BB5006FEDCC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27944CF61B9494210064C69C /* ViewController.swift */; };
+		275B35441BD97BB5006FEDCC /* RotationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27944CF61B9494210064C69C /* RotationViewController.swift */; };
 		275B35451BD97BB5006FEDCC /* MapData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 271EF1711BC1BD860087BE32 /* MapData.swift */; };
 		275B35461BD97BB5006FEDCC /* GlobalConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A2FF941B9A1F2C0023EE8D /* GlobalConstants.swift */; };
 		275B35471BD97BB5006FEDCC /* StageCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2778DFDF1B9634C4002E5AE5 /* StageCardView.swift */; };
@@ -54,7 +54,7 @@
 		2784972A1BC453F400B1FFAF /* BackgroundViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 278497291BC453F400B1FFAF /* BackgroundViewController.swift */; };
 		2784972C1BC45D9D00B1FFAF /* SplatoonColorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2784972B1BC45D9D00B1FFAF /* SplatoonColorManager.swift */; };
 		27944CF51B9494210064C69C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27944CF41B9494210064C69C /* AppDelegate.swift */; };
-		27944CF71B9494210064C69C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27944CF61B9494210064C69C /* ViewController.swift */; };
+		27944CF71B9494210064C69C /* RotationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27944CF61B9494210064C69C /* RotationViewController.swift */; };
 		27944CFA1B9494210064C69C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 27944CF81B9494210064C69C /* Main.storyboard */; };
 		27944CFC1B9494210064C69C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 27944CFB1B9494210064C69C /* Images.xcassets */; };
 		27944CFF1B9494210064C69C /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 27944CFD1B9494210064C69C /* LaunchScreen.xib */; };
@@ -148,7 +148,7 @@
 		27944CEF1B9494210064C69C /* SplatTrack.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SplatTrack.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		27944CF31B9494210064C69C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		27944CF41B9494210064C69C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		27944CF61B9494210064C69C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		27944CF61B9494210064C69C /* RotationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RotationViewController.swift; sourceTree = "<group>"; };
 		27944CF91B9494210064C69C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		27944CFB1B9494210064C69C /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = SplatTrack/Images.xcassets; sourceTree = "<group>"; };
 		27944CFE1B9494210064C69C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -215,6 +215,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2718A8BD1C4ED81700D70D4D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				275B35711BD994CC006FEDCC /* WidgetRotationView.xib */,
+				276C4CE01C4EB93E00E0F3E9 /* SplatfestRotationView.xib */,
+				275B35741BD99534006FEDCC /* WidgetRotationView.swift */,
+				276C4CDE1C4EB86F00E0F3E9 /* SplatfestRotationView.swift */,
+				276C4CE21C4EBBA100E0F3E9 /* RotationWidget.swift */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
 		271A36231BBE3FDB0041EB84 /* SplatTrackToday */ = {
 			isa = PBXGroup;
 			children = (
@@ -222,11 +234,7 @@
 				271A36241BBE3FDB0041EB84 /* TodayViewController.swift */,
 				271A36261BBE3FDB0041EB84 /* MainInterface.storyboard */,
 				271A36291BBE3FDB0041EB84 /* Info.plist */,
-				275B35711BD994CC006FEDCC /* WidgetRotationView.xib */,
-				276C4CE01C4EB93E00E0F3E9 /* SplatfestRotationView.xib */,
-				275B35741BD99534006FEDCC /* WidgetRotationView.swift */,
-				276C4CDE1C4EB86F00E0F3E9 /* SplatfestRotationView.swift */,
-				276C4CE21C4EBBA100E0F3E9 /* RotationWidget.swift */,
+				2718A8BD1C4ED81700D70D4D /* Views */,
 			);
 			path = SplatTrackToday;
 			sourceTree = "<group>";
@@ -244,7 +252,7 @@
 			children = (
 				278497291BC453F400B1FFAF /* BackgroundViewController.swift */,
 				278497271BC44DE100B1FFAF /* PageViewController.swift */,
-				27944CF61B9494210064C69C /* ViewController.swift */,
+				27944CF61B9494210064C69C /* RotationViewController.swift */,
 				273B11401B98D58800E51AF0 /* SettingsTableViewController.swift */,
 			);
 			name = ViewControllers;
@@ -754,7 +762,7 @@
 				275B35411BD97BB5006FEDCC /* PageViewController.swift in Sources */,
 				275B35421BD97BB5006FEDCC /* UIImage.swift in Sources */,
 				275B35431BD97BB5006FEDCC /* SettingsTableViewController.swift in Sources */,
-				275B35441BD97BB5006FEDCC /* ViewController.swift in Sources */,
+				275B35441BD97BB5006FEDCC /* RotationViewController.swift in Sources */,
 				275B35451BD97BB5006FEDCC /* MapData.swift in Sources */,
 				275B35461BD97BB5006FEDCC /* GlobalConstants.swift in Sources */,
 				275B35471BD97BB5006FEDCC /* StageCardView.swift in Sources */,
@@ -783,7 +791,7 @@
 				278497281BC44DE100B1FFAF /* PageViewController.swift in Sources */,
 				272FF0F81B962C260096BCDF /* UIImage.swift in Sources */,
 				273B11411B98D58800E51AF0 /* SettingsTableViewController.swift in Sources */,
-				27944CF71B9494210064C69C /* ViewController.swift in Sources */,
+				27944CF71B9494210064C69C /* RotationViewController.swift in Sources */,
 				271EF1721BC1BD860087BE32 /* MapData.swift in Sources */,
 				27A2FF951B9A1F2D0023EE8D /* GlobalConstants.swift in Sources */,
 				2778DFE01B9634C4002E5AE5 /* StageCardView.swift in Sources */,
