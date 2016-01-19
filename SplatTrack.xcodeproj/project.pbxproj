@@ -247,7 +247,6 @@
 				27A2FF961B9A208F0023EE8D /* Utility */,
 				27F7DD371B94D3B800C6A7DA /* Extensions */,
 				27944CF41B9494210064C69C /* AppDelegate.swift */,
-				2718A8C01C4EE94F00D70D4D /* ApiKeys.plist */,
 				27944CF81B9494210064C69C /* Main.storyboard */,
 				27944CFD1B9494210064C69C /* LaunchScreen.xib */,
 				27944CF21B9494210064C69C /* Supporting Files */,
@@ -258,6 +257,7 @@
 		27944CF21B9494210064C69C /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				2718A8C01C4EE94F00D70D4D /* ApiKeys.plist */,
 				27944CF31B9494210064C69C /* Info.plist */,
 			);
 			name = "Supporting Files";
