@@ -1,4 +1,7 @@
-# Created by https://www.gitignore.io/api/code,swift
+# Keys ignore
+ApiKeys.plist
+
+# Following created by https://www.gitignore.io/api/code,swift
 
 ### Code ###
 # Visual Studio Code - https://code.visualstudio.com/
