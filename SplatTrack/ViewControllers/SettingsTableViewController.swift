@@ -12,6 +12,8 @@ class SettingsTableViewController: UITableViewController {
     
     @IBOutlet weak var backgroundScrollSwitch: UISwitch!
     
+    
+    // MARK: View Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -21,8 +23,7 @@ class SettingsTableViewController: UITableViewController {
         backgroundScrollSwitch.on = NSUserDefaults.standardUserDefaults().boolForKey(GlobalConstants.SplatNoBackgroundScroll)
     }
 
-    // MARK: - Table view data source
-
+    // MARK: UITableViewController
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // Return the number of sections.
         return 1
@@ -38,7 +39,7 @@ class SettingsTableViewController: UITableViewController {
         cell.backgroundColor = UIColor.blackColor()
     }
     
-    
+    // MARK: IBActions
     @IBAction func backgroundScrollSwitchChanged(sender: UISwitch) {
         NSUserDefaults.standardUserDefaults().setBool(sender.on, forKey: GlobalConstants.SplatNoBackgroundScroll)
     }
