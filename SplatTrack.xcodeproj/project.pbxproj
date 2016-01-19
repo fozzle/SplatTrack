@@ -77,7 +77,7 @@
 		07D51072891A3582D5722E9D /* Pods-SplatTrackToday.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SplatTrackToday.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SplatTrackToday/Pods-SplatTrackToday.debug.xcconfig"; sourceTree = "<group>"; };
 		18577BB5900A82EF889E9C42 /* Pods-SplatTrack.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SplatTrack.release.xcconfig"; path = "Pods/Target Support Files/Pods-SplatTrack/Pods-SplatTrack.release.xcconfig"; sourceTree = "<group>"; };
 		2718A8BE1C4EE84200D70D4D /* KeyManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyManager.swift; sourceTree = "<group>"; };
-		2718A8C01C4EE94F00D70D4D /* ApiKeys.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ApiKeys.plist; sourceTree = SOURCE_ROOT; };
+		2718A8C01C4EE94F00D70D4D /* ApiKeys.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ApiKeys.plist; sourceTree = "<group>"; };
 		271A36201BBE3FDB0041EB84 /* SplatTrackToday.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = SplatTrackToday.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		271A36211BBE3FDB0041EB84 /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
 		271A36241BBE3FDB0041EB84 /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
@@ -93,11 +93,11 @@
 		276C4CDE1C4EB86F00E0F3E9 /* SplatfestRotationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplatfestRotationView.swift; sourceTree = "<group>"; };
 		276C4CE01C4EB93E00E0F3E9 /* SplatfestRotationView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SplatfestRotationView.xib; sourceTree = "<group>"; };
 		276C4CE21C4EBBA100E0F3E9 /* RotationWidget.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RotationWidget.swift; sourceTree = "<group>"; };
-		27748A8C1B94A22D00090E19 /* ProjectPaintball.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = ProjectPaintball.otf; path = Resources/ProjectPaintball.otf; sourceTree = "<group>"; };
+		27748A8C1B94A22D00090E19 /* ProjectPaintball.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = ProjectPaintball.otf; sourceTree = "<group>"; };
 		2778DFDF1B9634C4002E5AE5 /* StageCardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StageCardView.swift; sourceTree = "<group>"; };
 		2778DFE11B9634D7002E5AE5 /* StageCardView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StageCardView.xib; sourceTree = "<group>"; };
-		278497271BC44DE100B1FFAF /* PageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PageViewController.swift; path = ../PageViewController.swift; sourceTree = "<group>"; };
-		278497291BC453F400B1FFAF /* BackgroundViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BackgroundViewController.swift; path = ../BackgroundViewController.swift; sourceTree = "<group>"; };
+		278497271BC44DE100B1FFAF /* PageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
+		278497291BC453F400B1FFAF /* BackgroundViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackgroundViewController.swift; sourceTree = "<group>"; };
 		2784972B1BC45D9D00B1FFAF /* SplatoonColorManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplatoonColorManager.swift; sourceTree = "<group>"; };
 		278C8C161BD7FF6200436ABB /* SplatTrack-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SplatTrack-Bridging-Header.h"; sourceTree = "<group>"; };
 		27944CEF1B9494210064C69C /* SplatTrack.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SplatTrack.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -105,7 +105,7 @@
 		27944CF41B9494210064C69C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		27944CF61B9494210064C69C /* RotationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RotationViewController.swift; sourceTree = "<group>"; };
 		27944CF91B9494210064C69C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		27944CFB1B9494210064C69C /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = SplatTrack/Images.xcassets; sourceTree = "<group>"; };
+		27944CFB1B9494210064C69C /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		27944CFE1B9494210064C69C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		27944D041B9494210064C69C /* SplatTrackTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SplatTrackTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		27944D091B9494210064C69C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -156,23 +156,23 @@
 		2718A8BD1C4ED81700D70D4D /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				275B35711BD994CC006FEDCC /* WidgetRotationView.xib */,
+				276C4CE21C4EBBA100E0F3E9 /* RotationWidget.swift */,
+				276C4CDE1C4EB86F00E0F3E9 /* SplatfestRotationView.swift */,
 				276C4CE01C4EB93E00E0F3E9 /* SplatfestRotationView.xib */,
 				275B35741BD99534006FEDCC /* WidgetRotationView.swift */,
-				276C4CDE1C4EB86F00E0F3E9 /* SplatfestRotationView.swift */,
-				276C4CE21C4EBBA100E0F3E9 /* RotationWidget.swift */,
+				275B35711BD994CC006FEDCC /* WidgetRotationView.xib */,
 			);
-			name = Views;
+			path = Views;
 			sourceTree = "<group>";
 		};
 		271A36231BBE3FDB0041EB84 /* SplatTrackToday */ = {
 			isa = PBXGroup;
 			children = (
+				2718A8BD1C4ED81700D70D4D /* Views */,
+				271A36291BBE3FDB0041EB84 /* Info.plist */,
+				271A36261BBE3FDB0041EB84 /* MainInterface.storyboard */,
 				271EF16E1BC1BC1D0087BE32 /* SplatTrackToday.entitlements */,
 				271A36241BBE3FDB0041EB84 /* TodayViewController.swift */,
-				271A36261BBE3FDB0041EB84 /* MainInterface.storyboard */,
-				271A36291BBE3FDB0041EB84 /* Info.plist */,
-				2718A8BD1C4ED81700D70D4D /* Views */,
 			);
 			path = SplatTrackToday;
 			sourceTree = "<group>";
@@ -182,7 +182,7 @@
 			children = (
 				271EF1711BC1BD860087BE32 /* MapData.swift */,
 			);
-			name = Models;
+			path = Models;
 			sourceTree = "<group>";
 		};
 		275B356F1BD98E12006FEDCC /* ViewControllers */ = {
@@ -193,7 +193,7 @@
 				27944CF61B9494210064C69C /* RotationViewController.swift */,
 				273B11401B98D58800E51AF0 /* SettingsTableViewController.swift */,
 			);
-			name = ViewControllers;
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 		275B35701BD98E32006FEDCC /* Views */ = {
@@ -202,7 +202,7 @@
 				2778DFDF1B9634C4002E5AE5 /* StageCardView.swift */,
 				2778DFE11B9634D7002E5AE5 /* StageCardView.xib */,
 			);
-			name = Views;
+			path = Views;
 			sourceTree = "<group>";
 		};
 		27748A8B1B94A1ED00090E19 /* Resources */ = {
@@ -211,19 +211,19 @@
 				27944CFB1B9494210064C69C /* Images.xcassets */,
 				27748A8C1B94A22D00090E19 /* ProjectPaintball.otf */,
 			);
-			name = Resources;
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		27944CE61B9494210064C69C = {
 			isa = PBXGroup;
 			children = (
+				5C47792DD39640CB4CC91CAE /* Frameworks */,
+				7B14D9BC8EE94B8E8291A4E7 /* Pods */,
+				27944CF01B9494210064C69C /* Products */,
 				27748A8B1B94A1ED00090E19 /* Resources */,
 				27944CF11B9494210064C69C /* SplatTrack */,
 				27944D071B9494210064C69C /* SplatTrackTests */,
 				271A36231BBE3FDB0041EB84 /* SplatTrackToday */,
-				27944CF01B9494210064C69C /* Products */,
-				7B14D9BC8EE94B8E8291A4E7 /* Pods */,
-				5C47792DD39640CB4CC91CAE /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -240,16 +240,16 @@
 		27944CF11B9494210064C69C /* SplatTrack */ = {
 			isa = PBXGroup;
 			children = (
-				275B35701BD98E32006FEDCC /* Views */,
-				275B356F1BD98E12006FEDCC /* ViewControllers */,
-				271EF1701BC1BD730087BE32 /* Models */,
-				271EF16F1BC1BC6E0087BE32 /* SplatTrack.entitlements */,
-				27A2FF961B9A208F0023EE8D /* Utility */,
 				27F7DD371B94D3B800C6A7DA /* Extensions */,
-				27944CF41B9494210064C69C /* AppDelegate.swift */,
-				27944CF81B9494210064C69C /* Main.storyboard */,
-				27944CFD1B9494210064C69C /* LaunchScreen.xib */,
+				271EF1701BC1BD730087BE32 /* Models */,
 				27944CF21B9494210064C69C /* Supporting Files */,
+				27A2FF961B9A208F0023EE8D /* Utility */,
+				275B356F1BD98E12006FEDCC /* ViewControllers */,
+				275B35701BD98E32006FEDCC /* Views */,
+				27944CF41B9494210064C69C /* AppDelegate.swift */,
+				27944CFD1B9494210064C69C /* LaunchScreen.xib */,
+				27944CF81B9494210064C69C /* Main.storyboard */,
+				271EF16F1BC1BC6E0087BE32 /* SplatTrack.entitlements */,
 			);
 			path = SplatTrack;
 			sourceTree = "<group>";
@@ -260,14 +260,14 @@
 				2718A8C01C4EE94F00D70D4D /* ApiKeys.plist */,
 				27944CF31B9494210064C69C /* Info.plist */,
 			);
-			name = "Supporting Files";
+			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		27944D071B9494210064C69C /* SplatTrackTests */ = {
 			isa = PBXGroup;
 			children = (
-				27944D0A1B9494210064C69C /* SplatTrackTests.swift */,
 				27944D081B9494210064C69C /* Supporting Files */,
+				27944D0A1B9494210064C69C /* SplatTrackTests.swift */,
 			);
 			path = SplatTrackTests;
 			sourceTree = "<group>";
@@ -277,19 +277,19 @@
 			children = (
 				27944D091B9494210064C69C /* Info.plist */,
 			);
-			name = "Supporting Files";
+			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		27A2FF961B9A208F0023EE8D /* Utility */ = {
 			isa = PBXGroup;
 			children = (
-				278C8C161BD7FF6200436ABB /* SplatTrack-Bridging-Header.h */,
 				27A2FF941B9A1F2C0023EE8D /* GlobalConstants.swift */,
-				27A2FF971B9A20A10023EE8D /* NotificationManager.swift */,
-				2784972B1BC45D9D00B1FFAF /* SplatoonColorManager.swift */,
 				2718A8BE1C4EE84200D70D4D /* KeyManager.swift */,
+				27A2FF971B9A20A10023EE8D /* NotificationManager.swift */,
+				278C8C161BD7FF6200436ABB /* SplatTrack-Bridging-Header.h */,
+				2784972B1BC45D9D00B1FFAF /* SplatoonColorManager.swift */,
 			);
-			name = Utility;
+			path = Utility;
 			sourceTree = "<group>";
 		};
 		27F7DD371B94D3B800C6A7DA /* Extensions */ = {
@@ -298,7 +298,7 @@
 				27F7DD381B94D3C900C6A7DA /* Array.swift */,
 				272FF0F71B962C260096BCDF /* UIImage.swift */,
 			);
-			name = Extensions;
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		5C47792DD39640CB4CC91CAE /* Frameworks */ = {
@@ -625,6 +625,7 @@
 				271A36271BBE3FDB0041EB84 /* Base */,
 			);
 			name = MainInterface.storyboard;
+			path = .;
 			sourceTree = "<group>";
 		};
 		27944CF81B9494210064C69C /* Main.storyboard */ = {
@@ -633,6 +634,7 @@
 				27944CF91B9494210064C69C /* Base */,
 			);
 			name = Main.storyboard;
+			path = .;
 			sourceTree = "<group>";
 		};
 		27944CFD1B9494210064C69C /* LaunchScreen.xib */ = {
@@ -641,6 +643,7 @@
 				27944CFE1B9494210064C69C /* Base */,
 			);
 			name = LaunchScreen.xib;
+			path = .;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -782,14 +785,14 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				FRAMEWORK_SEARCH_PATHS = "";
-				INFOPLIST_FILE = SplatTrack/Info.plist;
+				INFOPLIST_FILE = "SplatTrack/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.petro.SplatTrack;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "3a79389e-9b20-4205-908c-285f1ebbc674";
-				SWIFT_OBJC_BRIDGING_HEADER = "SplatTrack/SplatTrack-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "SplatTrack/Utility/SplatTrack-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
@@ -805,13 +808,13 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				FRAMEWORK_SEARCH_PATHS = "";
-				INFOPLIST_FILE = SplatTrack/Info.plist;
+				INFOPLIST_FILE = "SplatTrack/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.petro.SplatTrack;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "d8133d9e-d120-40c3-a35d-c63c0afa3e58";
-				SWIFT_OBJC_BRIDGING_HEADER = "SplatTrack/SplatTrack-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "SplatTrack/Utility/SplatTrack-Bridging-Header.h";
 			};
 			name = Release;
 		};
@@ -824,7 +827,7 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = SplatTrackTests/Info.plist;
+				INFOPLIST_FILE = "SplatTrackTests/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "petro.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -838,7 +841,7 @@
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = "";
-				INFOPLIST_FILE = SplatTrackTests/Info.plist;
+				INFOPLIST_FILE = "SplatTrackTests/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "petro.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
