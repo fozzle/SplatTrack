@@ -15,6 +15,8 @@ class RotationViewController: UIViewController {
     // MARK: Instance var
     var PageIndex = 0
     var currentMapData : MapData?
+    @IBOutlet weak var contentView: UIView?
+    @IBOutlet weak var loadingView: UIView!
     
     // MARK: Constants
     let RulesFormatString = "%@"
@@ -36,10 +38,6 @@ class RotationViewController: UIViewController {
         "Piranha Pit": "Stage_Piranha_Pit",
         "Ancho VGames": "Stage_Ancho_V_Games"
     ]
-    
-    // Container view
-    @IBOutlet weak var contentView: UIView?
-    @IBOutlet weak var loadingView: UIView!
     
     // MARK: View Lifecycle
     override func viewWillAppear(animated: Bool) {
