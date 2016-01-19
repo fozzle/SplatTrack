@@ -10,8 +10,6 @@ import Foundation
 import UIKit
 
 class NotificationManager {
-    static private let StageChangeHoursUTC = [6, 10, 14, 18, 22, 2]
-    static private let NotificationBody = "Stages have changed!"
     static private let NotificationTypes : UIUserNotificationType = [.Alert, .Sound]
     static private let NotificationSettings = UIUserNotificationSettings(forTypes: NotificationTypes, categories: nil)
     
@@ -19,7 +17,4 @@ class NotificationManager {
         UIApplication.sharedApplication().registerUserNotificationSettings(NotificationSettings)
     }
     
-    static func areNotificationsEnabled() -> Bool {
-        return (UIApplication.sharedApplication().currentUserNotificationSettings()!.types.intersect([UIUserNotificationType.Alert, UIUserNotificationType.Sound])) != UIUserNotificationType.None
-    }
 }
