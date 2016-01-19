@@ -61,7 +61,7 @@ JSON MapData takes the form:
 */
 struct MapData {
     var staleTime: NSDate
-    var rotations: [RotationInfo]
+    var rotations: [RotationInfo] = [RotationInfo]()
     
     enum DataSource {
         case Cached
@@ -71,26 +71,22 @@ struct MapData {
     init?(fromDictionary: Dictionary<String, AnyObject>) {
         staleTime = fromDictionary["staleTime"] as! NSDate
         let bullshit = fromDictionary["rotations"] as! [Dictionary<String, AnyObject>]
-        var moreBullshit = [RotationInfo]()
         for rotation: Dictionary<String, AnyObject> in bullshit {
             if (rotation["regularStageNames"] == nil) {
                 return nil;
             }
-            moreBullshit.append(RotationInfo(fromDictionary: rotation))
+            rotations.append(RotationInfo(fromDictionary: rotation))
         }
-        rotations = moreBullshit
     }
     
     init(fromJSON: JSON) {
         staleTime = NSDate(timeIntervalSince1970:NSTimeInterval(fromJSON["schedule"][0]["endTime"].int64Value / 1000))
         
         let schedule = fromJSON["schedule"].array
-        var stupidFuckingSwift = [RotationInfo]()
         for rotation: JSON in schedule! {
             guard let parsedRotation = RotationInfo(fromJSON: rotation) else { continue }
-            stupidFuckingSwift.append(parsedRotation)
+            rotations.append(parsedRotation)
         }
-        rotations = stupidFuckingSwift
     }
     
     private func serializeToDictionary() -> Dictionary<String,AnyObject>? {
@@ -120,7 +116,6 @@ struct MapData {
         // Cache fuckups
         NSURLCache.sharedURLCache().removeAllCachedResponses()
         
-        // Hit splatoon.ink API for data
         Alamofire.request(.GET, SPLATOON_URL).responseJSON {(_, _, res) in
             switch res {
             case .Success(let json):
