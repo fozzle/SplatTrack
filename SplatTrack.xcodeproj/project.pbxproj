@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2718A8BF1C4EE84200D70D4D /* KeyManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2718A8BE1C4EE84200D70D4D /* KeyManager.swift */; };
+		2718A8C11C4EE94F00D70D4D /* ApiKeys.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2718A8C01C4EE94F00D70D4D /* ApiKeys.plist */; };
 		271A36221BBE3FDB0041EB84 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 271A36211BBE3FDB0041EB84 /* NotificationCenter.framework */; };
 		271A36251BBE3FDB0041EB84 /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 271A36241BBE3FDB0041EB84 /* TodayViewController.swift */; };
 		271A36281BBE3FDB0041EB84 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 271A36261BBE3FDB0041EB84 /* MainInterface.storyboard */; };
@@ -119,6 +121,8 @@
 /* Begin PBXFileReference section */
 		07D51072891A3582D5722E9D /* Pods-SplatTrackToday.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SplatTrackToday.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SplatTrackToday/Pods-SplatTrackToday.debug.xcconfig"; sourceTree = "<group>"; };
 		18577BB5900A82EF889E9C42 /* Pods-SplatTrack.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SplatTrack.release.xcconfig"; path = "Pods/Target Support Files/Pods-SplatTrack/Pods-SplatTrack.release.xcconfig"; sourceTree = "<group>"; };
+		2718A8BE1C4EE84200D70D4D /* KeyManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyManager.swift; sourceTree = "<group>"; };
+		2718A8C01C4EE94F00D70D4D /* ApiKeys.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ApiKeys.plist; sourceTree = SOURCE_ROOT; };
 		271A36201BBE3FDB0041EB84 /* SplatTrackToday.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = SplatTrackToday.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		271A36211BBE3FDB0041EB84 /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
 		271A36241BBE3FDB0041EB84 /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
@@ -312,6 +316,7 @@
 				27A2FF961B9A208F0023EE8D /* Utility */,
 				27F7DD371B94D3B800C6A7DA /* Extensions */,
 				27944CF41B9494210064C69C /* AppDelegate.swift */,
+				2718A8C01C4EE94F00D70D4D /* ApiKeys.plist */,
 				27944CF81B9494210064C69C /* Main.storyboard */,
 				27944CFD1B9494210064C69C /* LaunchScreen.xib */,
 				27944CF21B9494210064C69C /* Supporting Files */,
@@ -352,6 +357,7 @@
 				27A2FF941B9A1F2C0023EE8D /* GlobalConstants.swift */,
 				27A2FF971B9A20A10023EE8D /* NotificationManager.swift */,
 				2784972B1BC45D9D00B1FFAF /* SplatoonColorManager.swift */,
+				2718A8BE1C4EE84200D70D4D /* KeyManager.swift */,
 			);
 			name = Utility;
 			sourceTree = "<group>";
@@ -606,6 +612,7 @@
 				27748A8D1B94A22D00090E19 /* ProjectPaintball.otf in Resources */,
 				27944CFF1B9494210064C69C /* LaunchScreen.xib in Resources */,
 				27944CFC1B9494210064C69C /* Images.xcassets in Resources */,
+				2718A8C11C4EE94F00D70D4D /* ApiKeys.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -796,6 +803,7 @@
 				27A2FF951B9A1F2D0023EE8D /* GlobalConstants.swift in Sources */,
 				2778DFE01B9634C4002E5AE5 /* StageCardView.swift in Sources */,
 				2784972A1BC453F400B1FFAF /* BackgroundViewController.swift in Sources */,
+				2718A8BF1C4EE84200D70D4D /* KeyManager.swift in Sources */,
 				27A2FF981B9A20A10023EE8D /* NotificationManager.swift in Sources */,
 				27944CF51B9494210064C69C /* AppDelegate.swift in Sources */,
 				2784972C1BC45D9D00B1FFAF /* SplatoonColorManager.swift in Sources */,
